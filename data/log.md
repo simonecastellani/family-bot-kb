@@ -1,5 +1,12 @@
 # Log
 
+## 2026-11-13T09:33:27Z
+
+concept_batch (3 operation(s)):
+- progetto/roadmap (+ index entry)
+- progetto/questioni-aperte (+ index entry)
+- sviluppo/convenzioni-agenti (+ index entry)
+
 ## 2026-11-13T09:33:20Z
 
 concept_patch: ingest/u03-primer-regole
