@@ -2,6 +2,10 @@
 
 ## 2026-11-13T09:33:39Z
 
+concept_patch: ingest/u11-gcp-eventi-ci
+
+## 2026-11-13T09:33:39Z
+
 concept_patch: ingest/u07-primer-sviluppo
 
 ## 2026-11-13T09:33:30Z
