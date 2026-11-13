@@ -2,6 +2,10 @@
 
 ## 2026-11-13T09:22:35Z
 
+source_register: sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci
+
+## 2026-11-13T09:22:35Z
+
 source_register: sources/2026-11-13-agents-md-e-readme-md-convenzioni-e-comandi-del-repo
 
 ## 2026-11-13T09:22:35Z
