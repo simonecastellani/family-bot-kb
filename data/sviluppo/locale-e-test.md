@@ -41,7 +41,8 @@ Ambiente di sviluppo e strategia di test del progetto, dal primer §7. Le scelte
 - Serve a intercettare le differenze di compatibilità che i test locali non vedono.
 - Non usare librerie che simulano MongoDB in memoria al posto di un MongoDB reale: divergono dal comportamento reale più di quanto convenga. Il doppio in memoria del progetto serve solo agli unit test dei servizi.
 - La suite **fallisce** se MongoDB non risponde: non viene saltata in silenzio. Prima di `uv run pytest` serve `docker compose up -d mongo`.
-- Ogni test usa un database usa-e-getta (`family_bot_test_<uuid>`), applica `ensure_indexes()` e lo elimina alla fine.
+- La suite usa un database condiviso (`family_bot_test`): gli indici sono creati una volta e le collection vengono svuotate con `delete_many` attorno a ogni test. Niente `dropDatabase`, che Firestore non supporta.
+- Le impostazioni dei test usano `_env_file=None` e rifiutano URI non locali: un `.env` che punta a Firestore non può far scrivere la suite sul database reale.
 - La CI GitHub Actions avvia un service `mongo:8.0` con `--replSet rs0` e inizializza il replica set prima della suite.
 
 ## Script di verifica
