@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-13T09:33:11Z
+
+concept_batch (2 operation(s)):
+- architettura/regole (+ index entry)
+- architettura/porte-e-fake (+ index entry)
+
 ## 2026-11-13T09:33:06Z
 
 concept_patch: ingest/u05-primer-promemoria-agente

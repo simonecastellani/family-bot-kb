@@ -10,3 +10,5 @@ title: Architettura
 - [Promemoria event-driven](promemoria.md)
 - [Agente](agente.md)
 - [Sicurezza](sicurezza.md)
+- [Regole architetturali, flusso e struttura del repo](regole.md)
+- [Porte e fake](porte-e-fake.md)
