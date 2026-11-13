@@ -7,3 +7,4 @@ title: Progetto
 ## New pages
 
 - [Panoramica del progetto](overview.md)
+- [Stack tecnologico](stack.md)
