@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:35:10Z
+
+concept_patch: ingest/u15-codice-struttura
+
 ## 2026-11-13T09:35:04Z
 
 concept_batch (2 operation(s)):
