@@ -1,5 +1,5 @@
 ---
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot, sources/2026-11-13-agents-md-e-readme-md-convenzioni-e-comandi-del-repo]
 status: active
 timestamp: 2026-11-13
 title: "Convenzioni per l'agente"
@@ -17,6 +17,21 @@ Istruzioni operative per chi lavora sul repository (§13). Le regole architettur
 4. **Dipendenze giustificate**: non aggiungere dipendenze senza motivarle in una riga.
 5. **Verifica le API esterne**: per librerie e servizi esterni (PydanticAI, PyMongo, libreria Telegram, Cloud Tasks, API Firestore-MongoDB) controllare documentazione e versione installata; non inventare API né presumere compatibilità.
 6. **Chiedi invece di assumere**: in caso di ambiguità, porre la domanda.
+
+## Stato della milestone
+
+- Milestone corrente: **M0 — fondamenta**; l'elenco delle milestone e i criteri di chiusura sono in [[progetto/roadmap]].
+- Infrastruttura: **manuale su GCP**, niente Terraform per ora.
+- Database: **Firestore Enterprise** con compatibilità MongoDB; **MongoDB 8.0** locale per lo sviluppo.
+
+## Regole rapide del repo
+
+Convenzioni operative del repository. Le dieci regole architetturali non negoziabili non sono ripetute qui: sono in [[architettura/regole]].
+
+- Non committare segreti: `.env` resta locale, `.env.example` è il modello.
+- Firestore: `roles/datastore.user` copre i dati; `drop()` e `createIndex()` richiedono permessi schema e un principal di migrazione dedicato.
+- Aggiornare `docs/gcp-inventory.md` quando si crea o modifica una risorsa GCP.
+- Se una decisione del primer cambia, aggiornare il primer o segnalarlo.
 
 ## Definition of done
 

@@ -2,6 +2,10 @@
 
 ## 2026-11-13T09:35:25Z
 
+concept_patch: sviluppo/convenzioni-agenti
+
+## 2026-11-13T09:35:25Z
+
 concept_patch: sviluppo/qualita
 
 ## 2026-11-13T09:35:16Z
