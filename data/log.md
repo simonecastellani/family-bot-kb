@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:34:09Z
+
+concept_write: infrastruttura/gcp-bootstrap
+
 ## 2026-11-13T09:34:02Z
 
 concept_patch: ingest/u12-gcp-osservabilita-integrazioni
