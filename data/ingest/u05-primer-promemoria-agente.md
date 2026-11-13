@@ -1,7 +1,7 @@
 ---
 extract: "§8 i sei passi del flusso event-driven; §9 tool, conferma esplicita, contenuto non fidato, agent_runs. Non la configurazione GCP, che è di U11"
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
+status: done
 targets: [architettura/promemoria, architettura/agente]
 timestamp: 2026-11-13
 type: IngestUnit
@@ -11,7 +11,6 @@ plan: ingest/piano-family-bot-docs
 title: U05 — Promemoria event-driven e agente
 claimed_at: "2026-11-13T00:00:00Z"
 claimed_by: subagent-u05
-review_after: 2026-11-14
 ---
 Questa unità produce: `architettura/promemoria`, `architettura/agente`.
 
