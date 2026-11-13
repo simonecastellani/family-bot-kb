@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-13T09:32:54Z
+
+concept_batch (2 operation(s)):
+- architettura/promemoria
+- architettura/agente
+
 ## 2026-11-13T09:32:23Z
 
 concept_patch: ingest/u09-gcp-bootstrap

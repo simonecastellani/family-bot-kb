@@ -10,7 +10,7 @@ L'agente è il livello conversazionale che traduce i messaggi dei membri in oper
 
 ## Tool
 
-- I tool sono **wrapper sottili sui servizi**, non logica di business duplicata: \`create_task\`, \`complete_task\`, \`snooze_task\`, \`list_tasks\`, \`get_week_overview\`, \`create_event\`, \`save_menu\` e così via.
+- I tool sono **wrapper sottili sui servizi**, non logica di business duplicata: `create_task`, `complete_task`, `snooze_task`, `list_tasks`, `get_week_overview`, `create_event`, `save_menu` e così via.
 - Il **system prompt** include data e ora corrente, fuso orario e il membro che sta scrivendo.
 - Gli output sono **strutturati (Pydantic)** per eventi, task e menu; se l'output non è valido si ritenta.
 - Con i modelli open il function calling è meno solido: date relative e ambiguità vanno testate presto.
@@ -23,4 +23,4 @@ L'agente è il livello conversazionale che traduce i messaggi dei membri in oper
 
 ## Registrazione delle run
 
-Ogni run dell'agente è registrata in \`agent_runs\` **dal primo giorno**: la registrazione non è un'aggiunta successiva, fa parte del funzionamento normale.
+Ogni run dell'agente è registrata in `agent_runs` **dal primo giorno**: la registrazione non è un'aggiunta successiva, fa parte del funzionamento normale.
