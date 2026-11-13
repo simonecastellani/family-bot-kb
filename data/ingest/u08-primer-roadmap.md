@@ -12,6 +12,9 @@ type: IngestUnit
 ---
 Questa unità produce: `progetto/roadmap`, `progetto/questioni-aperte`, `sviluppo/convenzioni-agenti`.
 
+**Fonte**
+Leggi `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+
 **Target**
 - `progetto/roadmap` — nuova: `## Milestone`, `## Stato corrente`
 - `progetto/questioni-aperte` — nuova: `## Aperte`

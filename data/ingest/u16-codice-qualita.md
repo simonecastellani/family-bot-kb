@@ -12,6 +12,9 @@ timestamp: 2026-11-13
 ---
 Questa unità produce: `sviluppo/qualita`, `sviluppo/locale-e-test`.
 
+**Fonte**
+Leggi `sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+
 **Target**
 - `sviluppo/qualita` — esistente (creata da U07): aggiungi `## CI` e `## Pre-commit`
 - `sviluppo/locale-e-test` — esistente (creata da U07): aggiungi `## Compose reale` e `## Script di verifica`

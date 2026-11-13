@@ -12,6 +12,9 @@ type: IngestUnit
 ---
 Questa unità produce: `infrastruttura/identita-e-runtime`.
 
+**Fonte**
+Leggi `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+
 **Target**
 - `infrastruttura/identita-e-runtime` — nuova: `## Service account`, `## Segreti e file`, `## Artifact Registry`, `## Cloud Run`, `## Guardrail`
 

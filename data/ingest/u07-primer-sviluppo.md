@@ -12,6 +12,9 @@ verify: "le due pagine esistono con le sezioni indicate; i comandi sono quelli d
 ---
 Questa unità produce: `sviluppo/locale-e-test`, `sviluppo/qualita`.
 
+**Fonte**
+Leggi `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+
 **Target**
 - `sviluppo/locale-e-test` — nuova: `## Ambiente locale`, `## Fake`, `## Contract test`
 - `sviluppo/qualita` — nuova: `## Comandi`, `## Tooling`, `## Convenzioni di codice`

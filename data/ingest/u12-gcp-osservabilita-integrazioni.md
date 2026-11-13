@@ -12,6 +12,9 @@ executor: large
 ---
 Questa unità produce: `infrastruttura/osservabilita`, `architettura/integrazioni`, `architettura/sicurezza`.
 
+**Fonte**
+Leggi `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+
 **Target**
 - `infrastruttura/osservabilita` — nuova: `## Osservabilità`, `## Quote`, `## Checklist di verifica`, `## Decisioni verificate`
 - `architettura/integrazioni` — nuova: `## Google Calendar`, `## Speech to text`, `## Link e immagini`

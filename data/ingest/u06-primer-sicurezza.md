@@ -12,6 +12,9 @@ targets: [architettura/sicurezza]
 ---
 Questa unità produce: `architettura/sicurezza`.
 
+**Fonte**
+Leggi `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+
 **Target**
 - `architettura/sicurezza` — nuova: `## Autenticazione`, `## Identità e privilegi`, `## Segreti`, `## Dati verso il provider LLM`
 

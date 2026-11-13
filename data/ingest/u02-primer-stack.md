@@ -12,6 +12,9 @@ targets: [progetto/stack]
 ---
 Questa unità produce: `progetto/stack`.
 
+**Fonte**
+Leggi `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+
 **Target**
 - `progetto/stack` — nuova: sezioni `## Confermati`, `## Default`, `## Tooling`
 

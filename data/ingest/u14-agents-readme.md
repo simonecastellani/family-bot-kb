@@ -12,6 +12,9 @@ status: draft
 ---
 Questa unità produce: `sviluppo/convenzioni-agenti`, `sviluppo/qualita`.
 
+**Fonte**
+Leggi `sources/2026-11-13-agents-md-e-readme-md-convenzioni-e-comandi-del-repo` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+
 **Target**
 - `sviluppo/convenzioni-agenti` — esistente (creata da U08): aggiungi `## Stato della milestone` e `## Regole rapide del repo`
 - `sviluppo/qualita` — esistente (creata da U07): aggiungi `## Comandi del repo`
