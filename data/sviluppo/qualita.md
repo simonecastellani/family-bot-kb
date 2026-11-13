@@ -1,5 +1,5 @@
 ---
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot, sources/2026-11-13-agents-md-e-readme-md-convenzioni-e-comandi-del-repo]
 status: active
 timestamp: 2026-11-13
 title: Qualità del codice
@@ -9,11 +9,20 @@ type: Pagina
 
 Comandi, tooling e convenzioni di sviluppo, dal primer §12. L'ambiente locale e i test sono in [[sviluppo/locale-e-test]]; i tool adottati e le decisioni di stack in [[progetto/stack]].
 
-## Comandi
+## Comandi del repo
 
-- Test: `pytest`.
-- Lint: `ruff`.
-- Type-check: previsto in CI.
+Comandi esatti del repository (coincidono in `README.md` e `AGENTS.md`):
+
+```bash
+uv sync
+uv run ruff check .
+uv run ruff format --check .
+uv run pyright
+uv run pytest
+docker compose up --build
+```
+
+`pre-commit` è opzionale ma consigliato: `uv run pre-commit install`, poi `uv run pre-commit run --all-files`.
 
 ## Tooling
 
