@@ -1,5 +1,15 @@
 # Log
 
+## 2026-11-13T09:39:11Z
+
+concept_batch (6 operation(s)):
+- sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot
+- sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud
+- sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp
+- sources/2026-11-13-agents-md-e-readme-md-convenzioni-e-comandi-del-repo
+- sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci
+- ingest/piano-family-bot-docs
+
 ## 2026-11-13T09:38:22Z
 
 concept_patch: ingest/u16-codice-qualita

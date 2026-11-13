@@ -2,7 +2,7 @@
 type: IngestPlan
 maps: [progetto, architettura, infrastruttura, sviluppo]
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot, sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud, sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp, sources/2026-11-13-agents-md-e-readme-md-convenzioni-e-comandi-del-repo, sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci]
-status: in-progress
+status: done
 timestamp: 2026-11-13
 title: Ingest — documentazione family-bot
 ---
