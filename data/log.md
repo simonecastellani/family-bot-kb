@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:33:39Z
+
+concept_patch: ingest/u07-primer-sviluppo
+
 ## 2026-11-13T09:33:30Z
 
 concept_batch (2 operation(s)):

@@ -1,6 +1,6 @@
 ---
 plan: ingest/piano-family-bot-docs
-status: in-progress
+status: done
 type: IngestUnit
 executor: any
 extract: "§7 (compose, fake, contract test, niente mongomock) e §12 (Python, lint, type-check, config da env, commit atomici); non la CI, che è U16"
@@ -11,7 +11,6 @@ title: "U07 — Sviluppo locale, test e qualità"
 verify: "le due pagine esistono con le sezioni indicate; i comandi sono quelli del sorgente, identici; nessun path di macchina"
 claimed_at: "2026-11-13T00:00:00Z"
 claimed_by: subagent-u07
-review_after: 2026-11-14
 ---
 Questa unità produce: `sviluppo/locale-e-test`, `sviluppo/qualita`.
 
