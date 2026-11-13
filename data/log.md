@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:33:48Z
+
+concept_patch: ingest/u15-codice-struttura
+
 ## 2026-11-13T09:33:39Z
 
 concept_patch: ingest/u11-gcp-eventi-ci
