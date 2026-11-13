@@ -10,3 +10,4 @@ title: Progetto
 - [Stack tecnologico](stack.md)
 - [Roadmap](roadmap.md)
 - [Questioni aperte](questioni-aperte.md)
+- [M1 — Task core](m1-task-core.md)

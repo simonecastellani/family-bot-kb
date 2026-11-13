@@ -29,7 +29,9 @@ Per l'use case 4 (gestione della casa) vale la regola generale: il bot **propone
 
 ## Stato corrente
 
-- La roadmap parte da **M0 — fondamenta**, la prima milestone della tabella e quindi quella in corso; M1–M10 non si anticipano (§11, §13).
+- **M0 — fondamenta** è completata.
+- **M1 — Task core** è accettata e non ancora iniziata (`open`): obiettivo, decisioni e criteri in [[progetto/m1-task-core]].
+- M2–M10 non si anticipano (§11, §13).
 - Il passaggio da una milestone alla successiva si misura con i **criteri di accettazione** della tabella, non con il numero di attività svolte.
 - **M10** non è pianificabile a calendario: si affronta solo dopo settimane di uso reale, e la prima attività è la progettazione, non l'implementazione (§11).
 - Le domande che possono bloccare o rimandare una milestone sono raccolte in [[progetto/questioni-aperte]].

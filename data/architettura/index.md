@@ -13,3 +13,4 @@ title: Architettura
 - [Regole architetturali, flusso e struttura del repo](regole.md)
 - [Porte e fake](porte-e-fake.md)
 - [Integrazioni con servizi esterni](integrazioni.md)
+- [Task e occorrenze](task-e-occorrenze.md)

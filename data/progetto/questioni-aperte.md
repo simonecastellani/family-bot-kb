@@ -11,7 +11,7 @@ Domande non ancora risolte, con la condizione o il momento in cui vanno chiuse (
 
 ## Aperte
 
-- **Copertura reale della compatibilità MongoDB di Firestore** — per gli operatori e gli stage che servono (aggregazioni, indici, transazioni): verificare in M1 con i contract test su database reale.
+- **Copertura reale della compatibilità MongoDB di Firestore** — per gli operatori e gli stage che servono (aggregazioni, indici, transazioni): la verifica con i contract test su database reale è **spostata a M2**, quando identità del service account e WIF evitano credenziali statiche; in M1 i contract girano solo su MongoDB locale. Vedi [[progetto/m1-task-core]].
 - **Autenticazione dal servizio Cloud Run all'endpoint MongoDB di Firestore** — preferibilmente con IAM e identità del servizio, senza segreti statici.
 - **Regioni** — disponibilità dell'edizione Enterprise e applicabilità delle quote gratuite in regioni UE, vicine a Cloud Run.
 - **Strategia di backup/restore** — da definire, dato che non ha uso gratuito.

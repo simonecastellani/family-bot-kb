@@ -1,5 +1,13 @@
 # Log
 
+## 2026-11-13T17:38:57Z
+
+concept_batch (4 operation(s)):
+- architettura/task-e-occorrenze (+ index entry)
+- progetto/m1-task-core (+ index entry)
+- progetto/roadmap
+- progetto/questioni-aperte
+
 ## 2026-11-13T10:29:34Z
 
 Contraddizioni risolte (2026-11-13): nome task Cloud Tasks versionato vs dedupe_key (idempotenza su reminders._id); soglie budget canoniche 50/80/100; limite documento 16 MiB con regola di progetto <4 MiB; Motor escluso (EOL 14/05/2026). Pagine: architettura/promemoria, architettura/modello-dati, infrastruttura/eventi-e-ci, infrastruttura/gcp-bootstrap, infrastruttura/inventario, progetto/stack, progetto/questioni-aperte (9→7 aperte), progetto/roadmap. Stesse correzioni applicate a primer.md e docs/gcp-setup.md nel repo family-bot (non committate).
