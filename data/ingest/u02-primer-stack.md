@@ -12,8 +12,7 @@ targets: [progetto/stack]
 ---
 Questa unità produce: `progetto/stack`.
 
-**Fonte**
-Fonte di U02: `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
+**Fonte** — U02,  `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `progetto/stack` — nuova: sezioni `## Confermati`, `## Default`, `## Tooling`

@@ -12,8 +12,7 @@ targets: [progetto/overview]
 ---
 Questa unità produce: `progetto/overview`.
 
-**Fonte**
-Fonte di U01: `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
+**Fonte** — U01,  `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `progetto/overview` — nuova: sezioni `## Obiettivo`, `## Use case`, `## Fuori scope`

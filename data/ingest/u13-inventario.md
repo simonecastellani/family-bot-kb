@@ -12,8 +12,7 @@ provenance: [sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-g
 ---
 Questa unità produce: `infrastruttura/inventario`, `infrastruttura/gcp-bootstrap`.
 
-**Fonte**
-Fonte di U13: `sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
+**Fonte** — U13,  `sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `infrastruttura/inventario` — nuova: `## Progetto e ambienti`, `## Budget`, `## Firestore`, `## Service account`, `## API abilitate`, `## Registro modifiche`

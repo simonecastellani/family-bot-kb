@@ -1,5 +1,25 @@
 # Log
 
+## 2026-11-13T09:26:36Z
+
+concept_batch (16 operation(s)):
+- ingest/u01-primer-overview
+- ingest/u02-primer-stack
+- ingest/u03-primer-regole
+- ingest/u04-primer-modello-dati
+- ingest/u05-primer-promemoria-agente
+- ingest/u06-primer-sicurezza
+- ingest/u07-primer-sviluppo
+- ingest/u08-primer-roadmap
+- ingest/u09-gcp-bootstrap
+- ingest/u10-gcp-identita-runtime
+- ingest/u11-gcp-eventi-ci
+- ingest/u12-gcp-osservabilita-integrazioni
+- ingest/u13-inventario
+- ingest/u14-agents-readme
+- ingest/u15-codice-struttura
+- ingest/u16-codice-qualita
+
 ## 2026-11-13T09:26:24Z
 
 concept_batch (16 operation(s)):

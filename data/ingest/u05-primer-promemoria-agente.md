@@ -12,8 +12,7 @@ title: U05 — Promemoria event-driven e agente
 ---
 Questa unità produce: `architettura/promemoria`, `architettura/agente`.
 
-**Fonte**
-Fonte di U05: `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
+**Fonte** — U05,  `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `architettura/promemoria` — nuova: `## Flusso`, `## Idempotenza`, `## Scheduler`
