@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:34:16Z
+
+concept_patch: ingest/u14-agents-readme
+
 ## 2026-11-13T09:34:09Z
 
 concept_write: infrastruttura/gcp-bootstrap

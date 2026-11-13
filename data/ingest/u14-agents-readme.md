@@ -8,7 +8,9 @@ type: IngestUnit
 verify: le regole rapide non ripetono `architettura/regole` né `sviluppo/qualita`; i comandi coincidono con README e AGENTS; nessuna sezione duplicata
 extract: "stato M0, milestone corrente, infrastruttura manuale e regole rapide da AGENTS.md; comandi, stack e struttura reale da README.md. Non duplicare ciò che il primer possiede già"
 plan: ingest/piano-family-bot-docs
-status: open
+status: in-progress
+claimed_by: subagent-u14
+review_after: 2026-11-14
 ---
 Questa unità produce: `sviluppo/convenzioni-agenti`, `sviluppo/qualita`.
 
