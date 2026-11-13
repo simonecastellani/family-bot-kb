@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:33:06Z
+
+concept_patch: ingest/u06-primer-sicurezza
+
 ## 2026-11-13T09:32:57Z
 
 concept_write: architettura/sicurezza
