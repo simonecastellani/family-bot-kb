@@ -20,9 +20,9 @@ Istruzioni operative per chi lavora sul repository (§13). Le regole architettur
 
 ## Stato della milestone
 
-- Milestone corrente: **M0 — fondamenta**; l'elenco delle milestone e i criteri di chiusura sono in [[progetto/roadmap]].
+- Milestone corrente: **M1 — task core** (completata); l'elenco delle milestone e i criteri di chiusura sono in [[progetto/roadmap]].
 - Infrastruttura: **manuale su GCP**, niente Terraform per ora.
-- Database: **Firestore Enterprise** con compatibilità MongoDB; **MongoDB 8.0** locale per lo sviluppo.
+- Database: **Firestore Enterprise** con compatibilità MongoDB; **MongoDB 8.0** locale per lo sviluppo, come replica set a nodo singolo.
 
 ## Regole rapide del repo
 

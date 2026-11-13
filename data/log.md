@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T18:21:48Z
+
+concept_patch: sviluppo/convenzioni-agenti
+
 ## 2026-11-13T18:21:42Z
 
 concept_patch: progetto/roadmap
