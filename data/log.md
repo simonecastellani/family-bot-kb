@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:35:16Z
+
+concept_patch: ingest/u11-gcp-eventi-ci
+
 ## 2026-11-13T09:35:10Z
 
 concept_patch: infrastruttura/eventi-e-ci
