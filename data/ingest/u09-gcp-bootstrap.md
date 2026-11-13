@@ -1,5 +1,5 @@
 ---
-status: open
+status: in-progress
 targets: [infrastruttura/gcp-bootstrap]
 title: "U09 — Bootstrap GCP: progetto, billing, API, Firestore"
 type: IngestUnit
@@ -9,6 +9,9 @@ plan: ingest/piano-family-bot-docs
 timestamp: 2026-11-13
 verify: "i passi A1-A6 sono tutti presenti nell'ordine; ogni comando è citato come nel sorgente; i valori di progetto e regione sono coerenti con `infrastruttura/inventario`"
 provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
+claimed_at: "2026-11-13T00:00:00Z"
+claimed_by: subagent-u09
+review_after: 2026-11-14
 ---
 Questa unità produce: `infrastruttura/gcp-bootstrap`.
 

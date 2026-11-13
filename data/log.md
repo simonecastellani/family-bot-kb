@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:32:23Z
+
+concept_patch: ingest/u09-gcp-bootstrap
+
 ## 2026-11-13T09:32:21Z
 
 concept_patch: ingest/u08-primer-roadmap
