@@ -7,8 +7,10 @@ provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bo
 title: U02 — Decisioni tecnologiche e stato
 verify: "ogni voce di §3 compare una volta con il suo stato; nessun [Default] promosso a [Confermato]"
 executor: any
-status: open
+status: in-progress
 targets: [progetto/stack]
+claimed_by: subagent-u02
+review_after: 2026-11-14
 ---
 Questa unità produce: `progetto/stack`.
 
