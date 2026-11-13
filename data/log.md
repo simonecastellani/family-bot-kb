@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:30:59Z
+
+concept_patch: ingest/u06-primer-sicurezza
+
 ## 2026-11-13T09:30:16Z
 
 concept_batch (16 operation(s)):
