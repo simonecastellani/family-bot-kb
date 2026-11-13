@@ -2,6 +2,10 @@
 
 ## 2026-11-13T09:39:11Z
 
+Ingest family-bot completato: 5 fonti, 16 unità (10 any / 6 large / 0 human), 19 pagine attive. Revisione campione: U01, U04, U07, U09, U11, U13 — gate puliti, redazione di email/billing corretta, nessun contenuto inventato. Aperti due conflitti tra fonti lasciati come checkbox: nome task Cloud Tasks (dedupe) e soglie budget 50/90/100% vs 50/80/100%.
+
+## 2026-11-13T09:39:11Z
+
 concept_batch (6 operation(s)):
 - sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot
 - sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud
