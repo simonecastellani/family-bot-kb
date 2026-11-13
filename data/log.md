@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-13T09:32:00Z
+
+concept_batch (2 operation(s)):
+- architettura/promemoria (+ index entry)
+- architettura/agente (+ index entry)
+
 ## 2026-11-13T09:31:58Z
 
 concept_patch: ingest/u02-primer-stack
