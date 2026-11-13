@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T18:22:26Z
+
+[progetto] M1 — task core implementata in {{repo:family-bot}}: dominio e RRULE (dateutil, whitelist, DST), porte + adapter MongoDB (UUIDv7, indice unico task_id+occurrence_key, transazioni per mutazione+audit), servizi comando/query, creazione con materializzazione della prima finestra, 72 test (unit + contract + integration). MongoDB locale e CI ora usano un replica set a nodo singolo. Criteri 1–7 coperti.
+
 ## 2026-11-13T18:22:16Z
 
 concept_patch: sviluppo/locale-e-test
