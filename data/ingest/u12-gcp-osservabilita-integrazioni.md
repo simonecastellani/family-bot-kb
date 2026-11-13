@@ -4,11 +4,14 @@ verify: la checklist è riportata come elenco spuntabile; `architettura/integraz
 extract: "la sezione osservabilità/quote/sicurezza operativa, la checklist di verifica, le decisioni verificate e le fasi E2 (Calendar) ed E3 (login dashboard); non E1, già in U11"
 plan: ingest/piano-family-bot-docs
 provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
-status: open
+status: in-progress
 targets: [infrastruttura/osservabilita, architettura/integrazioni, architettura/sicurezza]
 timestamp: 2026-11-13
 type: IngestUnit
 executor: large
+claimed_by: subagent-u12
+review_after: 2026-11-14
+claimed_at: "2026-11-13T00:00:00Z"
 ---
 Questa unità produce: `infrastruttura/osservabilita`, `architettura/integrazioni`, `architettura/sicurezza`.
 

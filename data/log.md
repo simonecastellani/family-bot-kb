@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:34:02Z
+
+concept_patch: ingest/u12-gcp-osservabilita-integrazioni
+
 ## 2026-11-13T09:33:53Z
 
 concept_patch: ingest/u08-primer-roadmap
