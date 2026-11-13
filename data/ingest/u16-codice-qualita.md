@@ -6,9 +6,12 @@ plan: ingest/piano-family-bot-docs
 title: "U16 — Test, CI e script del repo"
 type: IngestUnit
 provenance: [sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci]
-status: open
+status: in-progress
 targets: [sviluppo/qualita, sviluppo/locale-e-test]
 timestamp: 2026-11-13
+claimed_at: "2026-11-13T00:00:00Z"
+claimed_by: subagent-u16
+review_after: 2026-11-14
 ---
 Questa unità produce: `sviluppo/qualita`, `sviluppo/locale-e-test`.
 
