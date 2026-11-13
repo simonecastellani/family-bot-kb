@@ -1,5 +1,26 @@
 # Log
 
+## 2026-11-13T09:25:24Z
+
+concept_batch (17 operation(s)):
+- ingest/piano-family-bot-docs (+ index entry)
+- ingest/u01-primer-overview (+ index entry)
+- ingest/u02-primer-stack (+ index entry)
+- ingest/u03-primer-regole (+ index entry)
+- ingest/u04-primer-modello-dati (+ index entry)
+- ingest/u05-primer-promemoria-agente (+ index entry)
+- ingest/u06-primer-sicurezza (+ index entry)
+- ingest/u07-primer-sviluppo (+ index entry)
+- ingest/u08-primer-roadmap (+ index entry)
+- ingest/u09-gcp-bootstrap (+ index entry)
+- ingest/u10-gcp-identita-runtime (+ index entry)
+- ingest/u11-gcp-eventi-ci (+ index entry)
+- ingest/u12-gcp-osservabilita-integrazioni (+ index entry)
+- ingest/u13-inventario (+ index entry)
+- ingest/u14-agents-readme (+ index entry)
+- ingest/u15-codice-struttura (+ index entry)
+- ingest/u16-codice-qualita (+ index entry)
+
 ## 2026-11-13T09:22:35Z
 
 source_register: sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci
