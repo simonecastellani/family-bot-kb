@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T18:21:23Z
+
+concept_patch: architettura/task-e-occorrenze
+
 ## 2026-11-13T17:38:57Z
 
 concept_batch (4 operation(s)):
