@@ -2,6 +2,10 @@
 
 ## 2026-11-13T09:22:25Z
 
+map_create: sviluppo
+
+## 2026-11-13T09:22:25Z
+
 map_create: infrastruttura
 
 ## 2026-11-13T09:22:25Z
