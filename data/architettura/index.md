@@ -12,3 +12,4 @@ title: Architettura
 - [Sicurezza](sicurezza.md)
 - [Regole architetturali, flusso e struttura del repo](regole.md)
 - [Porte e fake](porte-e-fake.md)
+- [Integrazioni con servizi esterni](integrazioni.md)

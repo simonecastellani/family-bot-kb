@@ -1,7 +1,7 @@
 ---
 title: Sicurezza
 type: Concept
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot, sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
 status: active
 ---
 # Sicurezza
@@ -29,6 +29,16 @@ Tre superfici distinte, ciascuna con la propria regola.
 
 - Non sono pubblici: verificano il token OIDC del service account chiamante.
 - Su Cloud Run solo `api` espone gli endpoint pubblici necessari; `worker` e gli handler interni sono privati, con IAM invoker = service account di Cloud Tasks/Scheduler.
+
+## Login della dashboard
+
+Configurazione del provider di identità per la dashboard (fase M5). La regola di autenticazione lato backend è in *Dashboard* qui sopra: qui c'è solo cosa si configura.
+
+- Si crea un **progetto Firebase collegato al progetto GCP**, oppure si usa **Identity Platform**.
+- Si abilita il provider **Google** in *Authentication*.
+- Si aggiungono i **domini autorizzati** della dashboard.
+- Il backend verifica l'ID token (firma, `aud`, `iss`, scadenza) e mappa l'email su `members`: dettaglio e 403 restano in *Dashboard*.
+- La configurazione Firebase lato frontend è **pubblica** e **non è un segreto**: non servono chiavi di service account.
 
 ## Identità e privilegi
 

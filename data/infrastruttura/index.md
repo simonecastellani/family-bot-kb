@@ -10,3 +10,4 @@ title: Infrastruttura
 - [Identità e runtime su Google Cloud](identita-e-runtime.md)
 - [Eventi e CI/CD su GCP](eventi-e-ci.md)
 - [Inventario delle risorse GCP](inventario.md)
+- [Osservabilità, quote e verifica su Google Cloud](osservabilita.md)

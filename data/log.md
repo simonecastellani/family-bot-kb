@@ -1,5 +1,12 @@
 # Log
 
+## 2026-11-13T09:36:25Z
+
+concept_batch (3 operation(s)):
+- infrastruttura/osservabilita (+ index entry)
+- architettura/integrazioni (+ index entry)
+- architettura/sicurezza
+
 ## 2026-11-13T09:35:52Z
 
 concept_batch (2 operation(s)):
