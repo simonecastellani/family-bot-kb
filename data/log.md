@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T18:21:37Z
+
+concept_patch: progetto/m1-task-core
+
 ## 2026-11-13T18:21:23Z
 
 concept_patch: architettura/task-e-occorrenze

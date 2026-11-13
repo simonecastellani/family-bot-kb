@@ -1,12 +1,12 @@
 ---
-status: open
+status: done
 timestamp: 2026-11-13
 title: M1 — Task core
 type: Pagina
 ---
 # M1 — Task core
 
-Lavoro accettato e **non ancora iniziato**: modello, repository con contract test, servizi e audit per task e occorrenze su MongoDB. I criteri di chiusura sono nella [[progetto/roadmap]]; il modello concreto e le sue regole stanno in [[architettura/task-e-occorrenze]].
+Lavoro **completato**: modello, repository con contract test, servizi e audit per task e occorrenze su MongoDB. I criteri di chiusura sono nella [[progetto/roadmap]]; il modello concreto e le sue regole stanno in [[architettura/task-e-occorrenze]].
 
 ## Obiettivo
 
@@ -33,6 +33,7 @@ Coprire gli use case 1 e 2 al livello dei dati: creare una definizione di task (
 | Superficie | solo dominio, repository e servizi; nessuna interfaccia HTTP |
 | Mensile senza giorno (31, 29 febbraio) | RFC 5545: il mese viene saltato; l'ultimo giorno si esprime con `BYMONTHDAY=-1` |
 | Contract test Firestore | solo MongoDB locale in M1; la suite resta parametrizzata sull'URI |
+| Locale | MongoDB single-node replica set; URI con `directConnection=true`; la suite fallisce se il database non risponde |
 | Audit | transazione mutazione + `audit_events` dove l'invariante conta |
 | ID | UUIDv7 tramite `uuid6` |
 
@@ -47,6 +48,15 @@ Il dettaglio tecnico di ciascuna scelta è in [[architettura/task-e-occorrenze]]
 5. Concorrenza ottimistica: due aggiornamenti con la stessa `version`, uno vince e l'altro riceve `VersionConflict`.
 6. Materializzazione idempotente: eseguita due volte produce le stesse occorrenze.
 7. Archiviazione del task: le occorrenze future diventano `cancelled`, quelle completate restano intatte.
+
+## Esito
+
+Implementato e verificato il 2026-11-13:
+
+- `app/domain`: `Task`, `TaskOccurrence`, `AuditEvent`, regole RRULE pure con whitelist e localizzazione DST.
+- `app/repositories`: porte, adapter MongoDB con `ensure_indexes()` e `schema_migrations`, doppio in memoria per gli unit test.
+- `app/services`: creazione (che materializza la prima finestra), materializzazione, completamento, snooze e archiviazione; query; audit nella stessa transazione.
+- Test: 72 tra unit, contract su MongoDB locale e integration; i sette criteri di accettazione sono coperti.
 
 ## Note
 
