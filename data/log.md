@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:34:31Z
+
+concept_write: infrastruttura/identita-e-runtime
+
 ## 2026-11-13T09:34:21Z
 
 concept_patch: ingest/u09-gcp-bootstrap
