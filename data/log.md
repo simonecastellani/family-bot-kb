@@ -1,5 +1,10 @@
 # Log
 
+## 2026-11-13T09:31:42Z
+
+concept_batch (1 operation(s)):
+- architettura/modello-dati (+ index entry)
+
 ## 2026-11-13T09:31:01Z
 
 concept_patch: ingest/u05-primer-promemoria-agente
