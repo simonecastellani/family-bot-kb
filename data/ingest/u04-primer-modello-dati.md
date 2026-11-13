@@ -13,7 +13,7 @@ timestamp: 2026-11-13
 Questa unità produce: `architettura/modello-dati`.
 
 **Fonte**
-Leggi `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+Fonte di U04: `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `architettura/modello-dati` — nuova: `## Convenzioni`, `## Collection`, `## Vincoli del free tier`

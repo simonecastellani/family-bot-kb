@@ -13,7 +13,7 @@ provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-goog
 Questa unità produce: `infrastruttura/gcp-bootstrap`.
 
 **Fonte**
-Leggi `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+Fonte di U09: `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `infrastruttura/gcp-bootstrap` — nuova: `## Prerequisiti`, `## Progetto e billing`, `## API`, `## Firestore`, `## Verifica`

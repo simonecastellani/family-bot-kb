@@ -13,7 +13,7 @@ targets: [architettura/porte-e-fake, architettura/regole]
 Questa unità produce: `architettura/porte-e-fake`, `architettura/regole`.
 
 **Fonte**
-Leggi `sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci` (la Source registrata) e nient'altro: le sezioni citate nelle estrazioni sono le sue.
+Fonte di U15: `sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `architettura/porte-e-fake` — esistente (creata da U03): sostituisci lo scheletro con `## Porte implementate` e `## Fake locali`
