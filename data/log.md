@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:31:58Z
+
+concept_patch: ingest/u02-primer-stack
+
 ## 2026-11-13T09:31:53Z
 
 concept_patch: ingest/u01-primer-overview
