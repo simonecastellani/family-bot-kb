@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-13T09:33:30Z
+
+concept_batch (2 operation(s)):
+- sviluppo/locale-e-test (+ index entry)
+- sviluppo/qualita (+ index entry)
+
 ## 2026-11-13T09:33:29Z
 
 concept_patch: ingest/u10-gcp-identita-runtime
