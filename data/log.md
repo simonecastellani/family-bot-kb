@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:34:50Z
+
+concept_patch: ingest/u13-inventario
+
 ## 2026-11-13T09:34:40Z
 
 concept_patch: ingest/u10-gcp-identita-runtime
