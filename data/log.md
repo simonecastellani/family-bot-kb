@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:31:51Z
+
+concept_patch: ingest/u04-primer-modello-dati
+
 ## 2026-11-13T09:31:49Z
 
 concept_write: progetto/stack

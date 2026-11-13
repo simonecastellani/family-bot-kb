@@ -6,12 +6,11 @@ provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bo
 verify: ogni riga della tabella collection è riportata; i vincoli free tier sono separati dalle convenzioni; nessun segreto
 executor: large
 extract: "§6: convenzioni documentali, la tabella delle collection e i vincoli Firestore Enterprise con la nota su TTL e backup"
-status: in-progress
+status: done
 targets: [architettura/modello-dati]
 timestamp: 2026-11-13
 claimed_at: "2026-11-13T00:00:00Z"
 claimed_by: subagent-u04
-review_after: 2026-11-14
 ---
 Questa unità produce: `architettura/modello-dati`.
 
