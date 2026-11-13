@@ -1,0 +1,4 @@
+repos:
+  family-bot:
+    description: Documentazione e codice del progetto family-bot — originale delle fonti della campagna di ingest
+    remote: git@github.com:simonecastellani/family-bot.git
