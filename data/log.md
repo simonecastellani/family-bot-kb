@@ -2,6 +2,10 @@
 
 ## 2026-11-13T09:35:10Z
 
+concept_patch: infrastruttura/eventi-e-ci
+
+## 2026-11-13T09:35:10Z
+
 concept_patch: ingest/u15-codice-struttura
 
 ## 2026-11-13T09:35:04Z

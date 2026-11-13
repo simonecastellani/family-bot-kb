@@ -41,7 +41,7 @@ Cloud Tasks ricorda i nomi dei task fino a **24 ore dopo la cancellazione**: riu
 
 ## Cloud Scheduler
 
-Cloud Scheduler ospita solo i job **periodici** (digest, sync del calendario, materializzazione delle ricorrenze, retention); i promemoria puntuali non passano di qui (la divisione è in [[architettura/promemoria]]).
+Cloud Scheduler ospita solo i job **periodici** (digest, sincronizzazione periodica, materializzazione delle ricorrenze, retention); i promemoria puntuali non passano di qui (la divisione è in [[architettura/promemoria]]).
 
 ```bash
 gcloud scheduler jobs create http family-bot-digest \
