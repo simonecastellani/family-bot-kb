@@ -2,6 +2,10 @@
 
 ## 2026-11-13T09:38:14Z
 
+concept_patch: sviluppo/locale-e-test
+
+## 2026-11-13T09:38:14Z
+
 concept_patch: sviluppo/qualita
 
 ## 2026-11-13T09:36:45Z
