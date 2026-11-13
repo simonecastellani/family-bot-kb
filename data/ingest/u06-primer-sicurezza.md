@@ -7,7 +7,7 @@ type: IngestUnit
 extract: §10 per intero più i vincoli di §5 su Actor e audit; non la procedura di creazione dei service account (U10) né il login in dettaglio (U12)
 plan: ingest/piano-family-bot-docs
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: draft
+status: open
 targets: [architettura/sicurezza]
 ---
 Questa unità produce: `architettura/sicurezza`.

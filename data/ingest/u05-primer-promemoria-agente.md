@@ -1,7 +1,7 @@
 ---
 extract: "§8 i sei passi del flusso event-driven; §9 tool, conferma esplicita, contenuto non fidato, agent_runs. Non la configurazione GCP, che è di U11"
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: draft
+status: open
 targets: [architettura/promemoria, architettura/agente]
 timestamp: 2026-11-13
 type: IngestUnit

@@ -2,7 +2,7 @@
 verify: ogni risorsa di B e C ha la sua sezione; i ruoli IAM sono quelli del sorgente; nessuna chiave JSON o segreto
 executor: large
 plan: ingest/piano-family-bot-docs
-status: draft
+status: open
 targets: [infrastruttura/identita-e-runtime]
 title: "U10 — Identità, segreti, storage e runtime"
 extract: "fasi B e C: service account dedicati, Secret Manager, Cloud Storage, guardrail, Artifact Registry, servizi Cloud Run api e worker, service identity e logging"

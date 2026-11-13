@@ -8,7 +8,7 @@ plan: ingest/piano-family-bot-docs
 title: U11 — Eventi e CI/CD su GCP
 type: IngestUnit
 provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
-status: draft
+status: open
 ---
 Questa unità produce: `infrastruttura/eventi-e-ci`.
 

@@ -3,7 +3,7 @@ timestamp: 2026-11-13
 title: U15 — Struttura del codice e porte reali
 extract: "i moduli presenti sotto app/ (core, domain, integrations, interfaces), le porte con i loro fake, e i test unitari che li coprono; non corpi di funzioni"
 plan: ingest/piano-family-bot-docs
-status: draft
+status: open
 type: IngestUnit
 verify: "ogni porta reale ha il suo fake o l'indicazione che manca; la struttura attuale è distinguibile da quella prevista dal primer; nessun dettaglio implementativo"
 executor: any

@@ -2,7 +2,7 @@
 executor: any
 extract: "§11 la tabella M0-M10 con i criteri di accettazione, §14 le questioni aperte come elenco aperto, §13 le istruzioni per l'agente; non le regole architetturali (U03)"
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: draft
+status: open
 timestamp: 2026-11-13
 title: "U08 — Roadmap, questioni aperte e istruzioni agente"
 verify: tutte le milestone M0-M10 hanno criteri; ogni questione aperta di §14 è presente; le convenzioni non duplicano `architettura/regole`

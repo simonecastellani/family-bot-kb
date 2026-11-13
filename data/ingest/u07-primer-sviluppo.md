@@ -1,6 +1,6 @@
 ---
 plan: ingest/piano-family-bot-docs
-status: draft
+status: open
 type: IngestUnit
 executor: any
 extract: "§7 (compose, fake, contract test, niente mongomock) e §12 (Python, lint, type-check, config da env, commit atomici); non la CI, che è U16"

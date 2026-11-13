@@ -1,5 +1,5 @@
 ---
-status: draft
+status: open
 type: IngestUnit
 verify: nessun indirizzo email reale né identificativo di fatturazione nella pagina; il progetto di produzione è descritto come non toccato in M0/M1; le API sono elencate
 plan: ingest/piano-family-bot-docs

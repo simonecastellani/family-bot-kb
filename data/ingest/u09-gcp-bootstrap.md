@@ -1,5 +1,5 @@
 ---
-status: draft
+status: open
 targets: [infrastruttura/gcp-bootstrap]
 title: "U09 — Bootstrap GCP: progetto, billing, API, Firestore"
 type: IngestUnit
