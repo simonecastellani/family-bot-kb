@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-13T09:35:04Z
+
+concept_batch (2 operation(s)):
+- architettura/porte-e-fake
+- architettura/regole
+
 ## 2026-11-13T09:34:59Z
 
 concept_write: infrastruttura/eventi-e-ci

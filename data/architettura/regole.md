@@ -2,7 +2,7 @@
 timestamp: 2026-11-13
 title: "Regole architetturali, flusso e struttura del repo"
 type: Architecture
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot, sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci]
 status: active
 ---
 # Regole architetturali, flusso e struttura del repo
@@ -57,6 +57,23 @@ infra/             # Terraform (futuro)
 tests/             # unit, contract (repository), integration
 docker-compose.yml # MongoDB locale + fake
 ```
+
+## Struttura attuale dei moduli
+
+Al momento (M0) il codice copre solo le fondamenta; questa è la fotografia del presente, da non confondere con la struttura prevista qui sopra.
+
+Presenti:
+
+- `app/core/` — `config.py` (impostazioni da ambiente, cache di processo), `clock.py` (porta `Clock` e `SystemClock`), `logging.py` (log JSON su stdout).
+- `app/domain/` — `actor.py` con `Actor` e `Source` (`telegram`, `web`, `agent`, `scheduler`): nessun modello di dominio vero e proprio.
+- `app/integrations/` — le cinque porte cloud con i rispettivi fake in memoria: `TaskQueue`, `BlobStore`, `SecretProvider`, `LLMClient`, `STTClient`. Dettaglio in [[architettura/porte-e-fake]].
+- `app/interfaces/api/` — factory FastAPI con health router (`/healthz`, `/readyz`); è l'unico ingresso HTTP. `app/main.py` espone l'ASGI `app.main:app`.
+- `tests/unit/` — test di configurazione, dei fake e degli endpoint di salute; `conftest.py` fornisce `FixedClock` e un `TestClient` con settings isolate.
+- `scripts/verify_gcp.sh` — verifica manuale delle risorse GCP.
+
+Assenti rispetto al primer: `schemas/`, `services/`, `repositories/`; le interfacce `telegram/`, `agent/`, `internal/`, `web/`; gli adapter reali delle integrazioni e quelli per Google Calendar, Telegram e `link_fetcher`; `infra/`; i test contract e di integrazione.
+
+Contorno di progetto: dipendenze gestite con `uv` (FastAPI, Pydantic e pydantic-settings, uvicorn; dev: pytest, pyright, ruff, pre-commit), `pyproject.toml` con ruff e pyright configurati, `Dockerfile` e `docker-compose.yml` con MongoDB 8.0 e il servizio api. La CI ha due job: uno esegue `ruff check`, `ruff format --check`, `pyright` e `pytest`; l'altro costruisce l'immagine Docker e valida la configurazione del compose.
 
 ## Regole non negoziabili
 
