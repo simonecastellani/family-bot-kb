@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:22:35Z
+
+source_register: sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp
+
 ## 2026-11-13T09:22:34Z
 
 source_register: sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud
