@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:38:22Z
+
+concept_patch: ingest/u16-codice-qualita
+
 ## 2026-11-13T09:38:14Z
 
 concept_patch: sviluppo/locale-e-test
