@@ -5,13 +5,12 @@ verify: "i quattro use case sono presenti con l'ordine 1-2 → 3 → 4; §15 è 
 executor: any
 extract: "§1 obiettivo e principi, §2 i quattro use case con il loro ordine, §15 fuori scope; non stack, architettura o roadmap"
 plan: ingest/piano-family-bot-docs
-status: in-progress
+status: done
 title: "U01 — Obiettivo, use case e fuori scope"
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 targets: [progetto/overview]
 claimed_at: "2026-11-13T09:31:00.638Z"
 claimed_by: subagent-u01
-review_after: 2026-11-14
 ---
 Questa unità produce: `progetto/overview`.
 
