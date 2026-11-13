@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:33:20Z
+
+concept_patch: ingest/u03-primer-regole
+
 ## 2026-11-13T09:33:11Z
 
 concept_batch (2 operation(s)):

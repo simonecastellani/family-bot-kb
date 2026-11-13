@@ -6,12 +6,9 @@ provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bo
 timestamp: 2026-11-13
 verify: le dieci regole sono presenti e numerate; i due diagrammi sono blocchi Mermaid validi; `architettura/porte-e-fake` elenca solo le porte previste
 executor: large
-status: in-progress
+status: done
 targets: [architettura/regole, architettura/porte-e-fake]
 title: U03 — Architettura e regole non negoziabili
-claimed_at: "2026-11-13T00:00:00Z"
-claimed_by: subagent-u03
-review_after: 2026-11-14
 ---
 Questa unità produce: `architettura/regole`, `architettura/porte-e-fake`.
 
