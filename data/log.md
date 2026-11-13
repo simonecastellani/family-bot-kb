@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:35:31Z
+
+concept_patch: ingest/u14-agents-readme
+
 ## 2026-11-13T09:35:25Z
 
 concept_patch: sviluppo/convenzioni-agenti
