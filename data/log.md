@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:34:59Z
+
+concept_write: infrastruttura/eventi-e-ci
+
 ## 2026-11-13T09:34:50Z
 
 concept_patch: ingest/u13-inventario
