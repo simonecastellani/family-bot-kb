@@ -2,13 +2,15 @@
 executor: any
 extract: "§11 la tabella M0-M10 con i criteri di accettazione, §14 le questioni aperte come elenco aperto, §13 le istruzioni per l'agente; non le regole architetturali (U03)"
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: open
+status: in-progress
 timestamp: 2026-11-13
 title: "U08 — Roadmap, questioni aperte e istruzioni agente"
 verify: tutte le milestone M0-M10 hanno criteri; ogni questione aperta di §14 è presente; le convenzioni non duplicano `architettura/regole`
 plan: ingest/piano-family-bot-docs
 targets: [progetto/roadmap, progetto/questioni-aperte, sviluppo/convenzioni-agenti]
 type: IngestUnit
+review_after: 2026-11-14
+claimed_by: subagent-u08
 ---
 Questa unità produce: `progetto/roadmap`, `progetto/questioni-aperte`, `sviluppo/convenzioni-agenti`.
 
