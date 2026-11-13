@@ -1,6 +1,6 @@
 ---
 type: Runbook
-provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
+provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud, sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp]
 status: active
 timestamp: 2026-11-13
 title: "Bootstrap GCP — progetto, billing, API, Firestore"
@@ -65,6 +65,10 @@ gcloud config set run/region "$REGION"
 `gcloud auth application-default login` crea credenziali utente locali per le librerie Google: **non** è una chiave JSON di service account. In alternativa Cloud Shell dal browser ha già `gcloud` e l'autenticazione.
 
 Regione di riferimento: `europe-west8` (Milano). La location di Firestore è permanente; il free tier di Firestore è per progetto, quello di Cloud Run per billing account.
+
+## Ambiente di produzione
+
+Il progetto di produzione `family-bot-prod-514113` (project number `98566746466`) esiste già, con il budget `family-bot-prod` (soglie 50%, 80%, 100%), ma **non è usato in M0/M1 e non va toccato** finché non si arriva al deploy reale: sviluppo e sperimentazione vivono su `family-bot-dev`. Lo stato effettivo delle risorse, comprese quelle del progetto di produzione, è in [[infrastruttura/inventario]].
 
 ## API
 

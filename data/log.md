@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-13T09:35:52Z
+
+concept_batch (2 operation(s)):
+- infrastruttura/inventario (+ index entry)
+- infrastruttura/gcp-bootstrap
+
 ## 2026-11-13T09:35:49Z
 
 concept_patch: ingest/u16-codice-qualita
