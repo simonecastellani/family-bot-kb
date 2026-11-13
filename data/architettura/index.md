@@ -9,3 +9,4 @@ title: Architettura
 - [Modello dati](modello-dati.md)
 - [Promemoria event-driven](promemoria.md)
 - [Agente](agente.md)
+- [Sicurezza](sicurezza.md)
