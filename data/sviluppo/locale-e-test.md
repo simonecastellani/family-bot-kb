@@ -21,10 +21,11 @@ Ambiente di sviluppo e strategia di test del progetto, dal primer §7. Le scelte
 
 | Servizio | Immagine / build | Porta | Note |
 |---|---|---|---|
-| `mongo` | `mongo:8.0` | solo loopback, `127.0.0.1:27017` | volume `mongo_data`; healthcheck con `mongosh` su `db.adminCommand('ping').ok` (ogni 10s, timeout 5s, 5 tentativi, 20s di grazia) |
+| `mongo` | `mongo:8.0` | solo loopback, `127.0.0.1:27017` | volume `mongo_data`; avviato con `--replSet rs0`; l'healthcheck con `mongosh` inizializza il replica set ed è verde quando `rs.status().ok` vale 1 (ogni 10s, timeout 5s, 5 tentativi, 20s di grazia) |
 | `api` | build dal `Dockerfile` del repo | solo loopback, `127.0.0.1:8080` | `init: true`, `no-new-privileges`, parte solo a Mongo sano (`depends_on` con `service_healthy`), healthcheck HTTP su `/healthz` |
 
-- L'`api` riceve la configurazione inline: `APP_ENV=local`, `LOG_LEVEL=INFO`, `TIMEZONE=Europe/Rome`, `MONGODB_URI=mongodb://mongo:27017`, `MONGODB_DATABASE=family_bot`. Sono un sottoinsieme di `.env.example` e valgono solo dentro il compose; l'app eseguita sul host legge `.env`.
+- L'`api` riceve la configurazione inline: `APP_ENV=local`, `LOG_LEVEL=INFO`, `TIMEZONE=Europe/Rome`, `MONGODB_URI=mongodb://mongo:27017/?directConnection=true`, `MONGODB_DATABASE=family_bot`. Sono un sottoinsieme di `.env.example` e valgono solo dentro il compose; l'app eseguita sul host legge `.env`.
+- `directConnection=true` è necessario perché il replica set annuncia il nome del servizio Docker (`mongo:27017`), che dal host non risolve; il driver si collega direttamente al membro.
 - I fake elencati sopra non sono servizi del compose, ma implementazioni in memoria dentro l'app: dettagli in [[architettura/porte-e-fake]].
 - Nel repo non esiste nessun altro file compose; il comando di avvio è in [[sviluppo/qualita]].
 
@@ -36,9 +37,12 @@ Ambiente di sviluppo e strategia di test del progetto, dal primer §7. Le scelte
 
 ## Contract test
 
-- **Contract test dei repository**: una sola suite, eseguita in due contesti — su MongoDB locale a ogni commit e su un database Firestore Enterprise reale di sviluppo in un workflow manuale/notturno.
+- **Contract test dei repository**: una sola suite, eseguita in due contesti — su MongoDB locale a ogni commit e su un database Firestore Enterprise reale di sviluppo in un workflow manuale/notturno. In M1 esiste il primo contesto; il secondo arriva in M2.
 - Serve a intercettare le differenze di compatibilità che i test locali non vedono.
-- Non usare librerie che simulano MongoDB in memoria al posto di un MongoDB reale: divergono dal comportamento reale più di quanto convenga.
+- Non usare librerie che simulano MongoDB in memoria al posto di un MongoDB reale: divergono dal comportamento reale più di quanto convenga. Il doppio in memoria del progetto serve solo agli unit test dei servizi.
+- La suite **fallisce** se MongoDB non risponde: non viene saltata in silenzio. Prima di `uv run pytest` serve `docker compose up -d mongo`.
+- Ogni test usa un database usa-e-getta (`family_bot_test_<uuid>`), applica `ensure_indexes()` e lo elimina alla fine.
+- La CI GitHub Actions avvia un service `mongo:8.0` con `--replSet rs0` e inizializza il replica set prima della suite.
 
 ## Script di verifica
 
@@ -56,5 +60,8 @@ In `scripts/` c'è un solo script: `verify_gcp.sh`, verifica **read-only** delle
 - `tests/unit/test_health.py`: `/healthz` con servizio e ambiente iniettati, `/readyz`, generazione di `/openapi.json`.
 - `tests/unit/test_fakes.py`: le porte e i fake di [[architettura/porte-e-fake]], compresi il rifiuto delle scadenze naive e il determinismo dei fake LLM e STT.
 - `tests/conftest.py`: fixture `settings` e `client` (TestClient sull'app costruita dalle impostazioni), il `FixedClock`, e una fixture automatica che sposta ogni test in una directory temporanea perché un `.env` locale non venga letto.
-- `pyproject.toml`: `testpaths = ["tests"]`, `asyncio_mode = "auto"`, output ridotto a `-q`.
-- Non esistono ancora `tests/integration` né test end-to-end: il contract test dei repository non è implementato.
+- `tests/unit/domain/`: ricorrenze (mese corto, `BYMONTHDAY=-1`, finestra di 60 giorni, cambio d'ora) e validazione dei modelli.
+- `tests/unit/services/`: casi d'uso dei task sul doppio in memoria, inclusi rollback e conflitto di versione.
+- `tests/contract/`: repository, unit of work e indici su MongoDB reale; marcati `pytest.mark.contract`.
+- `tests/integration/`: i sette criteri di accettazione di M1, con transazioni reali e audit atomico.
+- `pyproject.toml`: `testpaths = ["tests"]`, `asyncio_mode = "auto"`, output ridotto a `-q`, marker `contract`.

@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T18:22:16Z
+
+concept_patch: sviluppo/locale-e-test
+
 ## 2026-11-13T18:21:48Z
 
 concept_patch: sviluppo/convenzioni-agenti
