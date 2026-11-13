@@ -1,5 +1,5 @@
 ---
-status: in-progress
+status: done
 type: IngestUnit
 verify: nessun indirizzo email reale né identificativo di fatturazione nella pagina; il progetto di produzione è descritto come non toccato in M0/M1; le API sono elencate
 plan: ingest/piano-family-bot-docs
@@ -11,7 +11,6 @@ extract: "tutte le tabelle dell'inventario e il registro modifiche; redigi l'ema
 provenance: [sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp]
 claimed_at: "2026-11-13T09:34:49.714Z"
 claimed_by: subagent-u13
-review_after: 2026-11-14
 ---
 Questa unità produce: `infrastruttura/inventario`, `infrastruttura/gcp-bootstrap`.
 

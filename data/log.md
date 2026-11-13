@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:36:45Z
+
+concept_patch: ingest/u13-inventario
+
 ## 2026-11-13T09:36:33Z
 
 concept_patch: ingest/u12-gcp-osservabilita-integrazioni
