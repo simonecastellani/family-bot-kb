@@ -17,10 +17,12 @@ Dal primer §6, "Convenzioni":
 - Le date sono BSON Date in **UTC**; `Europe/Rome` compare solo in presentazione e per le ricorrenze. Si distingue `due_date` da `due_at`.
 - Campi comuni a tutti i documenti: `created_at`, `updated_at`, `deleted_at` (soft delete), `source`, `version`.
 - **Concorrenza ottimistica**: `update_one({_id, version: v}, {$set: ..., $inc: {version: 1}})`; se `matched_count == 0` c'è conflitto.
-- Nomi di campo senza il pattern `__x__`; documenti ben sotto il limite di 4 MiB; ID entro i tipi supportati.
+- Nomi di campo senza il pattern `__x__`; ID entro i tipi supportati.
 - Transazioni multi-documento solo dove serve un'invariante (es. completare un'occorrenza + audit), brevi, dopo aver verificato il supporto.
 - Gli **indici** sono dichiarati nel codice e applicati da `ensure_indexes()`, idempotente al deploy.
 - Le **migrazioni di dati e indici** sono script versionati e idempotenti, con collection `schema_migrations`.
+
+Limite di dimensione: la documentazione della compatibilità MongoDB indica **16 MiB** per documento; il progetto adotta **<4 MiB** come margine prudenziale. Non è una discrepanza aperta: è una regola più stretta del limite tecnico (verificato il 2026-11-13).
 
 ## Collection
 

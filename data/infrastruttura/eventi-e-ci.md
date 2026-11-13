@@ -92,6 +92,6 @@ gcloud iam service-accounts add-iam-policy-binding \
 - Nel workflow si usa `google-github-actions/auth@v2` con `workload_identity_provider` e `service_account` (il deployer).
 - In produzione va aggiunta una condizione sul branch, `assertion.ref == 'refs/heads/main'`, così solo i push su `main` possono federare.
 
-## Punti aperti
+## Nomi dei task dei promemoria
 
-- [ ] Verificare se la regola del nome versionato dopo uno spostamento convive con il nome deterministico del task descritto in [[architettura/promemoria]], e quale delle due adottare nel codice.
+- **Risolto il 2026-11-13.** Il nome del task è versionato (`<dedupe_key>-<revisione>`) e l'idempotenza resta `reminders._id = dedupe_key`; la regola completa, con le fonti, è in [[architettura/promemoria]].

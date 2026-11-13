@@ -1,5 +1,17 @@
 # Log
 
+## 2026-11-13T10:28:09Z
+
+concept_batch (8 operation(s)):
+- architettura/promemoria
+- infrastruttura/eventi-e-ci
+- architettura/modello-dati
+- infrastruttura/gcp-bootstrap
+- infrastruttura/inventario
+- progetto/stack
+- progetto/questioni-aperte
+- progetto/roadmap
+
 ## 2026-11-13T09:39:11Z
 
 Ingest family-bot completato: 5 fonti, 16 unità (10 any / 6 large / 0 human), 19 pagine attive. Revisione campione: U01, U04, U07, U09, U11, U13 — gate puliti, redazione di email/billing corretta, nessun contenuto inventato. Aperti due conflitti tra fonti lasciati come checkbox: nome task Cloud Tasks (dedupe) e soglie budget 50/90/100% vs 50/80/100%.

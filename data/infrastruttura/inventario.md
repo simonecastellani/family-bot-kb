@@ -34,6 +34,8 @@ L'ambiente di **produzione** è il progetto `family-bot-prod-514113` (project nu
 
 Il budget avvisa e non blocca la spesa; i dati di billing arrivano in ritardo.
 
+Le soglie configurate sono **50/80/100** e sono il valore canonico. Il runbook in `docs/gcp-setup.md` (sezione A2) indicava 50/90/100: il documento va allineato al valore reale, non il contrario.
+
 ## Firestore
 
 | Campo | Valore |

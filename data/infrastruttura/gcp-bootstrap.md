@@ -40,7 +40,7 @@ gcloud projects describe "$PROJECT_ID" \
 
 Con folder: `gcloud projects create "$PROJECT_ID" --name="Family Bot Dev" --folder=FOLDER_ID`.
 
-**Budget alert dal primo giorno** (Billing → Budgets & alerts → Create budget): scope sul progetto o sull'intero billing account, importo di esempio 10 EUR al mese, soglie 50%, 90%, 100% (opzionale 120%), alert email ai billing admin. Per altri destinatari: canale email in Cloud Monitoring collegato al budget, oppure ruolo billing al destinatario.
+**Budget alert dal primo giorno** (Billing → Budgets & alerts → Create budget): scope sul progetto o sull'intero billing account, importo di esempio 10 EUR al mese, soglie **50%, 80%, 100%** (il valore reale configurato, vedi [[infrastruttura/inventario]]), alert email ai billing admin. Per altri destinatari: canale email in Cloud Monitoring collegato al budget, oppure ruolo billing al destinatario.
 
 Il budget **avvisa e non blocca** la spesa; i dati di billing arrivano in ritardo; su Cloud Run il vero controllo di costo è `max-instances`. Controllo periodico in Billing → Reports, filtrato per progetto e servizio.
 
@@ -114,7 +114,7 @@ Regole:
 - Il free tier vale per **un solo database per progetto**: non creare database "usa e getta" nello stesso progetto.
 - TTL, backup, restore e point-in-time recovery **non sono gratuiti**: non farci affidamento per la retention.
 - La compatibilità MongoDB supporta MongoDB **8.0**; per i test locali si usa `mongo:8.0`.
-- Il limite documento documentato per la compatibilità MongoDB è **16 MiB**, mentre il primer adotta **4 MiB** per prudenza: discrepanza da riconciliare in M1, nel dubbio si resta sotto 4 MiB.
+- Il limite documento documentato per la compatibilità MongoDB è **16 MiB**; il progetto adotta **4 MiB** come margine prudenziale, non come vincolo tecnico. Riconciliato il 2026-11-13.
 
 **Identificatori**: il database ha un *Database ID* (`family-bot`) e un *UID* (UUID generato da Google, usato nell'hostname di connessione).
 

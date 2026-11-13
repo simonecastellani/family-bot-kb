@@ -35,7 +35,7 @@ Stato **[Default]**: scelte di partenza, non ancora confermate.
 - **Framework agente**: PydanticAI, in alternativa un loop manuale con l'SDK `openai`; LangChain e LangGraph esclusi.
 - **IaC**: Terraform, introdotto dopo la fase manuale su GCP (M0–M2). **CI/CD**: GitHub Actions con Workload Identity Federation (niente chiavi JSON). **Registry**: Artifact Registry.
 - **Osservabilità**: OpenTelemetry verso Cloud Logging e Trace; budget alert dal primo giorno.
-- **Driver MongoDB**: PyMongo con API async nativa; lo stato di Motor va verificato prima di adottarlo.
+- **Driver MongoDB**: PyMongo con API async nativa (`AsyncMongoClient`, 4.19+). Motor è escluso: deprecato, end of life il 14 maggio 2026 (verificato il 2026-11-13).
 
 ## Tooling
 

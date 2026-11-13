@@ -34,3 +34,4 @@ Per l'use case 4 (gestione della casa) vale la regola generale: il bot **propone
 - **M10** non è pianificabile a calendario: si affronta solo dopo settimane di uso reale, e la prima attività è la progettazione, non l'implementazione (§11).
 - Le domande che possono bloccare o rimandare una milestone sono raccolte in [[progetto/questioni-aperte]].
 - Le istruzioni con cui l'agente lavora e la definizione di done sono in [[sviluppo/convenzioni-agenti]].
+- Le regole architetturali non negoziabili sono in [[architettura/regole]].
