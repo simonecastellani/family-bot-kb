@@ -12,7 +12,7 @@ type: IngestUnit
 ---
 Questa unità produce: `infrastruttura/identita-e-runtime`.
 
-**Fonte** — U10,  `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
+**Fonte** — U10: `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `infrastruttura/identita-e-runtime` — nuova: `## Service account`, `## Segreti e file`, `## Artifact Registry`, `## Cloud Run`, `## Guardrail`

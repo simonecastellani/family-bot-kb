@@ -12,7 +12,7 @@ status: draft
 ---
 Questa unità produce: `infrastruttura/eventi-e-ci`.
 
-**Fonte** — U11,  `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
+**Fonte** — U11: `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `infrastruttura/eventi-e-ci` — nuova: `## Cloud Tasks`, `## Cloud Scheduler`, `## Workload Identity Federation`

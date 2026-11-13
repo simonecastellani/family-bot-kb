@@ -12,7 +12,7 @@ verify: "le due pagine esistono con le sezioni indicate; i comandi sono quelli d
 ---
 Questa unità produce: `sviluppo/locale-e-test`, `sviluppo/qualita`.
 
-**Fonte** — U07,  `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
+**Fonte** — U07: `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `sviluppo/locale-e-test` — nuova: `## Ambiente locale`, `## Fake`, `## Contract test`

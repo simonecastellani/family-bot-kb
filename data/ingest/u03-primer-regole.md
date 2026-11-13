@@ -12,7 +12,7 @@ title: U03 — Architettura e regole non negoziabili
 ---
 Questa unità produce: `architettura/regole`, `architettura/porte-e-fake`.
 
-**Fonte** — U03,  `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
+**Fonte** — U03: `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` — la Source registrata; leggi solo le sezioni citate nell'estrazione qui sotto.
 
 **Target**
 - `architettura/regole` — nuova: `## Flusso`, `## Struttura del repo`, `## Regole non negoziabili`
