@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:36:33Z
+
+concept_patch: ingest/u12-gcp-osservabilita-integrazioni
+
 ## 2026-11-13T09:36:25Z
 
 concept_batch (3 operation(s)):
