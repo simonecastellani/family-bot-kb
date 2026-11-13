@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-13T09:31:01Z
+
+concept_patch: ingest/u05-primer-promemoria-agente
+
 ## 2026-11-13T09:31:00Z
 
 concept_patch: ingest/u04-primer-modello-dati
