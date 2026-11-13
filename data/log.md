@@ -2,6 +2,10 @@
 
 ## 2026-11-13T09:31:00Z
 
+concept_patch: ingest/u04-primer-modello-dati
+
+## 2026-11-13T09:31:00Z
+
 concept_patch: ingest/u03-primer-regole
 
 ## 2026-11-13T09:31:00Z
