@@ -7,7 +7,7 @@ type: Pagina
 ---
 # Inventario delle risorse GCP
 
-Stato reale delle risorse dei progetti Family Bot su Google Cloud, aggiornato al 2026-11-09 e trascritto dal file `docs/gcp-inventory.md` del repository ([[sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp]]). Senza Terraform l'inventario è la **fonte di verità**: va aggiornato a ogni modifica con nomi stabili, così le risorse potranno essere importate in Terraform senza ricrearle. La procedura che lo produce è in [[infrastruttura/gcp-bootstrap]].
+Stato reale delle risorse dei progetti Family Bot su Google Cloud, aggiornato al 2026-11-14 e trascritto dal file `docs/gcp-inventory.md` del repository ([[sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp]]). Senza Terraform l'inventario è la **fonte di verità**: va aggiornato a ogni modifica con nomi stabili, così le risorse potranno essere importate in Terraform senza ricrearle. La procedura che lo produce è in [[infrastruttura/gcp-bootstrap]].
 
 Email dell'account proprietario e identificativo del billing account sono redatti come `<owner-email>` e `<billing-account>`: i valori reali stanno nel file sorgente nel repository ({{repo:family-bot}}/docs/gcp-inventory.md), mai in questa pagina.
 
@@ -56,7 +56,7 @@ Le soglie configurate sono **50/80/100** e sono il valore canonico. Il runbook i
 |---|---|---|---|
 | `local-dev` | `principal://firestore.googleapis.com/projects/602013947946/name/databases/family-bot/userCreds/local-dev` | `roles/datastore.user` (condizionato al DB) | Sviluppo locale, CRUD dati |
 
-`local-admin` non è ancora stato creato: serve in M1 per `ensure_indexes()` e per i contract test sul database reale, con `roles/datastore.owner` condizionato al database oppure un custom role con `datastore.schemas.*`. Non va usato per l'app. I permessi dati e schema sono descritti in [[infrastruttura/gcp-bootstrap]].
+`local-admin` non è ancora stato creato: serve in **M2**, quando la suite contract viene eseguita anche sul database Enterprise reale, con `roles/datastore.owner` condizionato al database oppure un custom role con `datastore.schemas.*` (`createIndex()`, `drop()`). In M1 gli indici sono stati applicati **solo** sul MongoDB locale; il runtime non usa questo utente. I permessi dati e schema sono descritti in [[infrastruttura/gcp-bootstrap]].
 
 ## Service account
 

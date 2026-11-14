@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-14T17:24:40Z
+
+concept_patch: infrastruttura/inventario
+
 ## 2026-11-13T18:28:22Z
 
 concept_patch: sviluppo/locale-e-test
