@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-14T17:24:52Z
+
+concept_patch: progetto/m1-task-core
+
 ## 2026-11-14T17:24:40Z
 
 concept_patch: infrastruttura/inventario

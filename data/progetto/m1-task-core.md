@@ -56,10 +56,11 @@ Implementato e verificato il 2026-11-13:
 - `app/domain`: `Task`, `TaskOccurrence`, `AuditEvent`, regole RRULE pure con whitelist e localizzazione DST.
 - `app/repositories`: porte, adapter MongoDB con `ensure_indexes()` e `schema_migrations`, doppio in memoria per gli unit test.
 - `app/services`: creazione (che materializza la prima finestra), materializzazione, completamento, snooze e archiviazione; query; audit nella stessa transazione.
-- Test: 72 tra unit, contract su MongoDB locale e integration; i sette criteri di accettazione sono coperti.
+- Test: 74 tra unit, contract su MongoDB locale e integration; i sette criteri di accettazione sono coperti.
 
 ## Note
 
 - La verifica è affidata a test unit, contract e integration: M1 non espone interfacce.
 - La CI esegue la suite contract contro un MongoDB 8.0 reale; senza database i test falliscono invece di essere saltati in silenzio.
 - Come eseguire la suite è descritto in [[sviluppo/locale-e-test]].
+- Riverifica del 2026-11-14: `uv run pytest` 74 test verdi su MongoDB locale, `ruff check` e `ruff format --check` puliti, `pyright` senza errori. Il contract test sul database Enterprise reale resta in M2, come in [[progetto/questioni-aperte]]; il documento di repo `docs/gcp-inventory.md` è stato riallineato di conseguenza ({{repo:family-bot}}/docs/gcp-inventory.md).
