@@ -1,9 +1,9 @@
 ---
+provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
 status: active
-timestamp: 2026-11-13
+timestamp: 2026-11-16
 title: Identità e runtime su Google Cloud
 type: Concept
-provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
 ---
 # Identità e runtime su Google Cloud
 
@@ -104,3 +104,7 @@ Su un progetto personale senza organizzazione questi vincoli non sono disponibil
 ## Fonte
 
 Distillato da [[sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]], fasi B e C.
+
+## Verifica di connettività (2026-11-16)
+
+L'endpoint MongoDB-compatible del database `family-bot` risponde su TLS con l'access token di `gcloud` e meccanismo `PLAIN`, usando `loadBalanced=true&tls=true&retryWrites=false` e `UID.europe-west8.firestore.goog:443`. Il database risultava **vuoto** (0 collection) a quella data. Il percorso usato dal runtime resta `MONGODB-OIDC` con `ENVIRONMENT:gcp` e `TOKEN_RESOURCE:FIRESTORE`, da confermare al primo deploy Cloud Run.
