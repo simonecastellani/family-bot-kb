@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-15T23:29:37Z
+
+[progetto/m2-deploy-telegram-agente] Pianificazione M2 (2026-11-16): approvato il piano di deploy Cloud Run + webhook Telegram + agente. Decisioni: python-telegram-bot >=20 con Bot e non Application/Dispatcher; porta AgentEngine davanti a PydanticAI; conferme deterministiche in agent_runs.actions[]; indici applicati dal job di deploy con family-bot-migrator. Spostati a M3 il servizio worker e i contract test sul Firestore Enterprise reale. Nessun codice scritto: la milestone resta open.
+
 ## 2026-11-15T23:29:25Z
 
 concept_write: architettura/agente
