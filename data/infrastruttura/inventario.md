@@ -68,7 +68,7 @@ Le soglie configurate sono **50/80/100** e sono il valore canonico. Il runbook i
 | `family-bot-scheduler-invoker` | `family-bot-scheduler-invoker@family-bot-dev.iam.gserviceaccount.com` | `roles/run.invoker` (progetto) | OIDC Cloud Scheduler | creato 2026-11-14 |
 | `github-deployer` | `github-deployer@family-bot-dev.iam.gserviceaccount.com` | `roles/run.admin`, `roles/artifactregistry.writer`, `roles/iam.serviceAccountUser` | CI/CD | creato 2026-11-14 |
 
-Debiti IAM aperti (dettaglio nel repository, `docs/gcp-inventory.md`): il binding `storage.objectAdmin` sul progetto ha una condizione `resource.name == "family-bot-documents"` che non corrisponde a nessuna risorsa Cloud Storage, quindi non concede nulla; manca `iam.serviceAccountUser` di `family-bot-api` sul `tasks-invoker`; `datastore.user` del worker non è condizionato al database; `run.invoker` è a livello progetto.
+Debiti IAM aperti (dettaglio nel repository, `docs/gcp-inventory.md`): manca `iam.serviceAccountUser` di `family-bot-api` sul `tasks-invoker`; `datastore.user` del worker non è condizionato al database; `run.invoker` è a livello progetto; il divieto di chiavi service account non è ancora imposto. Risolto il 2026-11-15: `storage.objectAdmin` era concesso sul progetto con una condizione `resource.name` che non corrisponde a nessuna risorsa Cloud Storage (quindi non concedeva nulla) ed è stato spostato sul bucket.
 
 Il disegno dei ruoli e dei runtime è in [[infrastruttura/identita-e-runtime]]; qui si registra solo lo stato effettivo.
 
@@ -121,3 +121,4 @@ Altre API risultano abilitate, probabilmente come default del progetto o abilita
 | 2026-11-14 | Creati `telegram-webhook-secret` e `opencode-api-key`; accesso per singolo secret, rimossi i binding project-level | `gcloud secrets create`, `gcloud secrets add-iam-policy-binding`, `gcloud projects remove-iam-policy-binding` |
 | 2026-11-14 | Creato bucket `family-bot-documents` e repository Artifact Registry `family-bot` | `gcloud storage buckets create`, `gcloud artifacts repositories create` |
 | 2026-11-15 | Verifica read-only della Fase B e documentazione dei debiti IAM | `gcloud ... describe/list`, endpoint regionale Secret Manager |
+| 2026-11-15 | `storage.objectAdmin` spostato dal progetto al bucket `family-bot-documents` | `gcloud projects remove-iam-policy-binding --all`, `gcloud storage buckets add-iam-policy-binding` |
