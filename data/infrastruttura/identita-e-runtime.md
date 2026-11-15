@@ -27,7 +27,7 @@ Dettagli che contano:
 - Chi crea un task con token OIDC deve avere `iam.serviceAccounts.actAs` sull'invoker: `family-bot-api` riceve `roles/iam.serviceAccountUser` **sul** `family-bot-tasks-invoker`.
 - `roles/datastore.user` è data plane: basta per il CRUD sui documenti, non per `drop()`, `createIndex()` o `dropDatabase()`.
 - Creare il database richiede `roles/datastore.owner`; creare utenti SCRAM richiede `roles/datastore.userCredsAdmin`.
-- Le migrazioni che creano indici richiedono `datastore.schemas.create`: le esegue un principal dedicato, non il service account di runtime.
+- Le migrazioni che creano indici richiedono `datastore.schemas.create`: le esegue un principal dedicato, non il service account di runtime. Esiste ed è `local-admin`, utente SCRAM con `roles/datastore.owner` condizionato al database `family-bot`.
 - Nessuna chiave JSON (`gcloud iam service-accounts keys create` è da evitare): in locale ADC, in CI Workload Identity Federation.
 
 ## Segreti e file

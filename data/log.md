@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-15T22:42:38Z
+
+concept_patch: infrastruttura/identita-e-runtime
+
 ## 2026-11-15T22:42:28Z
 
 concept_patch: infrastruttura/inventario
