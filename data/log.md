@@ -2,6 +2,10 @@
 
 ## 2026-11-15T23:57:38Z
 
+concept_write: progetto/questioni-aperte
+
+## 2026-11-15T23:57:38Z
+
 concept_write: progetto/m2-deploy-telegram-agente
 
 ## 2026-11-15T23:29:37Z
