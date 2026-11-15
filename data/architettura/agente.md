@@ -1,8 +1,9 @@
 ---
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: active
+timestamp: 2026-11-16
 title: Agente
 type: Architecture
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 ---
 # Agente
 
@@ -24,3 +25,8 @@ L'agente è il livello conversazionale che traduce i messaggi dei membri in oper
 ## Registrazione delle run
 
 Ogni run dell'agente è registrata in `agent_runs` **dal primo giorno**: la registrazione non è un'aggiunta successiva, fa parte del funzionamento normale.
+
+
+## Meccanismo della conferma (M2)
+
+Deciso in [[progetto/m2-deploy-telegram-agente]]: i tool di scrittura **non scrivono**, restituiscono una `ProposedAction` con il DTO già validato. Le azioni sono registrate in `agent_runs.actions[]` con `status` (`pending`, `confirmed`, `rejected`, `expired`) e `expires_at` a 24 ore; il bottone inline porta `cf:<run_id>:<action_id>` e la conferma esegue il servizio con l'`Actor` del membro (`source=telegram`). Un secondo click trova l'azione non più `pending` e risponde «già eseguita», senza doppie scritture.
