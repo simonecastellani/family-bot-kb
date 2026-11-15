@@ -127,3 +127,7 @@ Altre API risultano abilitate, probabilmente come default del progetto o abilita
 | 2026-11-14 | Creato bucket `family-bot-documents` e repository Artifact Registry `family-bot` | `gcloud storage buckets create`, `gcloud artifacts repositories create` |
 | 2026-11-15 | Verifica read-only della Fase B e documentazione dei debiti IAM | `gcloud ... describe/list`, endpoint regionale Secret Manager |
 | 2026-11-15 | `storage.objectAdmin` spostato dal progetto al bucket `family-bot-documents` | `gcloud projects remove-iam-policy-binding --all`, `gcloud storage buckets add-iam-policy-binding` |
+| 2026-11-15 | `iam.serviceAccountUser` concesso a `family-bot-api` solo sul `tasks-invoker` | Console → Service Accounts → `tasks-invoker` → Permissions |
+| 2026-11-15 | `datastore.user` del worker condizionato al database; worker rimosso da `opencode-api-key` | Console → IAM e Secret Manager → Permissions |
+| 2026-11-15 | Creato l'utente `local-admin` con `datastore.owner` condizionato al database | Firestore → Databases → `family-bot` → Security → Add User |
+| 2026-11-15 | Deciso di non imporre `iam.disableServiceAccountKeyCreation`: rischio accettato con controllo manuale | — |
