@@ -116,3 +116,8 @@ Altre API risultano abilitate, probabilmente come default del progetto o abilita
 | 2026-11-08 | Creato utente SCRAM `local-dev` con `roles/datastore.user` condizionato | `gcloud firestore user-creds create`, `gcloud projects add-iam-policy-binding` |
 | 2026-11-08 | Creato service account `family-bot-api` con `roles/datastore.user` condizionato | `gcloud iam service-accounts create`, `gcloud projects add-iam-policy-binding` |
 | 2026-11-09 | Verifica read-only e aggiornamento inventario | `./scripts/verify_gcp.sh family-bot-dev`, `gcloud ... describe/list` |
+| 2026-11-14 | Creati i 5 service account e i ruoli runtime (Fase B1) | `gcloud iam service-accounts create`, `gcloud projects add-iam-policy-binding` |
+| 2026-11-14 | `telegram-bot-token` creato come regional secret e poi migrato a secret globale con replica `europe-west8` | Console, `gcloud secrets create --replication-policy=user-managed` |
+| 2026-11-14 | Creati `telegram-webhook-secret` e `opencode-api-key`; accesso per singolo secret, rimossi i binding project-level | `gcloud secrets create`, `gcloud secrets add-iam-policy-binding`, `gcloud projects remove-iam-policy-binding` |
+| 2026-11-14 | Creato bucket `family-bot-documents` e repository Artifact Registry `family-bot` | `gcloud storage buckets create`, `gcloud artifacts repositories create` |
+| 2026-11-15 | Verifica read-only della Fase B e documentazione dei debiti IAM | `gcloud ... describe/list`, endpoint regionale Secret Manager |
