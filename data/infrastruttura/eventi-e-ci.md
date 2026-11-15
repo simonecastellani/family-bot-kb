@@ -13,11 +13,11 @@ Fonte: [[sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-c
 
 ## Cloud Tasks
 
-La coda dei promemoria si crea una volta, regionale:
+La coda dei promemoria si crea una volta, regionale. Attenzione: Cloud Tasks **non supporta `europe-west8`** (le location UE sono `europe-west1`, `europe-west2`, `europe-west3`, `europe-west6`, `europe-central2`): con Milano il comando fallisce con `INVALID_ARGUMENT`. Si usa `europe-west1` (Belgio), perché la coda può richiamare un worker in qualunque regione.
 
 ```bash
 gcloud tasks queues create reminders \
-  --location=europe-west8 \
+  --location=europe-west1 \
   --max-dispatches-per-second=5 \
   --max-concurrent-dispatches=5 \
   --max-attempts=5 \
@@ -25,7 +25,7 @@ gcloud tasks queues create reminders \
   --max-backoff=300s
 ```
 
-- La coda è **regionale** (`europe-west8`).
+- La coda è **regionale** (`europe-west1`) e la location è permanente: si sceglie una volta. Cloud Scheduler invece accetta `europe-west8`.
 - Il rate limit (5 dispatch/s, 5 concorrenti) protegge Telegram e il `worker` da ondate di task.
 - I retry sono configurabili (5 tentativi, backoff 10s–300s): il `worker` deve tollerarli.
 - L'`api` che accoda ha bisogno di `roles/cloudtasks.enqueuer`.

@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-15T00:09:45Z
+
+concept_patch: infrastruttura/eventi-e-ci
+
 ## 2026-11-15T00:09:36Z
 
 concept_patch: infrastruttura/identita-e-runtime
