@@ -55,8 +55,9 @@ Le soglie configurate sono **50/80/100** e sono il valore canonico. Il runbook i
 | Username | Principal IAM | Ruolo | Uso |
 |---|---|---|---|
 | `local-dev` | `principal://firestore.googleapis.com/projects/602013947946/name/databases/family-bot/userCreds/local-dev` | `roles/datastore.user` (condizionato al DB) | Sviluppo locale, CRUD dati |
+| `local-admin` | `principal://firestore.googleapis.com/projects/602013947946/name/databases/family-bot/userCreds/local-admin` | `roles/datastore.owner` (condizionato al DB) | Contract test sul database Enterprise reale, `createIndex()`, `drop()`, migrazioni |
 
-`local-admin` non è ancora stato creato: serve in **M2**, quando la suite contract viene eseguita anche sul database Enterprise reale, con `roles/datastore.owner` condizionato al database oppure un custom role con `datastore.schemas.*` (`createIndex()`, `drop()`). In M1 gli indici sono stati applicati **solo** sul MongoDB locale; il runtime non usa questo utente. I permessi dati e schema sono descritti in [[infrastruttura/gcp-bootstrap]].
+Entrambi hanno la condizione `family-bot-db-only` (`resource.name == "projects/family-bot-dev/databases/family-bot"`). `local-admin` è il principal di migrazione: il runtime non lo usa, e la sua password è stata mostrata una sola volta e vive solo in `.env`. I permessi dati e schema sono descritti in [[infrastruttura/gcp-bootstrap]].
 
 ## Service account
 
@@ -68,7 +69,11 @@ Le soglie configurate sono **50/80/100** e sono il valore canonico. Il runbook i
 | `family-bot-scheduler-invoker` | `family-bot-scheduler-invoker@family-bot-dev.iam.gserviceaccount.com` | `roles/run.invoker` (progetto) | OIDC Cloud Scheduler | creato 2026-11-14 |
 | `github-deployer` | `github-deployer@family-bot-dev.iam.gserviceaccount.com` | `roles/run.admin`, `roles/artifactregistry.writer`, `roles/iam.serviceAccountUser` | CI/CD | creato 2026-11-14 |
 
-Debiti IAM aperti (dettaglio nel repository, `docs/gcp-inventory.md`): manca `iam.serviceAccountUser` di `family-bot-api` sul `tasks-invoker`; `datastore.user` del worker non è condizionato al database; `run.invoker` è a livello progetto; il divieto di chiavi service account non è ancora imposto. Risolto il 2026-11-15: `storage.objectAdmin` era concesso sul progetto con una condizione `resource.name` che non corrisponde a nessuna risorsa Cloud Storage (quindi non concedeva nulla) ed è stato spostato sul bucket.
+Debiti IAM aperti (dettaglio nel repository, `docs/gcp-inventory.md`): resta solo `run.invoker` concesso a livello progetto, da stringere al servizio `family-bot-worker` subito dopo il deploy (prima concedere sul servizio, poi togliere dal progetto).
+
+Rischi accettati: `iam.disableServiceAccountKeyCreation` non è imposto (decisione del 2026-11-15), quindi il controllo è manuale con `gcloud iam service-accounts keys list`; il service account di default Compute conserva `roles/editor` ma non va usato come runtime.
+
+Chiusi il 2026-11-15: `storage.objectAdmin` spostato dal progetto al bucket (la condizione `resource.name` sul nome nudo non corrispondeva a nessuna risorsa Cloud Storage); `iam.serviceAccountUser` concesso a `family-bot-api` sul solo `tasks-invoker`; `datastore.user` del worker condizionato al database; worker senza accesso a `opencode-api-key`.
 
 Il disegno dei ruoli e dei runtime è in [[infrastruttura/identita-e-runtime]]; qui si registra solo lo stato effettivo.
 
