@@ -38,6 +38,10 @@ I segreti nascono con replica gestita dall'utente e locazione `europe-west8`. Pr
 
 L'accesso si concede **per singolo segreto** con `roles/secretmanager.secretAccessor`, non a livello di progetto.
 
+**Mai regional secret.** La console propone anche i *regional secret* (`projects/P/locations/L/secrets/S`): Cloud Run **non li supporta** e `--set-secrets` non li risolve. Serve un secret globale con `--replication-policy=user-managed --locations=europe-west8`, che garantisce la stessa residenza a Milano senza il vincolo regionale sulla risorsa. Attenzione: `gcloud secrets list` elenca solo i secret globali, quindi `Listed 0 items.` non significa che non ce ne siano.
+
+Stato al 2026-11-14: `telegram-bot-token`, `telegram-webhook-secret` e `opencode-api-key` esistono come secret globali con replica `europe-west8`. `telegram-bot-token` era nato come regional secret ed è stato migrato.
+
 - La password SCRAM è un segreto: non deve finire in git, nei log o nell'output di CI.
 - La rotazione si fa disabilitando le versioni vecchie.
 - In locale si usa `.env`; in cloud Secret Manager.
@@ -50,6 +54,8 @@ Bucket dei documenti (menu del nido, allegati): nome globalmente unico, locazion
 - `roles/storage.objectAdmin` si concede **sul bucket**, non sul progetto.
 - Versioning e lifecycle solo se si vogliono conservare le versioni, valutando i costi.
 - Per file grandi o sensibili si usano URL firmati a scadenza.
+- **Nessun free tier in UE**: i 5 GiB Always Free valgono solo nei bucket regionali statunitensi (`us-east1`, `us-west1`, `us-central1`). In `europe-west8` lo Standard costa circa $0.02/GiB-mese, quindi pochi centesimi con il volume atteso: la residenza UE vale il prezzo, e la leva di costo è il volume.
+- Soft delete è attivo di default per 7 giorni e **fattura** gli oggetti cancellati; su questo volume conviene tenerlo.
 
 ## Artifact Registry
 

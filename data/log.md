@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-15T00:09:36Z
+
+concept_patch: infrastruttura/identita-e-runtime
+
 ## 2026-11-14T17:24:59Z
 
 [progetto] Chiusura M1: riverifica locale del 2026-11-14 (74 test verdi su MongoDB locale, ruff e pyright puliti). `local-admin` e il contract test sul database Enterprise reale restano debito di M2, allineati in `docs/gcp-inventory.md` e `docs/gcp-setup.md` del repo (commit `61939ac` e `d16b519`). Nessuna risorsa GCP modificata.
