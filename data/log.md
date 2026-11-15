@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-15T23:28:49Z
+
+concept_write: progetto/m2-deploy-telegram-agente
+
 ## 2026-11-15T22:42:38Z
 
 concept_patch: infrastruttura/inventario

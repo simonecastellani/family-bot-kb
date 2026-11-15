@@ -11,3 +11,4 @@ title: Progetto
 - [Roadmap](roadmap.md)
 - [Questioni aperte](questioni-aperte.md)
 - [M1 — Task core](m1-task-core.md)
+- [M2 — Deploy, Telegram e agente](m2-deploy-telegram-agente.md)
