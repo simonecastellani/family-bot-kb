@@ -1,9 +1,9 @@
 ---
-title: "M2 — Deploy, Telegram e agente"
-type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: open
 timestamp: 2026-11-16
+title: "M2 — Deploy, Telegram e agente"
+type: Pagina
 ---
 # M2 — Deploy, Telegram e agente
 
@@ -70,6 +70,18 @@ L'ordine mette il percorso Telegram → servizi → database prima dell'LLM: i p
 ## Prerequisiti
 
 `telegram_user_id` ed email dei membri con ruolo e timezone; bot creato e token in `telegram-bot-token`; webhook attuale rimosso prima del primo `set_webhook`.
+
+## Esito delle verifiche W0 (2026-11-16)
+
+Tre verifiche fatte prima di scrivere codice:
+
+- **Firestore MongoDB compatibility raggiungibile**: con l'access token di `gcloud` e meccanismo `PLAIN` (come da guida, §A5), l'endpoint `63ea0fad-3b37-4915-9eff-b4b3fd292589.europe-west8.firestore.goog:443` risponde a `ping` su TLS con `loadBalanced=true&retryWrites=false`. Il database `family-bot` ha **0 collection**: M1 non ha mai scritto in cloud. Resta da provare il ramo `MONGODB-OIDC` (`ENVIRONMENT:gcp`), che si verifica al primo deploy.
+- **PTB 22.8**: `Bot` è async context manager; `Update.de_json(data, bot)`; `set_webhook(secret_token=…)`; `BadRequest` deriva da `NetworkError` (ordine degli `except`).
+- **PydanticAI 2.68 + OpenCode Go**: funziona con `OpenAICompatibleProvider(name=…, openai_client=AsyncOpenAI(...))` e `OpenAIChatModel`. L'endpoint **pretende** l'header `x-opencode-session` (senza: `400 MissingSessionID`) e un user agent proprio; con quelli, tool calling e output strutturato su `deepseek-v4.1-flash` producono la data relativa corretta («giovedì 19 novembre 2026») con 820+138 token.
+
+### Provider LLM: decisione temporanea, con scadenza
+
+Il piano OpenCode Go è documentato come destinato a «OpenCode and other coding agents», con traffico monitorato: un bot famigliare non rientra nell'intento. Decisione dell'operatore del 2026-11-16: **si sviluppa M2 con la chiave OpenCode già disponibile** e **il provider si sostituisce prima della messa in produzione**. La porta `AgentEngine` rende il cambio una modifica di configurazione; il gate è registrato come tale e non va dimenticato alla chiusura della milestone.
 
 ## Collegamenti
 
