@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-15T00:10:22Z
+
+concept_patch: infrastruttura/inventario
+
 ## 2026-11-15T00:09:45Z
 
 concept_patch: infrastruttura/eventi-e-ci

@@ -62,13 +62,27 @@ Le soglie configurate sono **50/80/100** e sono il valore canonico. Il runbook i
 
 | Nome | Email | Ruoli | Uso | Stato |
 |---|---|---|---|---|
-| `family-bot-api` | `family-bot-api@family-bot-dev.iam.gserviceaccount.com` | `roles/datastore.user` (condizionato al DB) | Runtime API | creato |
-| `family-bot-worker` | — | — | Runtime worker | da creare (M2) |
-| `family-bot-tasks-invoker` | — | — | OIDC Cloud Tasks | da creare (M3) |
-| `family-bot-scheduler-invoker` | — | — | OIDC Cloud Scheduler | da creare (M3) |
-| `github-deployer` | — | — | CI/CD con WIF | da creare (M2) |
+| `family-bot-api` | `family-bot-api@family-bot-dev.iam.gserviceaccount.com` | `roles/datastore.user` (condizionato al DB), `roles/cloudtasks.enqueuer`, `roles/storage.objectAdmin` (binding condizionato, da correggere), `secretAccessor` per singolo secret | Runtime API | creato 2026-11-14 |
+| `family-bot-worker` | `family-bot-worker@family-bot-dev.iam.gserviceaccount.com` | `roles/datastore.user` (senza condizione), `secretAccessor` per singolo secret | Runtime worker | creato 2026-11-14 |
+| `family-bot-tasks-invoker` | `family-bot-tasks-invoker@family-bot-dev.iam.gserviceaccount.com` | `roles/run.invoker` (progetto) | OIDC Cloud Tasks | creato 2026-11-14 |
+| `family-bot-scheduler-invoker` | `family-bot-scheduler-invoker@family-bot-dev.iam.gserviceaccount.com` | `roles/run.invoker` (progetto) | OIDC Cloud Scheduler | creato 2026-11-14 |
+| `github-deployer` | `github-deployer@family-bot-dev.iam.gserviceaccount.com` | `roles/run.admin`, `roles/artifactregistry.writer`, `roles/iam.serviceAccountUser` | CI/CD | creato 2026-11-14 |
+
+Debiti IAM aperti (dettaglio nel repository, `docs/gcp-inventory.md`): il binding `storage.objectAdmin` sul progetto ha una condizione `resource.name == "family-bot-documents"` che non corrisponde a nessuna risorsa Cloud Storage, quindi non concede nulla; manca `iam.serviceAccountUser` di `family-bot-api` sul `tasks-invoker`; `datastore.user` del worker non è condizionato al database; `run.invoker` è a livello progetto.
 
 Il disegno dei ruoli e dei runtime è in [[infrastruttura/identita-e-runtime]]; qui si registra solo lo stato effettivo.
+
+## Secret Manager
+
+Tre secret globali con replica `user-managed` in `europe-west8`, creati il 2026-11-14: `telegram-bot-token` (nato regional secret e poi migrato), `telegram-webhook-secret`, `opencode-api-key`. Accesso concesso per singolo secret a `family-bot-api` e `family-bot-worker`; nessun binding a livello progetto.
+
+## Cloud Storage
+
+`gs://family-bot-documents`, regional `europe-west8`, classe `STANDARD`, uniform bucket-level access, public access prevention `enforced`, soft delete 7 giorni, senza versioning né lifecycle. Creato il 2026-11-14. Nessun free tier: i 5 GiB Always Free valgono solo nei bucket statunitensi.
+
+## Artifact Registry
+
+Repository Docker `family-bot` in `europe-west8`, creato il 2026-11-14; cleanup policy non ancora configurata. Immagine prevista: `europe-west8-docker.pkg.dev/family-bot-dev/family-bot/api:TAG`.
 
 ## API abilitate
 
