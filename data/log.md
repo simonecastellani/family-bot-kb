@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-15T23:29:25Z
+
+concept_write: progetto/stack
+
 ## 2026-11-15T23:29:11Z
 
 concept_write: progetto/questioni-aperte

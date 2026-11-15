@@ -1,9 +1,9 @@
 ---
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: active
-timestamp: 2026-11-13
+timestamp: 2026-11-16
 title: Stack tecnologico
 type: Pagina
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 ---
 # Stack tecnologico
 
@@ -42,3 +42,13 @@ Stato **[Default]**: scelte di partenza, non ancora confermate.
 Stato **[Default]**.
 
 - `uv`, `ruff`, `pyright`, `pytest`, `pre-commit`, Docker.
+
+
+## Decisioni prese in M2
+
+Stato **[Confermato]**, decise il 2026-11-16 prima dell'inizio dei lavori.
+
+- **Libreria Telegram**: `python-telegram-bot` ≥ 20 (v22.x) in webhook. Si usa `telegram.Bot` come client async, **non** `Application`/`Dispatcher`: il route FastAPI verifica il secret token, deserializza con `Update.de_json` e chiama un servizio, così il flusso resta uno solo e il framework non entra nei servizi. Verificato sui documenti v22 il 2026-11-16: `Bot` è un async context manager con `initialize()`/`shutdown()`; `set_webhook(secret_token=…)` imposta l'header `X-Telegram-Bot-Api-Secret-Token`; `BadRequest` deriva da `NetworkError`, quindi l'ordine degli `except` conta.
+- **Agente**: PydanticAI resta il framework, ma dietro una porta `AgentEngine` con fake locale: i servizi e le interfacce non importano PydanticAI. Il segnaposto `LLMClient` viene ritirato.
+- **Endpoint LLM**: `https://opencode.ai/inference/go/openai/v1` (OpenAI-compatibile, provider `@ai-sdk/openai-compatible`), modello scelto da env (`LLM_MODEL`).
+- **Conferme**: le azioni proposte dall'agente vivono in `agent_runs.actions[]`, non in una collection dedicata, e vengono eseguite solo dopo il click sul bottone inline (vedi [[architettura/agente]]).
