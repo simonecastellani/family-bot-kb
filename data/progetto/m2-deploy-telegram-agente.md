@@ -1,9 +1,9 @@
 ---
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: open
-timestamp: 2026-11-16
 title: "M2 — Deploy, Telegram e agente"
 type: Pagina
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+status: in-progress
+timestamp: 2026-11-16
 ---
 # M2 — Deploy, Telegram e agente
 
@@ -88,3 +88,17 @@ Il piano OpenCode Go è documentato come destinato a «OpenCode and other coding
 Le regole non negoziabili sono in [[architettura/regole]]; il comportamento dell'agente in [[architettura/agente]]; le porte e i fake in [[architettura/porte-e-fake]]; identità, secret e service account in [[infrastruttura/identita-e-runtime]]; CI/CD in [[infrastruttura/eventi-e-ci]]; la suite e i contract test in [[sviluppo/locale-e-test]]; le domande ancora aperte in [[progetto/questioni-aperte]].
 
 Codice: {{repo:family-bot}}/app, documenti operativi {{repo:family-bot}}/docs/gcp-inventory.md e {{repo:family-bot}}/docs/gcp-setup.md.
+
+
+## Avanzamento (2026-11-16)
+
+- **W0 fatto**: endpoint Firestore raggiungibile, PTB 22.8 verificata, PydanticAI 2.68 + OpenCode Go funzionanti con l'header di sessione, termini Go chiusi come "solo sviluppo".
+- **W1 fatto**: `members` con email normalizzata, ruoli, timezone, indici unici (parziale su `telegram_user_id`), seed idempotente `app.cli.seed_members`.
+- **W2 fatto**: `agent_runs` con `dedupe_key` unico, step con cap, azioni con scadenza 24h e macchina a stati `pending → processing → confirmed/failed` (più `rejected`/`expired`), claim a vincitore unico.
+- **W3 fatto**: porta `TelegramClient` (+ fake), porta `AgentEngine` (+ fake), adapter PTB solo trasporto, adapter PydanticAI con tool di lettura e di proposta, servizi di turno e di conferma, composition root unico, webhook con secret token, whitelist e dedupe. 130 test verdi, `ruff` e `pyright` puliti.
+- **W4 parziale**: servizio `family-bot-api` deployato in `europe-west8` (revisione `00002-s8t`), `/livez` e `/readyz` rispondono, secret montati, **`MONGODB-OIDC` dal runtime verificato** con una richiesta reale al webhook. Restano il seed dei membri e il `set_webhook`, che richiedono `telegram_user_id` ed email dei membri.
+
+### Scoperte da non dimenticare
+
+- Cloud Run risponde **404 sul path esatto `/healthz`** prima del container: la liveness è `/livez`.
+- Il database Enterprise `family-bot` è ancora vuoto: la prima scrittura sarà il seed.

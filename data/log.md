@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-16T00:19:40Z
+
+concept_write: progetto/m2-deploy-telegram-agente
+
 ## 2026-11-15T23:57:39Z
 
 concept_write: infrastruttura/identita-e-runtime
