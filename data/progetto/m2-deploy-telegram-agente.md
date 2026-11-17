@@ -1,9 +1,9 @@
 ---
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+status: done
 timestamp: 2026-11-17
 title: "M2 — Deploy, Telegram e agente"
 type: Pagina
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
 ---
 # M2 — Deploy, Telegram e agente
 
@@ -148,3 +148,30 @@ Due ostacoli trovati e risolti:
 
 - con `roles/datastore.owner` **condizionato** a `resource.name`, `createIndexes` risponde `PermissionDenied`: la condizione non copre la risorsa valutata. Il SA di migrazione ha il ruolo senza condizione, non è usato dal runtime ed è registrato come debito accettato.
 - Firestore **non supporta gli indici parziali** (`Partial indexes are not supported`): l'unicità di `telegram_user_id` è passata al repository, in entrambi gli adapter (primer §5.5).
+
+
+## Chiusura (2026-11-17)
+
+Milestone **`done`**. Rilascio finale `v0.2.0` attraverso la pipeline: sette job verdi (guardia, test, immagine, migrazioni, canary, smoke, traffico), revisione `00007-lin` al 100%, `/livez` e `/readyz` riportano `0.2.0`.
+
+### Cosa è stato consegnato
+
+- `members` e `agent_runs` con contract test, `agent_runs` con dedupe del webhook e azioni con scadenza;
+- porte `TelegramClient` e `AgentEngine` con adapter PTB e PydanticAI e fake locali;
+- webhook con secret token, whitelist, dedupe, bottoni inline e macchina a stati della conferma;
+- deploy Cloud Run con secret montati, migrazioni indici via job dedicato, CD da tag semver con WIF e canary;
+- 137 test, `ruff` e `pyright` puliti; CI di nuovo verde (lo era ferma dal 13 novembre).
+
+### Cosa è stato imparato
+
+- GitHub Actions passa `options` dei `services` a `docker create`: `--replSet` non arrivava a `mongod` e la CI falliva in 25 secondi senza eseguire un test. Ora il container parte con `docker run`.
+- Cloud Run intercetta il path esatto `/healthz`; la liveness è `/livez`.
+- Firestore non supporta indici parziali e rifiuta `createIndexes` sotto una condizione IAM.
+- Il nome del database MongoDB-compatible deve coincidere con l'ID del database Firestore.
+
+### Rinviato a M3
+
+- servizio `worker`, Cloud Tasks, Scheduler e promemoria;
+- contract test sul Firestore Enterprise reale;
+- stringere `run.invoker` al servizio `worker` quando esisterà;
+- retention di `agent_runs` e azioni scadute.
