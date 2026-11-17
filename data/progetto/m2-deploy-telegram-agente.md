@@ -1,9 +1,9 @@
 ---
-title: "M2 — Deploy, Telegram e agente"
-type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: in-progress
-timestamp: 2026-11-16
+timestamp: 2026-11-17
+title: "M2 — Deploy, Telegram e agente"
+type: Pagina
 ---
 # M2 — Deploy, Telegram e agente
 
@@ -102,3 +102,18 @@ Codice: {{repo:family-bot}}/app, documenti operativi {{repo:family-bot}}/docs/gc
 
 - Cloud Run risponde **404 sul path esatto `/healthz`** prima del container: la liveness è `/livez`.
 - Il database Enterprise `family-bot` è ancora vuoto: la prima scrittura sarà il seed.
+
+
+## Prova end-to-end in cloud (2026-11-17)
+
+Primo membro creato sul database Enterprise (`sfrulloo@gmail.com`, admin, Europe/Rome). Una richiesta reale al webhook con il suo `telegram_user_id` ha prodotto, dentro Firestore:
+
+- la run `succeeded` con `deepseek-v4.1-flash` (2.499 token in ingresso, 240 in uscita, ~8,7 s);
+- gli step `create_task` (call e result) e il messaggio finale;
+- una proposta `task.create` **pending** con payload `due_date=2026-11-19`, cioè giovedì.
+
+Manca solo il `setWebhook`: senza di esso Telegram non consegna nulla al servizio. Il test dal telefono è il criterio di accettazione.
+
+### Regola scoperta
+
+Il nome del database nella connection string MongoDB-compatible **deve coincidere con l'ID del database Firestore**: `family_bot` viene rifiutato con `Invalid database name`, `family-bot` funziona. Default, `.env.example`, compose e Cloud Run sono allineati a `family-bot`.
