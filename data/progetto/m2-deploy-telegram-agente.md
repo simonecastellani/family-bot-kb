@@ -1,9 +1,9 @@
 ---
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
 timestamp: 2026-11-17
 title: "M2 — Deploy, Telegram e agente"
 type: Pagina
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+status: in-progress
 ---
 # M2 — Deploy, Telegram e agente
 
@@ -129,3 +129,22 @@ Due contromisure:
 2. se la risposta parla di una proposta e `actions` è vuoto, l'adapter fa **un giro correttivo** con la cronologia del turno (una sola volta, poi si accontenta).
 
 Verificato in cloud con lo stesso input: ora la run contiene `create_task` e una proposta `task.create` per il 2026-11-20. Coperto da test con `FunctionModel` (nessuna rete).
+
+
+## Criterio di accettazione raggiunto (2026-11-17)
+
+Test reale dal telefono: «ricordami di pagare il nido entro il 5 di ogni mese» → proposta con i bottoni → conferma → scrittura. In Firestore:
+
+- task `Pagare il nido`, attivo, assegnato al membro, `source=telegram`;
+- ricorrenza `FREQ=MONTHLY;BYMONTHDAY=5` con `starts_on=2026-12-05` e fuso `Europe/Rome`;
+- due occorrenze `pending` (5 dicembre, 5 gennaio) nella finestra di 60 giorni;
+- due eventi di audit (`task.created`, `occurrences.materialized`) con attore e fonte corretti.
+
+### Indici sul database reale
+
+Mancavano del tutto: il runtime non li crea (per progetto) e nessun job li aveva mai applicati. Creato `family-bot-migrator` e il job Cloud Run `family-bot-migrate` (`python -m app.cli.migrate`); gli indici esistono ora e `schema_migrations` contiene le tre migrazioni.
+
+Due ostacoli trovati e risolti:
+
+- con `roles/datastore.owner` **condizionato** a `resource.name`, `createIndexes` risponde `PermissionDenied`: la condizione non copre la risorsa valutata. Il SA di migrazione ha il ruolo senza condizione, non è usato dal runtime ed è registrato come debito accettato.
+- Firestore **non supporta gli indici parziali** (`Partial indexes are not supported`): l'unicità di `telegram_user_id` è passata al repository, in entrambi gli adapter (primer §5.5).

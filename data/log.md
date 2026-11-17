@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-17T12:44:49Z
+
+concept_write: progetto/m2-deploy-telegram-agente
+
 ## 2026-11-17T08:30:28Z
 
 concept_write: progetto/m2-deploy-telegram-agente
