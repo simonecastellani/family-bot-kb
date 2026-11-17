@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-17T14:43:22Z
+
+[progetto/m2-deploy-telegram-agente] M2 chiusa (2026-11-17): release v0.2.0 da tag semver attraverso la pipeline (guardia, test, immagine, migrazioni, canary senza traffico, smoke, spostamento traffico). In produzione la revisione 00007-lin riporta 0.2.0. Aggiunti WIF con condizione su ref_type=tag, job di migrazione indici, /livez con versione e /readyz con ping al database. Scoperti e corretti: CI rossa dal 13 novembre (--replSet nei services), indici parziali non supportati da Firestore, createIndex sotto condizione IAM.
+
 ## 2026-11-17T14:43:17Z
 
 concept_write: infrastruttura/eventi-e-ci
