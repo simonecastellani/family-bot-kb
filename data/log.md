@@ -2,6 +2,10 @@
 
 ## 2026-11-17T14:43:17Z
 
+concept_write: infrastruttura/eventi-e-ci
+
+## 2026-11-17T14:43:17Z
+
 concept_write: progetto/roadmap
 
 ## 2026-11-17T14:43:17Z

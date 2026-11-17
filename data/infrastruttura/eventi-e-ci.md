@@ -1,7 +1,7 @@
 ---
 provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
 status: active
-timestamp: 2026-11-13
+timestamp: 2026-11-17
 title: Eventi e CI/CD su GCP
 type: Pagina
 ---
@@ -95,3 +95,10 @@ gcloud iam service-accounts add-iam-policy-binding \
 ## Nomi dei task dei promemoria
 
 - **Risolto il 2026-11-13.** Il nome del task è versionato (`<dedupe_key>-<revisione>`) e l'idempotenza resta `reminders._id = dedupe_key`; la regola completa, con le fonti, è in [[architettura/promemoria]].
+
+
+## Deploy da tag (M2)
+
+Il deploy non parte dal push su `main` ma da un **tag semver**: la versione in `pyproject.toml` deve coincidere col tag e il tag deve stare su `main`. La pipeline (`.github/workflows/deploy.yml`) autentica con Workload Identity Federation (pool `github`, condizione su repository e `ref_type == tag`), costruisce l'immagine, esegue il job di migrazione indici e pubblica una revisione **canary senza traffico**; solo se `/livez` riporta la versione attesa e `/readyz` raggiunge il database il traffico passa al 100%.
+
+Il primo giro (`v0.2.0-rc1` … `-rc4`) ha corretto tre attriti: `--replSet` nei `services` di GitHub finiva a `docker create` (la CI era rossa dal 13 novembre), il job di migrazione non faceva checkout del file di env, un job leggeva un output da un passo inesistente. Dettagli e runbook di rollback in {{repo:family-bot}}/docs/gcp-setup.md (E1, E1b).
