@@ -117,3 +117,15 @@ Manca solo il `setWebhook`: senza di esso Telegram non consegna nulla al servizi
 ### Regola scoperta
 
 Il nome del database nella connection string MongoDB-compatible **deve coincidere con l'ID del database Firestore**: `family_bot` viene rifiutato con `Invalid database name`, `family-bot` funziona. Default, `.env.example`, compose e Cloud Run sono allineati a `family-bot`.
+
+
+### Correzione dopo il primo test reale (2026-11-17)
+
+Il primo messaggio dal telefono ha smascherato un difetto dell'agente, non dei bottoni: la run mostrava solo `list_tasks` e `list_occurrences`, il modello aveva **scritto** di aver preparato una proposta senza chiamare `create_task`, quindi `actions` era vuoto e nessuna tastiera inline compariva.
+
+Due contromisure:
+
+1. l'istruzione vieta di annunciare una proposta se lo strumento non è stato chiamato;
+2. se la risposta parla di una proposta e `actions` è vuoto, l'adapter fa **un giro correttivo** con la cronologia del turno (una sola volta, poi si accontenta).
+
+Verificato in cloud con lo stesso input: ora la run contiene `create_task` e una proposta `task.create` per il 2026-11-20. Coperto da test con `FunctionModel` (nessuna rete).
