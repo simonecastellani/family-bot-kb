@@ -1,7 +1,7 @@
 ---
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: active
-timestamp: 2026-11-17
+timestamp: 2026-11-18
 title: Roadmap
 type: Pagina
 ---
@@ -32,7 +32,8 @@ Per l'use case 4 (gestione della casa) vale la regola generale: il bot **propone
 - **M0 — fondamenta** è completata.
 - **M1 — Task core** è completata (`done`): obiettivo, decisioni, criteri ed esito in [[progetto/m1-task-core]].
 - **M2 — Deploy, Telegram e agente** è completata (`done`): criterio raggiunto dal telefono, rilascio `v0.2.0` con canary. Piano, decisioni ed esito in [[progetto/m2-deploy-telegram-agente]].
-- **M3 — Promemoria event-driven** è la prossima milestone; non iniziata. I debiti assegnati a M3 sono il servizio `worker` con la coda Cloud Tasks, i contract test sul Firestore Enterprise reale, lo stringere `run.invoker` al worker e la retention di `agent_runs`.
+- **M3 — Promemoria event-driven** è completata (`done`): rilascio `v0.3.0` con coda Cloud Tasks, worker privato, due job Scheduler e bottoni sul promemoria. Esito e ostacoli in [[progetto/m3-promemoria-event-driven]].
+- **M4 — Google Calendar** è la prossima milestone; non iniziata. Resta aperto il contract test sul Firestore Enterprise reale, da chiudere con il workflow notturno previsto.
 - Il passaggio da una milestone alla successiva si misura con i **criteri di accettazione** della tabella, non con il numero di attività svolte.
 - **M10** non è pianificabile a calendario: si affronta solo dopo settimane di uso reale, e la prima attività è la progettazione, non l'implementazione (§11).
 - Le domande che possono bloccare o rimandare una milestone sono raccolte in [[progetto/questioni-aperte]].

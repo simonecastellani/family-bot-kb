@@ -2,6 +2,10 @@
 
 ## 2026-11-18T12:57:09Z
 
+concept_write: progetto/roadmap
+
+## 2026-11-18T12:57:09Z
+
 concept_write: progetto/questioni-aperte
 
 ## 2026-11-18T12:56:53Z
