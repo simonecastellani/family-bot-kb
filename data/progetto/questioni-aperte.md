@@ -1,9 +1,9 @@
 ---
-title: Questioni aperte
-type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: active
-timestamp: 2026-11-17
+timestamp: 2026-11-18
+title: Questioni aperte
+type: Pagina
 ---
 # Questioni aperte
 
@@ -11,7 +11,7 @@ Domande non ancora risolte, con la condizione o il momento in cui vanno chiuse (
 
 ## Aperte
 
-- **Copertura reale della compatibilità MongoDB di Firestore** — per gli operatori e gli stage che servono (aggregazioni, indici, transazioni): la verifica con i contract test su database reale è **spostata a M3**, insieme al servizio `worker`, perché richiede un percorso OIDC funzionante dal runner. Fino ad allora i contract girano solo su MongoDB locale. Vedi [[progetto/m2-deploy-telegram-agente]].
+- **Copertura reale della compatibilità MongoDB di Firestore** — per gli operatori e gli stage che servono: i contract test girano ancora solo su MongoDB locale. Il piano è pronto (isolamento con prefisso di collection `ct_`, autenticazione `PLAIN` con access token dal workflow notturno via Workload Identity Federation) ma non implementato: M3 si è chiusa senza questo pezzo. Vedi [[progetto/m3-promemoria-event-driven]].
 - **Regioni** — disponibilità dell'edizione Enterprise e applicabilità delle quote gratuite in regioni UE, vicine a Cloud Run.
 - **Strategia di backup/restore** — da definire, dato che non ha uso gratuito.
 - **Modelli con vision/audio** — quali modelli di OpenCode Go li supportano; STT gestito oppure audio nativo del modello.
