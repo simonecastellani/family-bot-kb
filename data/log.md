@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-18T14:04:02Z
+
+[progetto/m3-promemoria-event-driven] Contract sul Firestore reale eseguito (2026-11-18) col consenso dell'operatore: 41 test verdi, transazioni incluse. Guard ALLOW_REMOTE_CONTRACT per non svuotare per sbaglio un database remoto; TEST_MONGODB_DATABASE punta a family-bot. Gli indici sopravvivono allo svuotamento. Dati ricreati (membro + task nido) e promemoria ripianificato. Suite notturna rinviata alla pre-produzione.
+
 ## 2026-11-18T14:04:01Z
 
 concept_write: progetto/m3-promemoria-event-driven
