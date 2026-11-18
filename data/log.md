@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-18T14:04:01Z
+
+concept_write: progetto/m3-promemoria-event-driven
+
 ## 2026-11-18T14:03:45Z
 
 concept_write: progetto/questioni-aperte

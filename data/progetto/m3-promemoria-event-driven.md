@@ -1,9 +1,9 @@
 ---
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: done
 timestamp: 2026-11-18
 title: M3 — Promemoria event-driven
 type: Pagina
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+status: done
 ---
 # M3 — Promemoria event-driven
 
@@ -78,3 +78,17 @@ Coperti da test di integrazione: stesso task eseguito due volte → un solo invi
 
 - **Contract test sul Firestore Enterprise reale** (debito da M1): il piano prevede isolamento con prefisso di collection `ct_` e autenticazione `PLAIN` con access token dal workflow notturno. Non implementato in questa sessione.
 - Prova dal vivo del promemoria: il primo invio reale è il **5 dicembre**. Per accorciare, basta creare un task con scadenza domani.
+
+
+## Contract sul Firestore reale (2026-11-18)
+
+Decisione dell'operatore: i dati erano sacrificabili, quindi la suite è stata eseguita **direttamente sul database Enterprise**, senza prefisso di collection. **41 test contract verdi**, transazioni comprese: la compatibilità MongoDB copre ciò che serve al progetto (CRUD, filtri, indici, transazioni, concorrenza ottimistica).
+
+Due dettagli utili:
+
+- il guard è esplicito: `ALLOW_REMOTE_CONTRACT=distruggi-i-dati` più `TEST_MONGODB_DATABASE=family-bot`, altrimenti la suite rifiuta un URI non locale;
+- **gli indici sopravvivono allo svuotamento** (Firestore elimina la collection quando sparisce l'ultimo documento, ma la definizione degli indici resta), quindi non serve rilanciare le migrazioni dopo un giro distruttivo.
+
+Dopo il giro sono stati ricreati il membro (seed) e il task «Pagare il nido», e il job notturno ha ripianificato il promemoria del 5 dicembre; il task Cloud Tasks rimasto orfano è stato cancellato.
+
+**Presidio periodico**: la suite resterà manuale finché non esiste il progetto di pre-produzione, dove diventerà notturna. Isolamento per progetto, non per prefisso.
