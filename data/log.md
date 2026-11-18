@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-18T14:03:45Z
+
+concept_write: progetto/questioni-aperte
+
 ## 2026-11-18T12:57:10Z
 
 [progetto/m3-promemoria-event-driven] M3 rilasciata come v0.3.0 (2026-11-18): coda Cloud Tasks reminders, worker privato con /internal/* verificato via OIDC, job Scheduler da deploy/scheduler.json, bottoni Fatto/Domani, run.invoker stretto al worker. Scoperti in cloud: limite 720h di Cloud Tasks, $elemMatch non supportato da Firestore, worker senza chiave LLM. Primo promemoria reale in coda per il 5 dicembre. Aperto: contract test sul Firestore reale.

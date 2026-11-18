@@ -11,12 +11,14 @@ Domande non ancora risolte, con la condizione o il momento in cui vanno chiuse (
 
 ## Aperte
 
-- **Copertura reale della compatibilità MongoDB di Firestore** — per gli operatori e gli stage che servono: i contract test girano ancora solo su MongoDB locale. Il piano è pronto (isolamento con prefisso di collection `ct_`, autenticazione `PLAIN` con access token dal workflow notturno via Workload Identity Federation) ma non implementato: M3 si è chiusa senza questo pezzo. Vedi [[progetto/m3-promemoria-event-driven]].
+- **Copertura reale della compatibilità MongoDB di Firestore** — **verificata il 2026-11-18**: la suite contract (41 test) è passata sul database Enterprise reale, transazioni comprese. Resta aperto solo il presidio periodico: la suite è distruttiva, quindi non diventa notturna finché non esiste il progetto di pre-produzione dove spostarla.
 - **Regioni** — disponibilità dell'edizione Enterprise e applicabilità delle quote gratuite in regioni UE, vicine a Cloud Run.
 - **Strategia di backup/restore** — da definire, dato che non ha uso gratuito.
 - **Modelli con vision/audio** — quali modelli di OpenCode Go li supportano; STT gestito oppure audio nativo del modello.
 
 ## Chiuse di recente
+
+- **Compatibilità MongoDB di Firestore** — chiusa il 2026-11-18 con la suite contract eseguita sul database vero; il presidio periodico vivrà nella pre-produzione.
 
 - **Autenticazione dal servizio Cloud Run all'endpoint MongoDB di Firestore** — chiusa il 2026-11-17: identità del service account, nessun segreto statico, verificata con una richiesta reale.
 
