@@ -12,3 +12,4 @@ title: Progetto
 - [Questioni aperte](questioni-aperte.md)
 - [M1 — Task core](m1-task-core.md)
 - [M2 — Deploy, Telegram e agente](m2-deploy-telegram-agente.md)
+- [M3 — Promemoria event-driven](m3-promemoria-event-driven.md)
