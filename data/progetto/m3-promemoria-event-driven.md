@@ -1,6 +1,6 @@
 ---
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
+status: done
 timestamp: 2026-11-18
 title: M3 — Promemoria event-driven
 type: Pagina
@@ -45,3 +45,36 @@ Due serrature diverse, entrambe necessarie:
 | W5 | Bottoni `rm:` | |
 | W6 | Contract test sul Firestore reale | |
 | W7 | Documentazione e rilascio `v0.3.0` | |
+
+
+## Esito (2026-11-18)
+
+Milestone rilasciata come **v0.3.0** con la pipeline completa (8 job verdi): guardia, test, immagine, migrazioni, **worker e job Scheduler**, canary, smoke, traffico. In produzione: `/livez` riporta `0.3.0`, il worker è Ready, i due job Scheduler sono ENABLED, la coda `reminders` contiene il promemoria del **5 dicembre** (il primo reale).
+
+### Consegnato
+
+- `reminders` con `_id` = chiave di dedupe e contract test; retention nei due adapter;
+- `PlanRemindersService` (09:00 per le occorrenze tutto il giorno, 30 minuti prima per quelle con orario, snooze come override, nome del task hashato), agganciato a creazione, snooze e manutenzione notturna;
+- adapter Cloud Tasks REST (`google-auth` + `httpx`), `409` trattato come successo;
+- worker privato con `SERVICE_ROLE`, `/internal/{reminders,digest,daily}` e token OIDC verificato contro un'allowlist di service account;
+- bottoni ✅ Fatto / 😴 Domani con prefisso `rm:`;
+- due job Scheduler applicati da `deploy/scheduler.json`, orari versionati;
+- `run.invoker` stretto al solo worker: debito IAM di M2 chiuso.
+
+### Ostacoli trovati solo in cloud
+
+- Cloud Tasks **rifiuta `schedule_time` oltre 720 ore**: con la finestra di 60 giorni il job notturno falliva sul secondo promemoria. Il pianificatore accoda entro 29 giorni (`REMINDER_MAX_LEAD_DAYS`) e il job notturno recupera il resto.
+- Firestore con compatibilità MongoDB **non supporta `$elemMatch`**: la scadenza delle azioni pendenti filtra in Python sulle run più recenti.
+- Il worker non ha la chiave LLM, quindi il container non deve costruire il motore dell'agente: `SERVICE_ROLE=worker` usa un motore disabilitato.
+- Il worker accoda anche lui (manutenzione notturna): la coda reale va costruita in entrambi i ruoli, non solo nell'API.
+- `gcloud auth print-identity-token --audiences` non funziona con la federazione: lo smoke del worker verifica revisione Ready e immagine invece di chiamare un endpoint privato.
+- `read` con IFS di default spezza la cron expression: il file degli orari si legge su tab.
+
+### Criteri di accettazione
+
+Coperti da test di integrazione: stesso task eseguito due volte → un solo invio; snooze prima della scadenza → nessun invio al vecchio orario; occorrenza completata → nessun invio; invio fallito → il retry invia una volta sola; promemoria oltre le 720 ore o nel passato → non accodato; digest solo ai membri con la preferenza attiva.
+
+### Resta aperto
+
+- **Contract test sul Firestore Enterprise reale** (debito da M1): il piano prevede isolamento con prefisso di collection `ct_` e autenticazione `PLAIN` con access token dal workflow notturno. Non implementato in questa sessione.
+- Prova dal vivo del promemoria: il primo invio reale è il **5 dicembre**. Per accorciare, basta creare un task con scadenza domani.
