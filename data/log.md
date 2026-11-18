@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-18T17:11:49Z
+
+[progetto] M4 — Google Calendar: implementati W1–W5 (dominio, cache `calendar_events`, `calendar_sync_state`, adapter Google su httpx, sync con 410 e full resync, creazione con id deterministico e conferma, tool `create_event`/`list_calendar_events`/`get_week_overview`). Suite verde (lint, pyright, contract su MongoDB reale). Restano W0 (API Calendar, agenda «Famiglia», app OAuth pubblicata, refresh token, tre secret) e il deploy v0.4.0. Debito provider LLM rimandato a milestone dedicata con classificatore locale.
+
 ## 2026-11-18T17:11:32Z
 
 concept_batch (2 operation(s)):
