@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-19T00:06:52Z
+
+[progetto] M4 — Calendar: l'app OAuth non si poteva pubblicare (Google richiede un dominio autorizzato e verificato nella Branding page). Scelta del 2026-11-19: ADC del service account di runtime con scope `calendar.events`, agenda «Famiglia» condivisa con `family-bot-api` e `family-bot-worker`. W0 verificato con token impersonato: `events.list` 200 (`accessRole: writer`), `events.insert` 200, `DELETE` 204; nessun secret OAuth. Concesso `serviceAccountTokenCreator` all'operatore sui due SA per le verifiche. Resta il deploy v0.4.0.
+
 ## 2026-11-19T00:06:33Z
 
 concept_batch (2 operation(s)):
