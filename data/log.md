@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-19T09:16:18Z
+
+[progetto] M4 — deploy v0.4.0 riuscito (revisione 00015-nol, `/livez` 0.4.0, tre job Scheduler), ma il primo sync reale è fallito con 500: Google non restituisce `nextSyncToken` a una listing con `timeMin`/`timeMax`/`orderBy`. Fix in v0.4.1: la full sync legge l'intero calendario e applica la finestra [-7, +90] alla cache; verificato con due sync reali consecutivi (full + incrementale) contro l'API. Il token Service Account funziona su Cloud Run: la chiamata a `events.list` era 200.
+
 ## 2026-11-19T09:16:10Z
 
 concept_patch: progetto/m4-google-calendar
