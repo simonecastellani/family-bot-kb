@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-19T12:52:14Z
+
+concept_batch (2 operation(s)):
+- progetto/m4-google-calendar
+- progetto/roadmap
+
 ## 2026-11-19T09:24:55Z
 
 [progetto] M4 — dopo v0.4.1 verificati in cloud: sync full e incrementale dal job Scheduler (200), creazione reale di un evento via `CreateCalendarEventService`, sync (upsert 1), cancellazione su Google (204), sync incrementale (`deleted: 1`) e cache vuota. Resta solo la prova dal telefono (proposta `create_event` + bottone). Rilascio `v0.4.1`, revisione `00017-zef`.

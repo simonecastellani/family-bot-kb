@@ -33,7 +33,7 @@ Per l'use case 4 (gestione della casa) vale la regola generale: il bot **propone
 - **M1 — Task core** è completata (`done`): obiettivo, decisioni, criteri ed esito in [[progetto/m1-task-core]].
 - **M2 — Deploy, Telegram e agente** è completata (`done`): criterio raggiunto dal telefono, rilascio `v0.2.0` con canary. Piano, decisioni ed esito in [[progetto/m2-deploy-telegram-agente]].
 - **M3 — Promemoria event-driven** è completata (`done`): rilascio `v0.3.0` con coda Cloud Tasks, worker privato, due job Scheduler e bottoni sul promemoria. Esito e ostacoli in [[progetto/m3-promemoria-event-driven]].
-- **M4 — Google Calendar** è in corso: codice, test e W0 pronti (agenda condivisa con i due service account); resta il deploy v0.4.0. Piano e stato in [[progetto/m4-google-calendar]].
+- **M4 — Google Calendar** è `done` (2026-11-19): sync in cache, cancellati e token scaduto gestiti, creazione con conferma verificata dal telefono. Esito in [[progetto/m4-google-calendar]]. **M5 — Dashboard in sola lettura** è la prossima milestone, non iniziata.
 - Il passaggio da una milestone alla successiva si misura con i **criteri di accettazione** della tabella, non con il numero di attività svolte.
 - **M10** non è pianificabile a calendario: si affronta solo dopo settimane di uso reale, e la prima attività è la progettazione, non l'implementazione (§11).
 - Le domande che possono bloccare o rimandare una milestone sono raccolte in [[progetto/questioni-aperte]].

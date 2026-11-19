@@ -3,7 +3,7 @@ timestamp: 2026-11-18
 title: M4 — Google Calendar
 type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
+status: done
 ---
 # M4 — Google Calendar
 
@@ -45,13 +45,17 @@ Il bot legge il calendario della famiglia e risponde a «cosa abbiamo questa set
 | W3 | Sync incrementale, 410 → full resync, job Scheduler | fatto |
 | W4 | Creazione evento con conferma e id deterministico | fatto |
 | W5 | Query e tool di lettura, panoramica settimanale | fatto |
-| W6 | Secret, env, scheduler, deploy `v0.4.0` | `blocked` da W0 |
-| W7 | Retention cache, documentazione, chiusura | in corso |
+| W6 | Env, scheduler, deploy `v0.4.0`/`v0.4.1` | fatto: revisione `00017-zef`, tre job Scheduler, sync reale |
+| W7 | Retention cache, documentazione, chiusura | fatto |
 
-## Cosa resta
+## Esito (2026-11-19)
 
-1. Tag `v0.4.0` e deploy: il workflow crea il terzo job Scheduler.
-2. Verifica in cloud dei criteri: doppio sync innocuo, evento cancellato che sparisce, creazione dal telefono.
+Chiusa. Rilasci `v0.4.0` e `v0.4.1` (il primo ha rivelato che Google non
+restituisce `nextSyncToken` a una listing con finestra temporale). Verificati in
+cloud: sync full e incrementale dal job Scheduler, creazione e cancellazione
+reale di un evento con cache coerente, e la prova dal telefono con proposta
+confermata. Restano come debiti noti il provider LLM e il presidio periodico del
+contract test nella pre-produzione.
 
 ## Debito registrato
 
