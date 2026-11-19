@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-19T12:53:15Z
+
+[progetto] M4 chiusa il 2026-11-19: prova dal telefono confermata (proposta `create_event` + bottone, evento su Google Calendar), sync idempotente, cancellati gestiti, creazione reale verificata. Rilascio `v0.4.1`, revisione `00017-zef`. Prossima milestone: M5 — dashboard in sola lettura.
+
 ## 2026-11-19T12:52:14Z
 
 concept_batch (2 operation(s)):
