@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-19T09:24:55Z
+
+[progetto] M4 — dopo v0.4.1 verificati in cloud: sync full e incrementale dal job Scheduler (200), creazione reale di un evento via `CreateCalendarEventService`, sync (upsert 1), cancellazione su Google (204), sync incrementale (`deleted: 1`) e cache vuota. Resta solo la prova dal telefono (proposta `create_event` + bottone). Rilascio `v0.4.1`, revisione `00017-zef`.
+
 ## 2026-11-19T09:16:18Z
 
 [progetto] M4 — deploy v0.4.0 riuscito (revisione 00015-nol, `/livez` 0.4.0, tre job Scheduler), ma il primo sync reale è fallito con 500: Google non restituisce `nextSyncToken` a una listing con `timeMin`/`timeMax`/`orderBy`. Fix in v0.4.1: la full sync legge l'intero calendario e applica la finestra [-7, +90] alla cache; verificato con due sync reali consecutivi (full + incrementale) contro l'API. Il token Service Account funziona su Cloud Run: la chiamata a `events.list` era 200.
