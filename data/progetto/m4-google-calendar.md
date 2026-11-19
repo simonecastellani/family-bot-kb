@@ -18,7 +18,7 @@ Il bot legge il calendario della famiglia e risponde a «cosa abbiamo questa set
 | Tema | Scelta |
 |---|---|
 | Agenda | una sola agenda condivisa dedicata («Famiglia»); il calendario personale dell'account OAuth non viene mai toccato |
-| Autenticazione | OAuth con refresh token in Secret Manager; app External **pubblicata, non verificata** (in Testing il token scade dopo 7 giorni) |
+| Autenticazione | ADC del service account di runtime, scoped a `calendar.events`; l'agenda è condivisa con i due SA (*Apporta modifiche agli eventi*). Nessuna app OAuth, nessun refresh token, nessuna chiave JSON |
 | Dipendenze | nessuna nuova: token exchange e due chiamate REST (`events.list`, `events.insert`) con `httpx` |
 | Cache | `calendar_events` è uno specchio, non una fonte di verità; i cancellati si eliminano e un full resync settimanale limita il drift fuori dalla finestra |
 | Stato del sync | collection `calendar_sync_state` (`_id = calendar_id`), token salvato solo a fine giro |
@@ -29,7 +29,7 @@ Il bot legge il calendario della famiglia e risponde a «cosa abbiamo questa set
 
 ## Architettura
 
-- Porta `CalendarGateway` con adapter `GoogleCalendarGateway` (REST + provider del token OAuth) e `FakeCalendarGateway` per i test. Dettagli in [[architettura/porte-e-fake]].
+- Porta `CalendarGateway` con adapter `GoogleCalendarGateway` (REST + token dal service account via ADC) e `FakeCalendarGateway` per i test. Dettagli in [[architettura/porte-e-fake]].
 - Servizi: `SyncCalendarService` (worker, endpoint `/internal/calendar/sync`), `CreateCalendarEventService` (conferma dell'agente), `ListCalendarEventsService` e `GetWeekOverviewService` (letture).
 - L'agente guadagna i tool `create_event`, `list_calendar_events`, `get_week_overview`; la scrittura resta dietro la conferma inline già usata per i task.
 - Modello dati e indici in [[architettura/modello-dati]]; risorse GCP, secret e job in [[infrastruttura/inventario]] e `docs/gcp-setup.md` fase E2.
@@ -38,7 +38,7 @@ Il bot legge il calendario della famiglia e risponde a «cosa abbiamo questa set
 
 | # | Cosa | Stato |
 |---|---|---|
-| W0 | API Calendar, agenda «Famiglia», app OAuth pubblicata, refresh token, tre secret | `in-progress`: azioni nel browser, non ancora eseguite |
+| W0 | API Calendar, agenda «Famiglia», condivisione con i due SA | fatto il 2026-11-19: `events.list` 200, `insert` 200, `DELETE` 204 con token impersonato |
 | W1 | Dominio, repository, contract test, indici, adapter memoria | fatto (9 contract test su MongoDB reale) |
 | W2 | Porta, token provider, adapter Google, fake | fatto (test con `httpx.MockTransport`) |
 | W3 | Sync incrementale, 410 → full resync, job Scheduler | fatto |
@@ -49,10 +49,8 @@ Il bot legge il calendario della famiglia e risponde a «cosa abbiamo questa set
 
 ## Cosa resta
 
-1. Abilitare `calendar-json.googleapis.com`, creare l'agenda condivisa e l'app OAuth pubblicata.
-2. Ottenere il refresh token e creare i tre secret; concedere `secretAccessor` ad `api` e `worker`.
-3. Mettere `CALENDAR_ID` in `deploy/api.env.yaml` e `deploy/worker.env.yaml` (vuoto oggi: blocca l'avvio in cloud, di proposito).
-4. Verificare `events.list` con il token, poi tag `v0.4.0` e verifica in cloud dei criteri.
+1. Tag `v0.4.0` e deploy: il workflow crea il terzo job Scheduler.
+2. Verifica in cloud dei criteri: doppio sync innocuo, evento cancellato che sparisce, creazione dal telefono.
 
 ## Debito registrato
 
