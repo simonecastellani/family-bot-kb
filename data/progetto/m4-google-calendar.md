@@ -26,6 +26,7 @@ Il bot legge il calendario della famiglia e risponde a «cosa abbiamo questa set
 | Creazione | id deterministico da `(run_id, action_id)` in base32hex; un 409 è trattato come successo |
 | Inviti | nessuno: `sendUpdates=none`; destinatari solo in cache per gli eventi creati altrove |
 | Sync | ogni 15 minuti via Scheduler: è il terzo e ultimo job gratuito |
+| Prima sync | senza `timeMin`/`timeMax` né `orderBy`: Google restituisce `nextSyncToken` solo a una listing non ristretta. La finestra [-7, +90] si applica alla cache dopo il fetch |
 
 ## Architettura
 
