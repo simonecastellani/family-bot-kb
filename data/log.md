@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-21T23:01:49Z
+
+concept_patch: sviluppo/skill-di-sviluppo
+
 ## 2026-11-21T22:58:56Z
 
 2026-11-21 — Alla skill `observability-and-instrumentation` si aggiunge il riferimento upstream `observability-checklist.md` (file accanto a SKILL.md, provenienza MIT): lista generica at-a-glance; la baseline del progetto resta [[infrastruttura/osservabilita]]. Lint 0, gate verde.

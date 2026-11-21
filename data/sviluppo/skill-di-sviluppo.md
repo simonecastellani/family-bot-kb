@@ -33,6 +33,20 @@ Dodici skill di processo, adattate da [addyosmani/agent-skills](https://github.c
 | `test-driven-development` | implementare logica, correggere un bug | ciclo nel repository; esiti in `log_append`, gate in [[sviluppo/qualita]] |
 | `observability-and-instrumentation` | strumentazione, allarmi, incidente difficile da diagnosticare | baseline in [[infrastruttura/osservabilita]], runbook in `infrastruttura/runbook-<alert>`; esito in `log_append` |
 
+## Reference spedite con le skill
+
+Le checklist e i cataloghi di `references/` del repo upstream viaggiano accanto al `SKILL.md` che li cita, e sono letti solo quando servono.
+
+| Skill | File | Nota |
+|---|---|---|
+| `code-review-and-quality` | `security-checklist.md`, `performance-checklist.md` | checklist generiche di review; la regola del progetto (`architettura/sicurezza`, `sviluppo/qualita`) vince |
+| `incremental-implementation` | `definition-of-done.md` | barra generica; il DoD del progetto è in [[sviluppo/convenzioni-agenti]] |
+| `test-driven-development` | `testing-patterns.md` | JavaScript/TypeScript: si prende la forma dei pattern, non la sintassi; il Python del progetto è in [[sviluppo/locale-e-test]] |
+| `idea-refine` | `frameworks.md`, `refinement-criteria.md`, `examples.md` | lenti di ideazione, rubrica di valutazione, esempi |
+| `observability-and-instrumentation` | `observability-checklist.md` | lista at-a-glance; la baseline è [[infrastruttura/osservabilita]] |
+
+Non spedite, con motivo: `orchestration-patterns.md` descrive persona e slash command del repository upstream, mentre qui l'orchestrazione è in `instructions.md`; `accessibility-checklist.md` non è citata da nessuna delle dodici skill.
+
 ## Decisioni architetturali
 
 Un ADR è una pagina di `architettura/` con id `adr-NNNN-<slug>`, numero sequenziale a quattro cifre, template `adr` (`concept_new` con `template: adr`). Stati: `proposed`, `accepted`, `superseded`, `deprecated`. Un ADR non si riscrive: se la decisione cambia se ne scrive un altro e il vecchio si chiude con `supersede`, che lascia il collegamento nei due versi. L'entry nell'indice di `architettura/` va nello stesso `concept_batch` della pagina.
