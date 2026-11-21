@@ -25,7 +25,7 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 | Tema | Decisione |
 |---|---|
 | Scope | Creare una serie; cancellare una occorrenza o tutta la serie; modificare una singola occorrenza |
-| Ambiguità «questa o tutte» | Due proposte con bottoni etichettati («Solo questa» / «Tutte le volte») |
+| Ambiguità «questa o tutte» | Due proposte con bottoni etichettati («Solo il 24/12» / «Tutte le volte»), solo quando il modello lascia `scope="ask"` |
 | Alternativa non scelta | Confermandone una, l'altra del turno viene chiusa |
 | Orario di tutta la serie | Fuori: si sposta la prossima e si propone di cancellare e ricreare la serie |
 | Coerenza della cache | Sync incrementale **best-effort** dopo ogni scrittura sul calendario |
@@ -83,12 +83,13 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 - **Gli id delle azioni colludevano**: `new_id()[:10]` è il timestamp di una UUIDv7, quindi due proposte dello stesso turno avevano lo stesso id e il bottone di una eseguiva l'altra. Ora si usa la coda casuale (`_action_id`), con un test.
 - **`BYMONTH` non era nel sottoinsieme**: una regola annuale scritta come `FREQ=YEARLY;BYMONTH=3;BYMONTHDAY=12` veniva rifiutata. Aggiunto e validato.
 - `close_alternatives` non deve far fallire un tap già riuscito: correzione in `v0.7.1`.
+- **Quattro bottoni e il secondo tasto perso** (verifica reale del 2026-11-22): «la piscina è sospesa il 24/12 e il 31/12» → il modello ha preparato due cancellazioni, ognuna con le sue due alternative, quindi quattro bottoni con etichette ripetute; al primo tap il messaggio veniva modificato **senza tastiera** e la seconda data restava in calendario senza modo di confermarla. Correzione in `v0.7.2`: `delete_event` prende `scope: one|all|ask` (date nominate → `one`, una proposta per data con l'etichetta della data; `ask` resta per l'ambiguità); le alternative condividono un **gruppo** e chiudono solo quelle; dopo un tap il messaggio si modifica **tenendo i bottoni** delle proposte ancora aperte e dicendo quali restano.
 
 ## Esito
 
 - 292 test verdi, ruff e pyright puliti; CI verde su `main`.
 - Deploy `v0.7.1` (dopo `v0.7.0`, che non conteneva la correzione della chiusura best-effort): canary e smoke test verdi, traffico al 100% sulla revisione `family-bot-api-00030-peh`, `/livez` riporta `0.7.1`.
-- Verifica reale dal telefono ancora da fare (vedi Handoff).
+- Verifica reale in corso (2026-11-22): creazione della serie confermata dal telefono; il primo giro di cancellazione ha rivelato il difetto dei quattro bottoni, corretto in `v0.7.2`.
 
 ## Handoff
 
