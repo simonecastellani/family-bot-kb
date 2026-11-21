@@ -6,7 +6,7 @@ status: active
 ---
 # Skill di sviluppo della KB
 
-Undici skill di processo, adattate da [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT) all'uso della KB come memoria del progetto: l'originale presuppone una directory di documentazione dentro il repository, qui l'artefatto vive in una pagina della KB. Il corpo delle skill resta in inglese, perché è un'istruzione per l'agente; questa pagina è il contratto su dove finiscono i loro risultati.
+Dodici skill di processo, adattate da [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT) all'uso della KB come memoria del progetto: l'originale presuppone una directory di documentazione dentro il repository, qui l'artefatto vive in una pagina della KB. Il corpo delle skill resta in inglese, perché è un'istruzione per l'agente; questa pagina è il contratto su dove finiscono i loro risultati.
 
 ## Regole comuni
 
@@ -31,6 +31,7 @@ Undici skill di processo, adattate da [addyosmani/agent-skills](https://github.c
 | `source-driven-development` | decidere su API o servizi esterni | `sources/` con `source_register`; contraddizioni in [[progetto/questioni-aperte]] |
 | `spec-driven-development` | feature o milestone senza spec | pagina milestone `progetto/m<n>-<slug>` e [[progetto/roadmap]] |
 | `test-driven-development` | implementare logica, correggere un bug | ciclo nel repository; esiti in `log_append`, gate in [[sviluppo/qualita]] |
+| `observability-and-instrumentation` | strumentazione, allarmi, incidente difficile da diagnosticare | baseline in [[infrastruttura/osservabilita]], runbook in `infrastruttura/runbook-<alert>`; esito in `log_append` |
 
 ## Decisioni architetturali
 
