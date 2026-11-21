@@ -78,6 +78,18 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 - Tool: una o due proposte secondo `recurring_event_id`; etichetta sul bottone; conferma che chiude l'alternativa; rifiuto che chiude tutte.
 - Lista con `(serie)`.
 
+## Difetti trovati strada facendo
+
+- **Gli id delle azioni colludevano**: `new_id()[:10]` è il timestamp di una UUIDv7, quindi due proposte dello stesso turno avevano lo stesso id e il bottone di una eseguiva l'altra. Ora si usa la coda casuale (`_action_id`), con un test.
+- **`BYMONTH` non era nel sottoinsieme**: una regola annuale scritta come `FREQ=YEARLY;BYMONTH=3;BYMONTHDAY=12` veniva rifiutata. Aggiunto e validato.
+- `close_alternatives` non deve far fallire un tap già riuscito: correzione in `v0.7.1`.
+
+## Esito
+
+- 292 test verdi, ruff e pyright puliti; CI verde su `main`.
+- Deploy `v0.7.1` (dopo `v0.7.0`, che non conteneva la correzione della chiusura best-effort): canary e smoke test verdi, traffico al 100% sulla revisione `family-bot-api-00030-peh`, `/livez` riporta `0.7.1`.
+- Verifica reale dal telefono ancora da fare (vedi Handoff).
+
 ## Ordine dei lavori
 
 | # | Cosa | Esito |
