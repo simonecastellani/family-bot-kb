@@ -5,5 +5,6 @@ kind: journal
 open_statuses: [open, in-progress, blocked]
 templates: [source]
 default_template: source
+field_values.Source.source_kind: [codebase, document]
 ---
 # Sources
