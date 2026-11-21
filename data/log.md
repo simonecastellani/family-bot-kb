@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-21T23:01:54Z
+
+2026-11-22 — Verificate le reference upstream (`references/` del repo agent-skills) per le dodici skill. Spediti `security-checklist.md` e `performance-checklist.md` accanto a code-review-and-quality, `definition-of-done.md` a incremental-implementation, `testing-patterns.md` (JS/TS) a test-driven-development; link corretti da `../../references/` a sibling. Non spedite `orchestration-patterns.md` (persona/slash command upstream) e `accessibility-checklist.md` (non citata): motivo registrato in [[sviluppo/skill-di-sviluppo]] §Reference spedite. Lint 0, gate verde.
+
 ## 2026-11-21T23:01:49Z
 
 concept_patch: sviluppo/skill-di-sviluppo
