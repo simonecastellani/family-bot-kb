@@ -30,6 +30,7 @@ Ridurre le chiamate all'LLM a pagamento instradando le richieste note su percors
 - Porta `IntentClassifier`; adapter `LayaClassifier` sopra un client MCP generico (`app/integrations/mcp.py`), riusabile per altri use case (per esempio un estrattore di documenti).
 - `agent_runs` porta `route`, `route_confidence`, `route_model`, `llm_used`.
 - Export del dataset con `python -m app.cli.routing_export`; valutazione con `python -m app.cli.routing_eval`.
+- Verificato da Cloud Run con un job one-off (`v0.5.0`): chiamata MCP riuscita, 308 ms, previsione `task_write` per «che task ho oggi?». Il primo tentativo ha rivelato un newline finale nel secret: un header HTTP illegale. Corretto in `v0.5.1`, timeout portato a 1,5 s.
 - Privacy: il testo esce verso l'homelab (UE, operatore), senza media; eccezione consapevole documentata in [[architettura/sicurezza]].
 
 ## Baseline zero-shot (2026-11-21)
