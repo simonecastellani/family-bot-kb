@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-21T01:31:59Z
+
+concept_patch: sviluppo/convenzioni-agenti
+
 ## 2026-11-21T01:31:46Z
 
 concept_write: sviluppo/skill-di-sviluppo
