@@ -1,7 +1,7 @@
 ---
 timestamp: 2026-11-21
 title: Skill di sviluppo della KB
-type: Concept
+type: Pagina
 status: active
 ---
 # Skill di sviluppo della KB
