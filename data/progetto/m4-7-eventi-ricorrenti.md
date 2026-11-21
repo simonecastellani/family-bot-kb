@@ -94,9 +94,9 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 
 | # | Cosa | Esito |
 |---|---|---|
-| W1 | `YEARLY` nel validatore, `rrule` negli schemi, `recurrence` nella porta | test di validazione e di payload |
-| W2 | Creazione serie, politica della cache, sync best-effort | la serie si crea, niente righe fantasma |
-| W3 | `label` sui bottoni, chiusura delle alternative, `scope` nella delete | tastiera a due conferme, un Annulla |
-| W4 | Tool e prompt | correzione e cancellazione senza domande |
-| W5 | Deploy `v0.7.0` e verifica reale | criteri 1-6 in cloud |
-| W6 | Primer, AGENTS, KB, roadmap | milestone chiusa |
+| W1 | `YEARLY`/`BYMONTH` nel validatore, `rrule` negli schemi, `recurrence` nella porta | fatto |
+| W2 | Creazione serie, politica della cache, sync best-effort | fatto |
+| W3 | `label` sui bottoni, chiusura delle alternative, `scope` nella delete | fatto |
+| W4 | Tool e prompt | fatto |
+| W5 | Deploy e verifica reale | deploy fatto (`v0.7.1`); verifica reale da fare |
+| W6 | Primer, AGENTS, KB, roadmap | fatto |
