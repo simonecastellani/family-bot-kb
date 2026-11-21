@@ -2,6 +2,10 @@
 
 ## 2026-11-21T23:14:42Z
 
+map_update: infrastruttura
+
+## 2026-11-21T23:14:42Z
+
 map_update: architettura
 
 ## 2026-11-21T23:14:39Z
