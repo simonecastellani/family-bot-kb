@@ -15,3 +15,16 @@ Reply in **English** unless the operator writes in another language.
 - Act on every finding a write returns: fix or acknowledge it before moving on.
 - Run `gate_check` at the end of a session and resolve what it reports.
 - Every write is a git commit, revertible. Close sessions with `log_append`.
+
+## Skills and where their artifacts live
+
+The KB ships eleven development skills, adapted from addyosmani/agent-skills: `code-review-and-quality`, `code-simplification`, `context-engineering`, `documentation-and-adrs`, `doubt-driven-development`, `idea-refine`, `incremental-implementation`, `interview-me`, `source-driven-development`, `spec-driven-development`, `test-driven-development`.
+
+Their outputs are KB knowledge, never a documentation directory inside the repository:
+
+- architecture decisions: `architettura/adr-NNNN-<slug>` with the `adr` template; a replaced decision is linked with `supersede`;
+- ideas and intents: `progetto/idea-<slug>` and `progetto/intento-<slug>`;
+- specs and plans: the milestone page `progetto/m<n>-<slug>`;
+- sources: `sources/` with `source_register`; test and review outcomes: `log_append`.
+
+The full table is the page `sviluppo/skill-di-sviluppo`. The reply-language rule above is unchanged.
