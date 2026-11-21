@@ -360,7 +360,7 @@ This separation ensures the test is written without knowledge of the fix, making
 
 ## See Also
 
-For JavaScript/TypeScript testing patterns illustrating these principles — Jest, React Testing Library, Supertest, Playwright — see `../../references/testing-patterns.md`. The principles transfer to any ecosystem; the syntax and tools there are JS/TS-specific.
+For JavaScript/TypeScript testing patterns illustrating these principles — Jest, React Testing Library, Supertest, Playwright — see `testing-patterns.md`. The principles transfer to any ecosystem; the syntax and tools there are JS/TS-specific.
 
 ## Common Rationalizations
 
@@ -400,6 +400,8 @@ After completing any implementation:
 **Note:** Run each test command after a change that could affect the result. After a clean run, don't repeat the same command unless the code has changed since — re-running on unchanged code adds no confidence.
 
 ## In this KB
+
+- `testing-patterns.md` ships beside this file and is JavaScript/TypeScript: take the shape of the patterns, not the syntax. The project's Python conventions and contract tests are in `sviluppo/locale-e-test`.
 
 - The cycle stays in the repository (`uv run pytest`, `uv run ruff check .`, `uv run pyright`); the KB never holds the tests.
 - A bug fixed through the prove-it pattern gets one `log_append` entry naming the failing test and the fix.
