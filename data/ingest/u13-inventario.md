@@ -27,3 +27,4 @@ tutte le tabelle dell'inventario e il registro modifiche; redigi l'email dell'ac
 nessun indirizzo email reale né identificativo di fatturazione nella pagina; il progetto di produzione è descritto come non toccato in M0/M1; le API sono elencate. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: dopo U09 (patch su gcp-bootstrap).
+Pagine prodotte: [[infrastruttura/inventario]], [[infrastruttura/gcp-bootstrap]].

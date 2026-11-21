@@ -25,3 +25,4 @@ Questa unità produce: `architettura/regole`, `architettura/porte-e-fake`.
 le dieci regole sono presenti e numerate; i due diagrammi sono blocchi Mermaid validi; `architettura/porte-e-fake` elenca solo le porte previste. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: prima di U15, che riempie `porte-e-fake` con il codice reale.
+Pagine prodotte: [[architettura/regole]], [[architettura/porte-e-fake]].

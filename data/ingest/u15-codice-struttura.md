@@ -27,3 +27,4 @@ i moduli presenti sotto app/ (core, domain, integrations, interfaces), le porte 
 ogni porta reale ha il suo fake o l'indicazione che manca; la struttura attuale è distinguibile da quella prevista dal primer; nessun dettaglio implementativo. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: dopo U03 (patch su due pagine create da U03).
+Pagine prodotte: [[architettura/porte-e-fake]], [[architettura/regole]].

@@ -27,3 +27,4 @@ il workflow CI, la configurazione pre-commit, i test presenti sotto tests/unit e
 il workflow è descritto per job; i servizi del compose corrispondono al file; nessun comando duplicato. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: dopo U07 e dopo U14 (patch sulle stesse pagine).
+Pagine prodotte: [[sviluppo/qualita]], [[sviluppo/locale-e-test]].

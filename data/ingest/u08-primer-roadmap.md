@@ -27,3 +27,4 @@ Questa unità produce: `progetto/roadmap`, `progetto/questioni-aperte`, `svilupp
 tutte le milestone M0-M10 hanno criteri; ogni questione aperta di §14 è presente; le convenzioni non duplicano `architettura/regole`. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: prima di U14, che aggiunge stato M0 e comandi reali.
+Pagine prodotte: [[progetto/roadmap]], [[progetto/questioni-aperte]], [[sviluppo/convenzioni-agenti]].

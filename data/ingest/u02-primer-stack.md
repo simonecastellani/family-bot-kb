@@ -25,3 +25,4 @@ Questa unità produce: `progetto/stack`.
 ogni voce di §3 compare una volta con il suo stato; nessun [Default] promosso a [Confermato]. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: indipendente da U01.
+Pagine prodotte: [[progetto/stack]].

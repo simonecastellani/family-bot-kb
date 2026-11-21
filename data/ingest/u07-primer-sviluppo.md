@@ -27,3 +27,4 @@ Questa unità produce: `sviluppo/locale-e-test`, `sviluppo/qualita`.
 le due pagine esistono con le sezioni indicate; i comandi sono quelli del sorgente, identici; nessun path di macchina. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: prima di U16, che aggiunge CI e test reali.
+Pagine prodotte: [[sviluppo/locale-e-test]], [[sviluppo/qualita]].

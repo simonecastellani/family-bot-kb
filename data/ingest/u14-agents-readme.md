@@ -26,3 +26,4 @@ stato M0, milestone corrente, infrastruttura manuale e regole rapide da AGENTS.m
 le regole rapide non ripetono `architettura/regole` né `sviluppo/qualita`; i comandi coincidono con README e AGENTS; nessuna sezione duplicata. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: dopo U08 (patch su convenzioni-agenti).
+Pagine prodotte: [[sviluppo/convenzioni-agenti]], [[sviluppo/qualita]].

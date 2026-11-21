@@ -27,3 +27,4 @@ Questa unità produce: `architettura/promemoria`, `architettura/agente`.
 i sei passi di §8 sono numerati; esistono le tre sezioni dell'agente; nessun comando gcloud. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: indipendente.
+Pagine prodotte: [[architettura/promemoria]], [[architettura/agente]].

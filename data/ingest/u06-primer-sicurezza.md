@@ -26,3 +26,4 @@ Questa unità produce: `architettura/sicurezza`.
 le quattro sezioni esistono; webhook, dashboard e endpoint interni hanno ciascuno la propria regola di auth; nessun segreto o token. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: prima di U12, che aggiunge il login dashboard.
+Pagine prodotte: [[architettura/sicurezza]].

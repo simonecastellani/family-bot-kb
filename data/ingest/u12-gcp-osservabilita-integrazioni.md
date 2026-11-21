@@ -28,3 +28,4 @@ la sezione osservabilità/quote/sicurezza operativa, la checklist di verifica, l
 la checklist è riportata come elenco spuntabile; `architettura/integrazioni` copre le tre integrazioni; la sicurezza cita il login senza duplicare U06. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: dopo U06 (patch su `architettura/sicurezza`); indipendente da U11.
+Pagine prodotte: [[infrastruttura/osservabilita]], [[architettura/integrazioni]], [[architettura/sicurezza]].

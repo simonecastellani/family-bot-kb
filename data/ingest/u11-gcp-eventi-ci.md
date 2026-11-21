@@ -25,3 +25,4 @@ fase D (coda Cloud Tasks e job Scheduler) e E1 (GitHub Actions con WIF); non E2 
 coda, scheduler e pool/provider WIF hanno una sezione ciascuno; nessun riferimento a calendario o login dashboard. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: indipendente.
+Pagine prodotte: [[infrastruttura/eventi-e-ci]].

@@ -26,3 +26,4 @@ fase A del documento (A1-A6): account e progetto, budget alert, gcloud, API da a
 i passi A1-A6 sono tutti presenti nell'ordine; ogni comando è citato come nel sorgente; i valori di progetto e regione sono coerenti con `infrastruttura/inventario`. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: prima di U13, che aggiunge le risorse reali e la distinzione dev/prod.
+Pagine prodotte: [[infrastruttura/gcp-bootstrap]].

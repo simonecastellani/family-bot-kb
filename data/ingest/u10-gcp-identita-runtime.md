@@ -26,3 +26,4 @@ fasi B e C: service account dedicati, Secret Manager, Cloud Storage, guardrail, 
 ogni risorsa di B e C ha la sua sezione; i ruoli IAM sono quelli del sorgente; nessuna chiave JSON o segreto. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: indipendente da U09, ma non scrivere sulla pagina di U09.
+Pagine prodotte: [[infrastruttura/identita-e-runtime]].

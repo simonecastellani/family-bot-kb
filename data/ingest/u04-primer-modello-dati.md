@@ -26,3 +26,4 @@ Questa unità produce: `architettura/modello-dati`.
 ogni riga della tabella collection è riportata; i vincoli free tier sono separati dalle convenzioni; nessun segreto. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: indipendente; U09 e U13 possono citarla solo dopo che esiste.
+Pagine prodotte: [[architettura/modello-dati]].

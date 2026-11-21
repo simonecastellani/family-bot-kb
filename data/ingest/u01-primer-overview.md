@@ -26,3 +26,4 @@ Questa unità produce: `progetto/overview`.
 i quattro use case sono presenti con l'ordine 1-2 → 3 → 4; §15 è un elenco; nessun link a pagine non esistenti. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
 Ordine: unità autonoma, nessun prerequisito.
+Pagine prodotte: [[progetto/overview]].
