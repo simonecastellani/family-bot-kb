@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-21T12:54:27Z
+
+[progetto] M4.6 — Eventi esistenti: piano scritto in `progetto/m4-6-eventi-esistenti` (status `open`) e aggiunto alla roadmap. Rilascio `v0.6.0`; M5 slitta a `v0.7.0`. Contenuto: `update_event` con If-Match e 412, `delete_event` idempotente, servizi con audit/cache, azioni agente con conferma, id evento in `list_calendar_events`, prompt per le correzioni, test e verifica reale sul «Cambio gomme». Handoff: M4 e M4.5a sono in produzione (`v0.5.2`), M4.6 non è iniziata; si riparte da W1 in build mode.
+
 ## 2026-11-21T12:53:17Z
 
 concept_batch (2 operation(s)):
