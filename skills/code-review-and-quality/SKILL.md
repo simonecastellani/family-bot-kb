@@ -354,8 +354,8 @@ For triaging audit findings and supply-chain risk (typosquatting, compromised ma
 ```
 ## See Also
 
-- For detailed security review guidance, see `../../references/security-checklist.md`
-- For performance review checks, see `../../references/performance-checklist.md`
+- For detailed security review guidance, see `security-checklist.md`
+- For performance review checks, see `performance-checklist.md`
 
 ## Common Rationalizations
 
@@ -402,6 +402,8 @@ After review is complete:
 **Presumptive blockers:** surface and propose the simpler design for each of these; escalate to Required only when the change actively makes structure worse: a refactor that relocates complexity instead of reducing it; a change that pushes a file past the size boundary with no decomposition; feature logic added to a shared module; a near-duplicate of an existing canonical helper; a silent fallback that hides an unclear invariant.
 
 ## In this KB
+
+- The review checklists ship beside this file: `security-checklist.md` and `performance-checklist.md` (upstream, generic). Where they conflict with the project's own rules in `architettura/sicurezza` or `sviluppo/qualita`, the KB page wins.
 
 - The spec a change is checked against is the milestone page (`progetto/m<n>-<slug>`), read with `concept_read`; there is no `SPEC.md` to diff against.
 - The verdict, its non-blocking findings and the follow-ups go to `log_append` — one entry per review. No `REVIEW.md`, no review notes in a local directory.
