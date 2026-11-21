@@ -22,17 +22,7 @@ Questa unità produce: `progetto/overview`.
 **Cosa estrarre**
 §1 obiettivo e principi, §2 i quattro use case con il loro ordine, §15 fuori scope; non stack, architettura o roadmap
 
-**Collocazione già decisa**
-Il soggetto di questa unità è posseduto dai target qui sopra: non cercare altre pagine e non crearne di nuove oltre a quelle marcate come nuove. Se ti serve un fatto che appartiene a un'altra pagina, non copiarlo: segnalalo nel digest.
-
-**Conflitti**
-Se il sorgente contraddice una pagina esistente, apri una Contradiction (`contradiction_kind: open_question`) e lascia la pagina com'è. Non scegliere da solo e non riscrivere la storia della pagina.
-
 **Verifica e fine**
 i quattro use case sono presenti con l'ordine 1-2 → 3 → 4; §15 è un elenco; nessun link a pagine non esistenti. Prima di chiudere esegui `gate_check` con `changed_ids` uguale ai target qui sopra: zero finding.
 
-**Lease**
-Lease 1 giorno: al claim scrivi `claimed_by` e `review_after` (domani, in UTC). Il digest finale sta sotto 10 righe: pagine toccate, lacune, contraddizioni, esito del gate.
-
-Piano: [ingest/piano-family-bot-docs](piano-family-bot-docs).
 Ordine: unità autonoma, nessun prerequisito.
