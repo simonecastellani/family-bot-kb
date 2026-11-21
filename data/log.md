@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-21T22:58:56Z
+
+2026-11-21 — Alla skill `observability-and-instrumentation` si aggiunge il riferimento upstream `observability-checklist.md` (file accanto a SKILL.md, provenienza MIT): lista generica at-a-glance; la baseline del progetto resta [[infrastruttura/osservabilita]]. Lint 0, gate verde.
+
 ## 2026-11-21T22:57:09Z
 
 2026-11-21 — Aggiunta la dodicesima skill, `observability-and-instrumentation` (addyosmani/agent-skills, MIT), adattata alla KB: baseline di telemetria in [[infrastruttura/osservabilita]], runbook come pagine `infrastruttura/runbook-<alert>` di tipo Runbook, igiene segreti/PII secondo [[architettura/sicurezza]]. Pagina-contratto [[sviluppo/skill-di-sviluppo]] e `instructions.md` aggiornati a dodici skill. Lint 0, gate verde.
