@@ -1,5 +1,10 @@
 # Log
 
+## 2026-11-21T14:54:03Z
+
+concept_batch (1 operation(s)):
+- progetto/m4-6-eventi-esistenti
+
 ## 2026-11-21T14:34:56Z
 
 M4.6 — eventi esistenti: `update_event`/`delete_event` con conferma. Scrittura condizionale (PATCH parziale con `If-Match`), durata conservata quando cambia solo l'inizio, tipo dell'evento invariato, serie toccata per istanza, cancellazione idempotente. Le etichette di routing contano i nuovi tool, così il dataset shadow di M4.5 non perde i turni di correzione. Restano tag `v0.6.0`, deploy e verifica reale.

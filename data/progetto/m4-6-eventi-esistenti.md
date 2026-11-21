@@ -83,12 +83,13 @@ Una correzione («il cambio gomme è alle 9:30») produce una **proposta di modi
 | W2 | Servizi, audit, cache | fatto: test di servizio |
 | W3 | Action kind, executor, conferma | fatto: modifica/cancellazione dal bottone |
 | W4 | Tool agente, id in lista, prompt | fatto: correzione senza duplicati |
-| W5 | Deploy `v0.6.0`, M5 → `v0.7.0` | da fare: criterio in cloud |
+| W5 | Deploy `v0.6.0`, M5 → `v0.7.0` | fatto: tag `v0.6.0`, canary e smoke test verdi, traffico spostato |
 | W6 | Documentazione, KB, verifica reale | mezzo: primer e AGENTS aggiornati, resta la verifica reale |
 
 ## Handoff
 
-- Stato al 2026-11-21: M4 e M4.5a chiusi e in produzione (`v0.5.2`), shadow routing attivo. M4.6 ha codice, test e documentazione: cinque commit (`M4.6 — porta…`, `servizi…`, `agente…`, `test…`, `documentazione…`), versione `0.6.0` in `pyproject.toml`.
+- Stato al 2026-11-21: M4 e M4.5a chiusi e in produzione (`v0.5.2`), shadow routing attivo. M4.6 è **rilasciata in produzione**: tag `v0.6.0`, revisione `family-bot-api-00026-qal` con il traffico al 100% dopo canary e smoke test.
+- Prima del rilascio la diff è passata da una revisione ostile: i difetti trovati (durata calcolata in tempo assoluto invece che da muro, fine dell'evento di tutta la giornata scartata in silenzio, test del doppio tap vuoto, sync che riscriveva la riga come nuova) sono corretti nel commit `fix(m4.6)`.
 - Decisioni prese in fase di piano: `PATCH` parziale (non `PUT`), il tipo dell'evento non cambia, di una serie si tocca la singola istanza, sul `412` si dice al membro senza riscrivere, niente guardia anti-duplicato in creazione.
 - Il duplicato del 19 novembre è già stato ripulito a mano: nessuna migrazione dati.
-- Prossima azione in una nuova sessione: tag `v0.6.0` da `main` (chiede il via libera all'operatore), deploy, poi verifica reale: un evento di prova con un promemoria, una correzione dell'orario, una cancellazione; chiudere con W6.
+- Prossima azione in una nuova sessione: **verifica reale dal telefono** (criterio 9), poi chiudere W6 e la milestone. La checklist: un evento di prova con un promemoria messo a mano, una correzione dell'orario (deve restare un solo evento e deve durare quanto prima), una cancellazione (poi un secondo tentativo non deve dare errore), un evento di tutta la giornata, e un evento che si sposta mentre il bot scrive (412: il bot deve dire che è cambiato, non sovrascrivere).
