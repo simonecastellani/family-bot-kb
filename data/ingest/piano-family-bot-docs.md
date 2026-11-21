@@ -14,11 +14,11 @@ Campagna unica che porta nella KB la documentazione del repository `family-bot` 
 
 | Source | Forma | Cosa porta |
 |---|---|---|
-| `sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot` | document | obiettivo, decisioni, architettura, modello dati, roadmap, questioni aperte |
-| `sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud` | document | procedura manuale GCP, fasi A-E |
-| `sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp` | document | risorse GCP realmente create |
-| `sources/2026-11-13-agents-md-e-readme-md-convenzioni-e-comandi-del-repo` | collection | convenzioni del repo e comandi |
-| `sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci` | system | struttura dei moduli, porte e fake, test e CI |
+| [[sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]] | document | obiettivo, decisioni, architettura, modello dati, roadmap, questioni aperte |
+| [[sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]] | document | procedura manuale GCP, fasi A-E |
+| [[sources/2026-11-13-docs-gcp-inventory-md-inventario-delle-risorse-gcp]] | document | risorse GCP realmente create |
+| [[sources/2026-11-13-agents-md-e-readme-md-convenzioni-e-comandi-del-repo]] | collection | convenzioni del repo e comandi |
+| [[sources/2026-11-13-codice-di-family-bot-struttura-porte-test-e-ci]] | system | struttura dei moduli, porte e fake, test e CI |
 
 Fuori campagna: `.env`, `.venv`, cache, `uv.lock` e `opencode.json` (contiene un token: non va nella KB). La cronologia git non è una fonte: le decisioni si prendono dai documenti.
 
@@ -66,6 +66,14 @@ Un solo owner per soggetto: due unità non creano mai la stessa pagina.
 5. Un'unità tocca solo i propri target. Un fatto di un altro soggetto diventa una riga del digest, non una pagina nuova.
 6. Se due fonti si contraddicono, vale la fonte più recente e la contraddizione resta aperta finché una persona non decide.
 7. I path di macchina non compaiono mai: si usa il placeholder `{{repo:family-bot}}`.
+
+## Regole delle unità
+
+Le regole comuni della campagna stanno qui: il corpo di un'unità non le ripete.
+
+- **Collocazione** — il soggetto di un'unità è posseduto dai target dichiarati: non cercare altre pagine e non crearne di nuove oltre a quelle marcate come nuove. Un fatto che appartiene a un'altra pagina diventa una riga del digest, non una copia.
+- **Conflitti** — se il sorgente contraddice una pagina esistente, apri una Contradiction (`contradiction_kind: open_question`) e lascia la pagina com'è: non scegliere da solo e non riscrivere la storia della pagina.
+- **Lease** — il claim dura un giorno: al claim si scrivono `claimed_by` e `review_after` (il giorno dopo, in UTC). Il digest finale sta sotto 10 righe: pagine toccate, lacune, contraddizioni, esito del gate.
 
 ## Unità
 

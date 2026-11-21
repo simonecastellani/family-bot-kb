@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-21T23:15:11Z
+
+concept_patch: ingest/piano-family-bot-docs
+
 ## 2026-11-21T23:14:42Z
 
 map_update: sources
