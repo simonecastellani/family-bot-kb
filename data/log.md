@@ -1,5 +1,10 @@
 # Log
 
+## 2026-11-21T22:39:35Z
+
+concept_batch (1 operation(s)):
+- progetto/questioni-aperte
+
 ## 2026-11-21T22:39:29Z
 
 concept_batch (2 operation(s)):

@@ -15,6 +15,7 @@ Domande non ancora risolte, con la condizione o il momento in cui vanno chiuse (
 - **Regioni** — disponibilità dell'edizione Enterprise e applicabilità delle quote gratuite in regioni UE, vicine a Cloud Run.
 - **Strategia di backup/restore** — da definire, dato che non ha uso gratuito.
 - **Modelli con vision/audio** — quali modelli di OpenCode Go li supportano; STT gestito oppure audio nativo del modello.
+- **Memoria della conversazione** — i turni sono stateless: una domanda del bot («quando?», «sì o no?») non può avere risposta al turno dopo. Da chiudere in **M10** (dopo M9, vedi [[progetto/roadmap]]): opzioni sul tavolo, i turni recenti già salvati in `agent_runs` (`input_text`, `outcome`) oppure un uso di Cartographer come memoria del sistema. Fino ad allora: il bot non chiude con una domanda secca e le ambiguità si risolvono con bottoni etichettati ([[progetto/m4-7-eventi-ricorrenti]]).
 
 ## Chiuse di recente
 
