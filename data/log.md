@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-21T12:53:17Z
+
+concept_batch (2 operation(s)):
+- progetto/m4-6-eventi-esistenti (+ index entry)
+- progetto/roadmap
+
 ## 2026-11-21T09:54:10Z
 
 [progetto] v0.5.2 — qualità delle risposte: `list_occurrences` restituisce il titolo del task, policy senza capacità di UI né Markdown, sanitizer sull'output e sull'outcome. Deploy revisione 00024-foc. Shadow verificato su tre messaggi reali: previsioni tutte sbagliate (chat/task_write/ingest) con `llm_used=true`, etichette corrette dai tool; il dataset cresce. M4.6 (modifica/cancellazione eventi) è la prossima, v0.6.0, M5 → v0.7.0.

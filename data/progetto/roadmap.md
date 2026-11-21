@@ -19,6 +19,7 @@ Milestone del progetto e criteri con cui ciascuna si considera chiusa (§11). L'
 | M3 | Promemoria event-driven: Cloud Tasks + worker + dedupe + Scheduler (digest) | Nessun doppio invio sotto retry; task rimandato → nessun invio al vecchio orario |
 | M4 | Google Calendar: sync con `syncToken` in `calendar_events`, tool di lettura, creazione evento con conferma | Sync idempotente; gestione eventi cancellati e token scaduto |
 | M4.5 | Routing locale: Laya in shadow, dataset etichettato, fine-tuning, canary delle letture | Accuratezza held-out ≥ 95%; **0** scritture instradate senza LLM; chiamate LLM ridotte |
+| M4.6 | Eventi esistenti: `update_event`/`delete_event` con conferma, `If-Match`, cache e audit | Correzione senza duplicati; cancellazione idempotente — `v0.6.0` |
 | M5 | Dashboard in sola lettura: `/api/v1` GET, login Google OIDC, viste minime | Utente non registrato → 403; log agente solo admin |
 | M6 | Vocali con STT gestito | Un vocale in italiano diventa un task corretto |
 | M7 | Link e immagini: estrazione evento con conferma | Un link con data/luogo produce una proposta strutturata |
@@ -35,7 +36,7 @@ Per l'use case 4 (gestione della casa) vale la regola generale: il bot **propone
 - **M2 — Deploy, Telegram e agente** è completata (`done`): criterio raggiunto dal telefono, rilascio `v0.2.0` con canary. Piano, decisioni ed esito in [[progetto/m2-deploy-telegram-agente]].
 - **M3 — Promemoria event-driven** è completata (`done`): rilascio `v0.3.0` con coda Cloud Tasks, worker privato, due job Scheduler e bottoni sul promemoria. Esito e ostacoli in [[progetto/m3-promemoria-event-driven]].
 - **M4 — Google Calendar** è `done` (2026-11-19): sync in cache, cancellati e token scaduto gestiti, creazione con conferma verificata dal telefono. Esito in [[progetto/m4-google-calendar]].
-- **M4.5 — Routing locale** è `in-progress` (2026-11-21): shadow via MCP deployato in `v0.5.0`, baseline zero-shot 68,3%; restano fine-tuning e canary. Dettagli in [[progetto/m4-5-routing-locale]]. **M5 — Dashboard** è la prossima dopo M4.5.
+- **M4.5 — Routing locale** è `in-progress` (2026-11-21): shadow via MCP deployato in `v0.5.0`, baseline zero-shot 68,3%; restano fine-tuning e canary. Dettagli in [[progetto/m4-5-routing-locale]]. **M4.6 — Eventi esistenti** è la prossima (`v0.6.0`); **M5 — Dashboard** slitta a `v0.7.0`. Dettagli in [[progetto/m4-6-eventi-esistenti]].
 - Il passaggio da una milestone alla successiva si misura con i **criteri di accettazione** della tabella, non con il numero di attività svolte.
 - **M10** non è pianificabile a calendario: si affronta solo dopo settimane di uso reale, e la prima attività è la progettazione, non l'implementazione (§11).
 - Le domande che possono bloccare o rimandare una milestone sono raccolte in [[progetto/questioni-aperte]].
