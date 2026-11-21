@@ -2,7 +2,7 @@
 type: Map
 title: Sviluppo
 kind: map
-templates: [concept-sviluppo, pagina]
+templates: [pagina]
 default_template: pagina
 index: generated
 ---
