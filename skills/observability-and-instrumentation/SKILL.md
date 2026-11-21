@@ -235,7 +235,7 @@ After instrumenting a feature, confirm:
 - [ ] Every new alert is symptom-based, has a runbook link, and was test-fired once
 - [ ] An induced failure in staging was located via telemetry alone, without reading the source
 
-For the at-a-glance version of this list, including the pre-launch instrumentation gate, read the KB page `infrastruttura/osservabilita`.
+For the at-a-glance version of this list, including the pre-launch instrumentation gate, read `observability-checklist.md` beside this file; the project's own baseline is the KB page `infrastruttura/osservabilita`.
 
 ## In this KB
 
@@ -243,7 +243,7 @@ For the at-a-glance version of this list, including the pre-launch instrumentati
 - The hard rule on secrets and PII is the project's, in `architettura/sicurezza`: no token, no full phone number, no message body in a log line.
 - A runbook is a KB page in `infrastruttura/`, type `Runbook`, id `runbook-<alert>`: the three-line form is the default, and every alert links to it.
 - A verification that changes a gate or a threshold patches `sviluppo/qualita`; an incident is closed with a `log_append` entry naming the alerts that fired and the runbook used.
-- The upstream reference to `../../references/observability-checklist.md` does not apply: the KB page above is the checklist.
+- The upstream `references/observability-checklist.md` ships beside this file as `observability-checklist.md`: it is the generic checklist, while `infrastruttura/osservabilita` is this project's baseline where the two differ.
 
 
 ---
