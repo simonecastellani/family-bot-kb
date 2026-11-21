@@ -17,3 +17,19 @@ title: Progetto
 - [M4.5 — Routing locale](m4-5-routing-locale.md)
 - [M4.6 — Eventi esistenti](m4-6-eventi-esistenti.md)
 - [M4.7 — Eventi ricorrenti](m4-7-eventi-ricorrenti.md)
+
+<!-- cartographer:index begin — generated from this map's concepts; edit outside the block -->
+### Overview
+- [[progetto/overview]] — Panoramica del progetto
+### Pagina
+- [[progetto/m1-task-core]] — M1 — Task core
+- [[progetto/m2-deploy-telegram-agente]] — M2 — Deploy, Telegram e agente
+- [[progetto/m3-promemoria-event-driven]] — M3 — Promemoria event-driven
+- [[progetto/m4-google-calendar]] — M4 — Google Calendar
+- [[progetto/m4-5-routing-locale]] — M4.5 — Routing locale
+- [[progetto/m4-6-eventi-esistenti]] — M4.6 — Eventi esistenti
+- [[progetto/m4-7-eventi-ricorrenti]] — M4.7 — Eventi ricorrenti
+- [[progetto/questioni-aperte]] — Questioni aperte
+- [[progetto/roadmap]] — Roadmap
+- [[progetto/stack]] — Stack tecnologico
+<!-- cartographer:index end -->

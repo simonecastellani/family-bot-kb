@@ -2,6 +2,10 @@
 
 ## 2026-11-21T23:14:39Z
 
+map_update: progetto
+
+## 2026-11-21T23:14:39Z
+
 map_update: ingest
 
 ## 2026-11-21T23:11:06Z
