@@ -2,6 +2,10 @@
 
 ## 2026-11-21T23:11:01Z
 
+M4.7 rilasciata (`v0.7.1`, revisione `family-bot-api-00030-peh`): serie in calendario con `rrule`, master mai in cache, sync best-effort dopo la scrittura, cancellazione di una occorrenza o della serie con due bottoni etichettati. Trovati strada facendo: id delle azioni che collidevano (timestamp della UUIDv7) e `BYMONTH` fuori dal sottoinsieme. Resta la verifica reale dal telefono.
+
+## 2026-11-21T23:11:01Z
+
 concept_batch (1 operation(s)):
 - progetto/m4-7-eventi-ricorrenti
 
