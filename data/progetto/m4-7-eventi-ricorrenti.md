@@ -88,13 +88,14 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 ## Esito
 
 - 292 test verdi, ruff e pyright puliti; CI verde su `main`.
-- Deploy `v0.7.1` (dopo `v0.7.0`, che non conteneva la correzione della chiusura best-effort): canary e smoke test verdi, traffico al 100% sulla revisione `family-bot-api-00030-peh`, `/livez` riporta `0.7.1`.
+- Deploy `v0.7.2`: canary e smoke test verdi, `/livez` riporta `0.7.2`. (`v0.7.0` non conteneva la chiusura best-effort, `v0.7.1` l'ha aggiunta, `v0.7.2` corregge il difetto dei quattro bottoni trovato in verifica reale.)
 - Verifica reale in corso (2026-11-22): creazione della serie confermata dal telefono; il primo giro di cancellazione ha rivelato il difetto dei quattro bottoni, corretto in `v0.7.2`.
 
 ## Handoff
 
 - Stato al 2026-11-22: M4.7 **rilasciata in produzione** (`v0.7.1`, revisione `family-bot-api-00030-peh`, `/livez` = 0.7.1). Resta la verifica reale dal telefono.
-- Checklist: «piscina con Matilde tutti i giovedì 18:15-18:30» → una proposta e poi la serie che si ripete sul telefono; «cosa ho giovedì?» → una sola riga con `(serie)`; «togli la piscina di giovedì» → due bottoni, «Solo questa» toglie una data e la serie resta, «Tutte le volte» la toglie del tutto; un evento singolo propone un solo bottone «Conferma».
+- Fatto in verifica: la serie si crea dal telefono e si ripete.
+- Da rifare dopo `v0.7.2`: «la piscina è sospesa il 24/12 e il 31/12» → due proposte con l'etichetta della data, **nessun** doppione; confermando la prima il messaggio resta con il bottone della seconda e la frase «Restano da confermare: …»; «togli la piscina di giovedì» senza date → due alternative che si chiudono a vicenda; un evento singolo propone un solo bottone «Conferma».
 - Se la verifica passa, chiudere la milestone: roadmap a `done` e questa pagina a `done`.
 
 ## Ordine dei lavori
