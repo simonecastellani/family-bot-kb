@@ -18,7 +18,7 @@ Reply in **English** unless the operator writes in another language.
 
 ## Skills and where their artifacts live
 
-The KB ships eleven development skills, adapted from addyosmani/agent-skills: `code-review-and-quality`, `code-simplification`, `context-engineering`, `documentation-and-adrs`, `doubt-driven-development`, `idea-refine`, `incremental-implementation`, `interview-me`, `source-driven-development`, `spec-driven-development`, `test-driven-development`.
+The KB ships twelve development skills, adapted from addyosmani/agent-skills: `code-review-and-quality`, `code-simplification`, `context-engineering`, `documentation-and-adrs`, `doubt-driven-development`, `idea-refine`, `incremental-implementation`, `interview-me`, `source-driven-development`, `spec-driven-development`, `test-driven-development`, `observability-and-instrumentation`.
 
 Their outputs are KB knowledge, never a documentation directory inside the repository:
 
