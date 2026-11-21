@@ -1,5 +1,10 @@
 # Log
 
+## 2026-11-21T23:41:09Z
+
+concept_batch (1 operation(s)):
+- progetto/roadmap
+
 ## 2026-11-21T23:41:04Z
 
 M4.7 `v0.7.2`: la verifica reale ha trovato il difetto dei quattro bottoni (due date × due alternative) e della tastiera che spariva dopo il primo tap. `delete_event` ora prende `scope: one|all|ask`, le alternative condividono un gruppo e dopo un tap il messaggio tiene i bottoni delle proposte ancora aperte.
