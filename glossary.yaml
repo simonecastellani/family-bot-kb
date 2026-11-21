@@ -1,0 +1,19 @@
+terms:
+  - canonical: MongoDB
+    aliases: [Mongo]
+    forbidden: []
+  - canonical: GCP
+    aliases: [Google Cloud Platform, Google Cloud]
+    forbidden: []
+  - canonical: OIDC
+    aliases: [OpenID Connect]
+    forbidden: []
+  - canonical: M0
+    aliases: []
+    forbidden: []
+  - canonical: M1
+    aliases: []
+    forbidden: []
+  - canonical: M2
+    aliases: []
+    forbidden: []
