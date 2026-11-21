@@ -49,3 +49,7 @@ Dal primer §6, "Vincoli del free tier (Firestore Enterprise, da verificare peri
 - 1 GiB di storage; **50.000 read unit e 40.000 write unit al giorno**; 10 GiB/mese di egress; il free tier vale per **un solo database per progetto**. Le unit sono a scaglioni (4 KB in lettura, 1 KB in scrittura) e le query indicizzate consumano anche letture di indice.
 - **TTL gestito, backup e restore non hanno uso gratuito** e richiedono billing: non farci affidamento per retention e dedupe; la retention si fa con un job dello scheduler.
 - Niente polling ravvicinato sui dati: usare il design event-driven (§8 del primer).
+
+## Fonte
+
+Fatti estratti da [[sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]].

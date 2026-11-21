@@ -2,6 +2,10 @@
 
 ## 2026-11-21T23:15:34Z
 
+concept_patch: architettura/modello-dati
+
+## 2026-11-21T23:15:34Z
+
 concept_patch: sviluppo/skill-di-sviluppo
 
 ## 2026-11-21T23:15:19Z
