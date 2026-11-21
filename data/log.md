@@ -1,5 +1,10 @@
 # Log
 
+## 2026-11-21T14:34:50Z
+
+concept_batch (1 operation(s)):
+- progetto/roadmap
+
 ## 2026-11-21T14:34:40Z
 
 concept_batch (1 operation(s)):
