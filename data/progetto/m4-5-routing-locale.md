@@ -46,6 +46,8 @@ Set congelato di 60 frasi, almeno 5 per workflow (`tests/fixtures/routing_seed.j
 
 Errori concentrati su `task_write` (confuso con `chat`, `ingest`, `event_write`) e `ingest`. Zero-shot non basta e alcuni errori hanno confidence alta: per questo lo shadow non decide nulla.
 
+Prime tre frasi reali (2026-11-21): `chat` 0,99 per un task, `task_write` 0,64 per una query, `ingest` 0,65 per un task — 0/3 corrette, `llm_used=true`. Il dato è raccolto con l'etichetta giusta dai tool: è materiale di training, non un guasto.
+
 ## Fasi
 
 | Fase | Contenuto | Stato |

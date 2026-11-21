@@ -1,5 +1,10 @@
 # Log
 
+## 2026-11-21T09:54:05Z
+
+concept_batch (1 operation(s)):
+- progetto/m4-5-routing-locale
+
 ## 2026-11-21T01:37:59Z
 
 2026-11-21 — Importate undici skill di sviluppo (addyosmani/agent-skills, MIT) adattate alla KB: code-review-and-quality, code-simplification, context-engineering, documentation-and-adrs, doubt-driven-development, idea-refine, incremental-implementation, interview-me, source-driven-development, spec-driven-development, test-driven-development. Aggiunti il template `adr` e la pagina [[sviluppo/skill-di-sviluppo]]; ADR in `architettura/adr-NNNN-<slug>`, idee/intenti/spec in `progetto/`. Lint 0, gate verde, client sincronizzati.
