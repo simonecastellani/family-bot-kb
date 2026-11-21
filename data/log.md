@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-21T01:31:46Z
+
+concept_write: sviluppo/skill-di-sviluppo
+
 ## 2026-11-21T01:27:17Z
 
 [progetto] M4.5a — shadow routing deployato (v0.5.0, poi v0.5.1): client MCP generico, LayaClassifier su `agent_runs` (route/confidence/modello/llm_used), export JSONL e set congelato con eval. Baseline zero-shot 68,3% su 60 frasi. Verificato da Cloud Run con un job one-off (308 ms, task_write per «che task ho oggi?»); il primo tentativo ha scoperto un newline finale nel secret `laya-mcp-token`, corretto e documentato. Prossimo: raccogliere ≥1.000 esempi dalle conversazioni reali, poi fine-tuning e canary delle sole query.
