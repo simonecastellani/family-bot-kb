@@ -191,7 +191,7 @@ After completing an ideation session:
 
 - The one-pager is `progetto/idea-<slug>`, type `Concept`, status `open`, written only after confirmation; there is no `docs/ideas/` directory.
 - `frameworks.md`, `refinement-criteria.md` and `examples.md` ship beside this file and are read from the skill directory when the session needs more lenses.
-- The upstream helper `scripts/idea-refine.sh` is not shipped: it only scaffolded `docs/ideas`, which the KB replaces.
+- The upstream helper script is not shipped: it only scaffolded `docs/ideas`, which the KB replaces.
 - An idea that becomes work goes to `interview-me`, then to a milestone page through `spec-driven-development`.
 
 
