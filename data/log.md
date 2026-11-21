@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-21T14:54:08Z
+
+M4.6 rilasciata: tag `v0.6.0`, revisione `family-bot-api-00026-qal` con traffico al 100% dopo canary e smoke test. Corretti prima del rilascio i difetti trovati da una revisione ostile della diff (durata da muro invece che assoluta, fine dell'evento di tutta la giornata, test del doppio tap, sync che riscriveva la riga). Resta la verifica reale dal telefono.
+
 ## 2026-11-21T14:54:03Z
 
 concept_batch (1 operation(s)):
