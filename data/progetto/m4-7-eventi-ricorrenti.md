@@ -90,6 +90,12 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 - Deploy `v0.7.1` (dopo `v0.7.0`, che non conteneva la correzione della chiusura best-effort): canary e smoke test verdi, traffico al 100% sulla revisione `family-bot-api-00030-peh`, `/livez` riporta `0.7.1`.
 - Verifica reale dal telefono ancora da fare (vedi Handoff).
 
+## Handoff
+
+- Stato al 2026-11-22: M4.7 **rilasciata in produzione** (`v0.7.1`, revisione `family-bot-api-00030-peh`, `/livez` = 0.7.1). Resta la verifica reale dal telefono.
+- Checklist: «piscina con Matilde tutti i giovedì 18:15-18:30» → una proposta e poi la serie che si ripete sul telefono; «cosa ho giovedì?» → una sola riga con `(serie)`; «togli la piscina di giovedì» → due bottoni, «Solo questa» toglie una data e la serie resta, «Tutte le volte» la toglie del tutto; un evento singolo propone un solo bottone «Conferma».
+- Se la verifica passa, chiudere la milestone: roadmap a `done` e questa pagina a `done`.
+
 ## Ordine dei lavori
 
 | # | Cosa | Esito |
