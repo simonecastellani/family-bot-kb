@@ -261,20 +261,15 @@ After checking the technical content, review the prose for the people who will u
 
 ## Documentation Drift
 
-A document that was true when written still reads as authoritative after the code moves on. When a doc may be stale, decide from version control, not from how confident the doc sounds:
+A document that was true when written still reads as authoritative after the code moves on. Here the document is a KB page and the code is in the repository, so the two histories are compared, never merged:
 
-```bash
-code=$(git log -1 --format=%H -- src/rate-limiter.js)
-doc=$(git log -1 --format=%H -- architettura/rate-limiter.md)  # or the KB page's history
-if [ "$code" = "$doc" ]; then echo "current: changed together"
-elif git merge-base --is-ancestor "$doc" "$code"; then echo "stale: code changed after the doc"
-elif git merge-base --is-ancestor "$code" "$doc"; then echo "current: doc changed after the code"
-else echo "can't tell"; fi
-```
+1. Take the page's `timestamp` frontmatter, or its last write from `concept_history`.
+2. Take the repository's last change for the code the page describes: `git -C "$repo" log -1 --format=%cI -- src/rate-limiter.js`, where `$repo` is the local clone of the project repository (`{{repo:family-bot}}`).
+3. If the code moved after the page, the page is suspect: read it, verify it against the code, then `concept_patch` it and record the drift in `log_append`.
 
-Unordered history (divergent branches, a rebase, a shallow clone) means "can't tell". Say that; never report it as current.
+`changes_since` lists what moved in the KB in a window — the other half of the comparison. Never run git in the KB's own clone: every KB write is already a commit, and `concept_history` is its log.
 
-When you correct a doc that has a change log, append a dated entry that says why it changed. Never rewrite or collapse earlier entries: git keeps the old text, but the log is the only record of the reasons.
+A page or a repository doc that has a change log keeps its old entries: append a dated line saying why it changed, never rewrite or collapse the earlier ones — the log is the only record of the reasons.
 
 ## Common Rationalizations
 
