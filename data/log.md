@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-21T22:39:29Z
+
+concept_batch (2 operation(s)):
+- progetto/m4-7-eventi-ricorrenti (+ index entry)
+- progetto/roadmap
+
 ## 2026-11-21T14:54:08Z
 
 concept_batch (1 operation(s)):

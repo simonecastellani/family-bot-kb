@@ -16,3 +16,4 @@ title: Progetto
 - [M4 — Google Calendar](m4-google-calendar.md)
 - [M4.5 — Routing locale](m4-5-routing-locale.md)
 - [M4.6 — Eventi esistenti](m4-6-eventi-esistenti.md)
+- [M4.7 — Eventi ricorrenti](m4-7-eventi-ricorrenti.md)
