@@ -246,9 +246,11 @@ After completing all increments for a task:
 
 ## See Also
 
-Per-increment verification is the local check. Before declaring a task done, apply the project-wide Definition of Done as the final gate, the standing bar every increment clears regardless of the task. See `../../references/definition-of-done.md`.
+Per-increment verification is the local check. Before declaring a task done, apply the project-wide Definition of Done as the final gate, the standing bar every increment clears regardless of the task. See `definition-of-done.md`.
 
 ## In this KB
+
+- `definition-of-done.md` ships beside this file as the generic bar; this project's Definition of Done is the one in `sviluppo/convenzioni-agenti`, and it wins where the two differ.
 
 - A slice is an increment of the current milestone, and the milestone page `progetto/m<n>-<slug>` is the one place its state lives: `open` when queued, `in-progress` in the same write that records the first progress, `done` when the slice lands.
 - Commits stay in the repository, one per slice; the KB gets one `log_append` entry per slice — what changed, how it was verified.
