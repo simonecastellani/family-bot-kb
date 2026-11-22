@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-22T22:25:11Z
+
+concept_write: progetto/m5-dashboard
+
 ## 2026-11-22T21:36:03Z
 
 Skill di sviluppo: la KB ne spedisce dodici (con observability-and-instrumentation), ma due punti dicevano undici. Corretti il titolo di [[sviluppo/skill-di-sviluppo]] (Le dodici skill) e la riga 7 di [[sviluppo/convenzioni-agenti]]. instructions.md era gia' a dodici. Lint 0, review 0. Resta la nota della sessione precedente: nessun'altra occorrenza di "undici" fuori dai log storici.
