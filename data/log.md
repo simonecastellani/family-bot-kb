@@ -1,5 +1,12 @@
 # Log
 
+## 2026-11-22T22:25:24Z
+
+concept_batch (3 operation(s)):
+- progetto/m4-5-routing-locale
+- progetto/m4-6-eventi-esistenti
+- progetto/roadmap
+
 ## 2026-11-22T22:25:11Z
 
 concept_write: progetto/m5-dashboard

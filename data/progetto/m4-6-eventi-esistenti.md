@@ -1,6 +1,6 @@
 ---
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
+status: done
 timestamp: 2026-11-21
 title: M4.6 — Eventi esistenti
 type: Pagina
@@ -85,6 +85,12 @@ Una correzione («il cambio gomme è alle 9:30») produce una **proposta di modi
 | W4 | Tool agente, id in lista, prompt | fatto: correzione senza duplicati |
 | W5 | Deploy `v0.6.0`, M5 → `v0.7.0` | fatto: tag `v0.6.0`, canary e smoke test verdi, traffico spostato |
 | W6 | Documentazione, KB, verifica reale | mezzo: primer e AGENTS aggiornati, resta la verifica reale |
+
+## Esito
+
+- **Chiusa il 2026-11-21 in produzione**: tag `v0.6.0`, revisione `family-bot-api-00026-qal` con il traffico al 100% dopo canary e smoke test verdi.
+- Criterio raggiunto sul rilascio: modifica condizionata all'etag e cancellazione idempotente, coperte dai test con `MockTransport` e dai test di servizio; la revisione ostile della diff ha portato la correzione della durata da muro e della fine dell'evento di tutta la giornata.
+- La verifica reale dal telefono prevista da W6 non è stata registrata: la chiusura poggia sul rilascio e sul canary.
 
 ## Handoff
 

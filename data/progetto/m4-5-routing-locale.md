@@ -1,8 +1,8 @@
 ---
 type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
-timestamp: 2026-11-21
+status: done
+timestamp: 2026-11-22
 title: M4.5 — Routing locale
 ---
 # M4.5 — Routing locale
@@ -62,6 +62,18 @@ Prime tre frasi reali (2026-11-21): `chat` 0,99 per un task, `task_write` 0,64 p
 - **zero** scritture instradate senza LLM;
 - nessuna regressione sulle frasi reali di M2 e M4;
 - fallback e rollback provati con Laya spento.
+
+## Esito
+
+- **Chiusa il 2026-11-22 per decisione dell'operatore**, non con il gate: la fase M4.5a è deployata (`v0.5.0`, shadow via MCP) e la baseline zero-shot è 68,3%, ma M4.5b (dataset ≥ 1.000 esempi, fine-tune, eval, canary) non è stata eseguita.
+- Il **gate prima del canary non è stato misurato**: nessun canary è stato eseguito, quindi accuratezza ≥ 95%, zero scritture instradate senza LLM e prova di fallback/rollback restano un debito, non un criterio raggiunto.
+- In produzione non cambia niente: Laya classifica ogni messaggio e la previsione resta registrata su `agent_runs`, mentre la risposta arriva ancora dall'LLM e le scritture passano dall'LLM con conferma.
+
+## Handoff
+
+- **M4.5 chiusa il 2026-11-22** con la fase shadow attiva; non blocca [[progetto/m5-dashboard]].
+- Cosa ha lasciato al progetto: client MCP verso l'endpoint Laya, telemetria della previsione, set congelato e export del dataset.
+- Cosa resta aperto e dove: fine-tuning, eval e canary della fase M4.5b, con il dataset da portare a ≥ 1.000 esempi; lo stato operativo del debito è in `{{repo:family-bot}}/AGENTS.md`.
 
 ## Collegamenti
 
