@@ -16,7 +16,7 @@ Dodici skill di processo, adattate da [addyosmani/agent-skills](https://github.c
 - nel repository resta solo la documentazione del codice (README, reference delle API, docs/gcp-inventory.md); quando diverge dalla pagina KB che la descrive si aggiorna la pagina e si registra il drift;
 - la risposta all'operatore è nella lingua in cui scrive.
 
-## Le undici skill
+## Le dodici skill
 
 | Skill | Quando si carica | Artefatto in KB |
 |---|---|---|

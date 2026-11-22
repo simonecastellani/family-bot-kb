@@ -17,7 +17,7 @@ Istruzioni operative per chi lavora sul repository (§13). Le regole architettur
 4. **Dipendenze giustificate**: non aggiungere dipendenze senza motivarle in una riga.
 5. **Verifica le API esterne**: per librerie e servizi esterni (PydanticAI, PyMongo, libreria Telegram, Cloud Tasks, API Firestore-MongoDB) controllare documentazione e versione installata; non inventare API né presumere compatibilità.
 6. **Chiedi invece di assumere**: in caso di ambiguità, porre la domanda.
-7. **Skill di processo**: le undici skill della KB (dalla review alla TDD) non creano documentazione dentro il repository — decisioni, idee, intenti e spec finiscono nelle pagine della KB. Il contratto è in [[sviluppo/skill-di-sviluppo]].
+7. **Skill di processo**: le dodici skill della KB (dalla review alla TDD, più l'osservabilità) non creano documentazione dentro il repository — decisioni, idee, intenti e spec finiscono nelle pagine della KB. Il contratto è in [[sviluppo/skill-di-sviluppo]].
 
 ## Stato della milestone
 
