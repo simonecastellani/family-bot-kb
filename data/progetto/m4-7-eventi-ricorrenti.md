@@ -2,7 +2,7 @@
 title: M4.7 — Eventi ricorrenti
 type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
+status: done
 timestamp: 2026-11-21
 ---
 # M4.7 — Eventi ricorrenti
@@ -88,16 +88,15 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 
 ## Esito
 
-- 292 test verdi, ruff e pyright puliti; CI verde su `main`.
-- Deploy `v0.7.3`: canary e smoke test verdi, revisione `family-bot-api-00034-jok`, `/livez` riporta `0.7.3`. (`v0.7.0` non conteneva la chiusura best-effort, `v0.7.1` l'ha aggiunta, `v0.7.2` corregge il difetto dei quattro bottoni trovato in verifica reale.)
-- Verifica reale in corso (2026-11-22): creazione della serie confermata dal telefono; il primo giro di cancellazione ha rivelato il difetto dei quattro bottoni (`v0.7.2`) e la richiesta di una sola conferma per più date (`v0.7.3`).
+- 306 test verdi, ruff e pyright puliti; CI verde su `main`.
+- Deploy `v0.7.3`: canary e smoke test verdi, revisione `family-bot-api-00034-jok`, `/livez` riporta `0.7.3`. (`v0.7.0` non conteneva la chiusura best-effort, `v0.7.1` l'ha aggiunta, `v0.7.2` ha corretto il difetto dei quattro bottoni, `v0.7.3` ha portato il batch di date.)
+- **Verifica reale superata il 2026-11-22**: serie creata dal telefono e ripetuta; cancellazione di due date con una sola conferma («2 date liberate»); alternative una volta/tutte che si chiudono a vicenda. I due difetti trovati in verifica (quattro bottoni, troppe conferme) sono stati corretti e ri-verificati.
 
 ## Handoff
 
-- Stato al 2026-11-22: M4.7 **rilasciata in produzione** (`v0.7.1`, revisione `family-bot-api-00030-peh`, `/livez` = 0.7.1). Resta la verifica reale dal telefono.
-- Fatto in verifica: la serie si crea dal telefono e si ripete.
-- Da rifare dopo `v0.7.3`: «la piscina è sospesa il 24/12 e il 31/12» → **una** proposta, **un** bottone «✅ Conferma», entrambe le date nel testo; alla conferma «2 date liberate» e nessun bottone; «togli la piscina di giovedì» senza date → due alternative che si chiudono a vicenda; un evento singolo → un solo «Conferma».
-- Se la verifica passa, chiudere la milestone: roadmap a `done` e questa pagina a `done`.
+- **M4.7 chiusa il 2026-11-22**, in produzione con `v0.7.3` (revisione `family-bot-api-00034-jok`). Test funzionale dal telefono superato.
+- Cosa ha lasciato al progetto: serie in calendario (`rrule`), master mai in cache, sync best-effort dopo le scritture, cancellazione di una occorrenza o della serie con bottoni etichettati, più date in una sola conferma, id delle azioni univoci, `YEARLY`/`BYMONTH` nel sottoinsieme RRULE.
+- Cosa resta aperto e dove: il fine-tuning e il canary di **M4.5** (shadow ancora attivo, dataset da portare a ≥ 1.000 esempi) e la prossima milestone **M5 — Dashboard** (`v0.8.0`). La memoria della conversazione è **M10**.
 
 ## Ordine dei lavori
 
@@ -107,5 +106,5 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 | W2 | Creazione serie, politica della cache, sync best-effort | fatto |
 | W3 | `label` sui bottoni, chiusura delle alternative, `scope` nella delete | fatto |
 | W4 | Tool e prompt | fatto |
-| W5 | Deploy e verifica reale | deploy fatto (`v0.7.1`); verifica reale da fare |
+| W5 | Deploy e verifica reale | fatto: `v0.7.3`, test funzionale dal telefono superato |
 | W6 | Primer, AGENTS, KB, roadmap | fatto |
