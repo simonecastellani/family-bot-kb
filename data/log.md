@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-22T09:53:18Z
+
+M4.7 chiusa (`done`, 2026-11-22, `v0.7.3`): serie in calendario, cancellazione di occorrenza/serie con bottoni etichettati, più date in una conferma (max 5). Test funzionale dal telefono superato. Prossima milestone: M5 — dashboard (`v0.8.0`); il fine-tuning e il canary di M4.5 restano aperti.
+
 ## 2026-11-22T09:53:17Z
 
 concept_batch (1 operation(s)):
