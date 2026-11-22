@@ -83,19 +83,20 @@ con la solita conferma. Cancellarla è una scelta esplicita fra **una occorrenza
 - **Gli id delle azioni colludevano**: `new_id()[:10]` è il timestamp di una UUIDv7, quindi due proposte dello stesso turno avevano lo stesso id e il bottone di una eseguiva l'altra. Ora si usa la coda casuale (`_action_id`), con un test.
 - **`BYMONTH` non era nel sottoinsieme**: una regola annuale scritta come `FREQ=YEARLY;BYMONTH=3;BYMONTHDAY=12` veniva rifiutata. Aggiunto e validato.
 - `close_alternatives` non deve far fallire un tap già riuscito: correzione in `v0.7.1`.
+- **Troppe conferme per una richiesta** (2026-11-22): «sospesa il 24 e il 31» produceva due proposte e due tap. Correzione in `v0.7.3`: `delete_event` prende una **lista** di id e più date diventano **una sola proposta** (max 5), con un `DELETE` per data, dedupe dei master con `scope="all"`, `404/410` non è errore e un errore su una data non ferma le altre (il messaggio dice quante sono andate). Il comando accetta ancora il payload vecchio con `event_id`, così una proposta in sospeso si conferma anche dopo il deploy.
 - **Quattro bottoni e il secondo tasto perso** (verifica reale del 2026-11-22): «la piscina è sospesa il 24/12 e il 31/12» → il modello ha preparato due cancellazioni, ognuna con le sue due alternative, quindi quattro bottoni con etichette ripetute; al primo tap il messaggio veniva modificato **senza tastiera** e la seconda data restava in calendario senza modo di confermarla. Correzione in `v0.7.2`: `delete_event` prende `scope: one|all|ask` (date nominate → `one`, una proposta per data con l'etichetta della data; `ask` resta per l'ambiguità); le alternative condividono un **gruppo** e chiudono solo quelle; dopo un tap il messaggio si modifica **tenendo i bottoni** delle proposte ancora aperte e dicendo quali restano.
 
 ## Esito
 
 - 292 test verdi, ruff e pyright puliti; CI verde su `main`.
-- Deploy `v0.7.2`: canary e smoke test verdi, `/livez` riporta `0.7.2`. (`v0.7.0` non conteneva la chiusura best-effort, `v0.7.1` l'ha aggiunta, `v0.7.2` corregge il difetto dei quattro bottoni trovato in verifica reale.)
-- Verifica reale in corso (2026-11-22): creazione della serie confermata dal telefono; il primo giro di cancellazione ha rivelato il difetto dei quattro bottoni, corretto in `v0.7.2`.
+- Deploy `v0.7.3`: canary e smoke test verdi, revisione `family-bot-api-00034-jok`, `/livez` riporta `0.7.3`. (`v0.7.0` non conteneva la chiusura best-effort, `v0.7.1` l'ha aggiunta, `v0.7.2` corregge il difetto dei quattro bottoni trovato in verifica reale.)
+- Verifica reale in corso (2026-11-22): creazione della serie confermata dal telefono; il primo giro di cancellazione ha rivelato il difetto dei quattro bottoni (`v0.7.2`) e la richiesta di una sola conferma per più date (`v0.7.3`).
 
 ## Handoff
 
 - Stato al 2026-11-22: M4.7 **rilasciata in produzione** (`v0.7.1`, revisione `family-bot-api-00030-peh`, `/livez` = 0.7.1). Resta la verifica reale dal telefono.
 - Fatto in verifica: la serie si crea dal telefono e si ripete.
-- Da rifare dopo `v0.7.2`: «la piscina è sospesa il 24/12 e il 31/12» → due proposte con l'etichetta della data, **nessun** doppione; confermando la prima il messaggio resta con il bottone della seconda e la frase «Restano da confermare: …»; «togli la piscina di giovedì» senza date → due alternative che si chiudono a vicenda; un evento singolo propone un solo bottone «Conferma».
+- Da rifare dopo `v0.7.3`: «la piscina è sospesa il 24/12 e il 31/12» → **una** proposta, **un** bottone «✅ Conferma», entrambe le date nel testo; alla conferma «2 date liberate» e nessun bottone; «togli la piscina di giovedì» senza date → due alternative che si chiudono a vicenda; un evento singolo → un solo «Conferma».
 - Se la verifica passa, chiudere la milestone: roadmap a `done` e questa pagina a `done`.
 
 ## Ordine dei lavori
