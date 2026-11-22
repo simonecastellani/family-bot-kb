@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-22T08:15:03Z
+
+M4.7 `v0.7.3`: la cancellazione di più date è una sola proposta (max 5). `delete_event` prende una lista di id, il servizio fa un DELETE per data, i master si deduplicano con `scope=all`, i fallimenti parziali si riportano nel messaggio e il payload vecchio con `event_id` resta valido per le proposte in sospeso.
+
 ## 2026-11-22T08:14:57Z
 
 concept_batch (1 operation(s)):
