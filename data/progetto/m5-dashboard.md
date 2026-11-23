@@ -32,12 +32,14 @@ Portare in web, in **sola lettura**, lo stato che il bot tiene già su MongoDB: 
 - Il log dell'agente è leggibile solo da `admin`.
 - Le viste passano dal service layer condiviso con Telegram e con i tool dell'agente, senza query duplicate nel layer HTTP (§3).
 
-## Decisioni da prendere
+## Decisioni prese (2026-11-23)
 
-- Forma della UI: pagine server-rendered dal servizio `api`, oppure SPA separata. Il primer ammette entrambe (§3).
-- Fornitore dell'identità: Firebase Auth o OIDC Google diretto; la procedura manuale è in `{{repo:family-bot}}/docs/gcp-setup.md` §E3.
-- Quali viste compongono il «minimo» della milestone.
-- Dove vive lo schema OpenAPI e come resta allineato ai modelli.
+- **UI separata dall'API**: SPA in `dashboard/` (Vite + TypeScript, nessun framework) su **Firebase Hosting**; l'API resta su Cloud Run. Due rilasci indipendenti: la UI a ogni merge su `main`, l'API solo da tag semver.
+- **Identità**: Firebase Authentication (project `family-bot-dev`), provider Google. L'ID token viaggia in `Authorization: Bearer`; il backend verifica firma, `aud`, `iss` e scadenza con `google.oauth2.id_token.verify_firebase_token` e mappa l'email su `members`. Niente cookie, niente sessione, niente upgrade a Identity Platform (gratis fino a 50.000 MAU social).
+- **Trasporto**: chiamata diretta cross-origin con CORS a allowlist (`DASHBOARD_ORIGINS`), non rewrite di Hosting: non si dipende dall'inoltro dell'header `Authorization` da parte del proxy.
+- **Viste minime**: `/api/v1/me`, `overview` (eventi + scadenze con `task_title`), `tasks`, `occurrences`, `reminders` (a tutti i membri), `members`, `agent-runs` (solo admin). Menu e lista della spesa restano a M8.
+- **Contratto**: OpenAPI generato da FastAPI; i servizi restituiscono DTO Pydantic; sotto `/api/v1` nessuna route di scrittura, imposto da un test.
+- **IAM del deploy UI**: service account `family-bot-hostinger` e provider WIF dedicato al ramo `main`, così un push su `main` non può impersonare il deployer dell'API.
 
 ## Test
 
@@ -49,13 +51,20 @@ Portare in web, in **sola lettura**, lo stato che il bot tiene già su MongoDB: 
 
 | # | Cosa | Esito |
 |---|---|---|
-| W1 | Verifica ID token e mapping su `members` | da fare |
-| W2 | Endpoint GET e schema OpenAPI | da fare |
-| W3 | Viste minime | da fare |
-| W4 | Deploy `v0.8.0`, canary e smoke test | da fare |
+| W1 | Verifica ID token e mapping su `members` | fatto (2026-11-23) |
+| W2 | Endpoint GET e schema OpenAPI | fatto (2026-11-23) |
+| W3 | Viste minime (SPA su Hosting) | fatto (2026-11-23) |
+| W4 | Deploy `v0.8.0`, canary e smoke test | fatto (2026-11-23) |
+| W5 | Verifica dal telefono: membro, estraneo → 403, log solo admin | da fare |
+
+## Stato (2026-11-23)
+
+- Rilasciata `v0.8.0`: l'API in produzione riporta `0.8.0` (canary, smoke e traffico verdi) e la SPA è su `https://family-bot-dev.simonecastellani.com` con dominio e certificato attivi.
+- Verifiche: 337 test `pytest` (contract inclusi), 22 test vitest, `ruff`, `pyright`, ESLint, build della SPA; smoke della UI verde (dominio 200, `/api/v1/me` 401, preflight CORS con l'origine del dominio).
+- Inciampo reale al primo deploy Hosting: i ruoli `firebase.viewer` e `firebasehosting.admin` erano legati alla condizione Firestore `family-bot-db-only` e quindi inefficaci per le API Firebase; mancava anche `roles/serviceusage.serviceUsageConsumer` per usare il progetto come quota project. Risolto con binding senza condizione, documentato in `{{repo:family-bot}}/docs/gcp-setup.md` §E3.
+- Resta: verifica dal telefono (W5), restrizione della chiave browser dopo il primo login (referrer + Identity Toolkit), chiusura della milestone in [[progetto/roadmap]].
 
 ## Collegamenti
 
 - Milestone precedente: [[progetto/m4-7-eventi-ricorrenti]]; debito shadow che resta aperto: [[progetto/m4-5-routing-locale]].
 - Auth, ruoli e dati verso l'esterno: [[architettura/sicurezza]]; service account e Cloud Run: [[infrastruttura/identita-e-runtime]].
-- Stato di tutte le milestone: [[progetto/roadmap]].
