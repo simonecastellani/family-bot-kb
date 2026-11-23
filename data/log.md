@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-23T15:17:55Z
+
+2026-11-23 — M5 chiusa (v0.8.0). Login dal telefono verificato dopo il fix della CSP: mancava https://apis.google.com in script-src (l'SDK Firebase lo carica per il popup), aggiunti anche accounts.google.com in frame-src e la diagnostica dei codici auth/* nel client. Resta opzionale la prova con un account reale non registrato (il 403 e il log admin sono coperti dai test) e la restrizione della chiave browser. Prossima milestone: M6 — vocali con STT.
+
 ## 2026-11-23T15:17:49Z
 
 concept_patch: progetto/roadmap
