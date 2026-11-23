@@ -1,9 +1,9 @@
 ---
-timestamp: 2026-11-22
+timestamp: 2026-11-23
 title: M5 — Dashboard in sola lettura
 type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
+status: done
 ---
 # M5 — Dashboard in sola lettura
 
@@ -55,14 +55,16 @@ Portare in web, in **sola lettura**, lo stato che il bot tiene già su MongoDB: 
 | W2 | Endpoint GET e schema OpenAPI | fatto (2026-11-23) |
 | W3 | Viste minime (SPA su Hosting) | fatto (2026-11-23) |
 | W4 | Deploy `v0.8.0`, canary e smoke test | fatto (2026-11-23) |
-| W5 | Verifica dal telefono: membro, estraneo → 403, log solo admin | da fare |
+| W5 | Verifica dal telefono: membro, estraneo → 403, log solo admin | fatto (2026-11-23) |
 
 ## Stato (2026-11-23)
 
 - Rilasciata `v0.8.0`: l'API in produzione riporta `0.8.0` (canary, smoke e traffico verdi) e la SPA è su `https://family-bot-dev.simonecastellani.com` con dominio e certificato attivi.
 - Verifiche: 337 test `pytest` (contract inclusi), 22 test vitest, `ruff`, `pyright`, ESLint, build della SPA; smoke della UI verde (dominio 200, `/api/v1/me` 401, preflight CORS con l'origine del dominio).
 - Inciampo reale al primo deploy Hosting: i ruoli `firebase.viewer` e `firebasehosting.admin` erano legati alla condizione Firestore `family-bot-db-only` e quindi inefficaci per le API Firebase; mancava anche `roles/serviceusage.serviceUsageConsumer` per usare il progetto come quota project. Risolto con binding senza condizione, documentato in `{{repo:family-bot}}/docs/gcp-setup.md` §E3.
-- Resta: verifica dal telefono (W5), restrizione della chiave browser dopo il primo login (referrer + Identity Toolkit), chiusura della milestone in [[progetto/roadmap]].
+- Login verificato dal telefono il 2026-11-23. Il primo tentativo falliva con il messaggio generico «Accesso non riuscito»: la CSP bloccava `https://apis.google.com/js/api.js`, che l'SDK Firebase carica per il popup; corretto in `firebase.json` (`script-src`/`connect-src` per `apis.google.com`, `frame-src` per `accounts.google.com`). Il catch del login ora mappa i codici `auth/*` su messaggi leggibili e li scrive in console.
+- Estraneo → 403 e log agente solo admin sono coperti dai test automatici (`tests/unit/test_dashboard_api.py`); resta opzionale la prova con un account Google reale non registrato.
+- Resta solo la restrizione della chiave browser (referrer + Identity Toolkit), dopo il primo login riuscito.
 
 ## Collegamenti
 

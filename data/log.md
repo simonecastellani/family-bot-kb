@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-23T15:17:41Z
+
+concept_patch: progetto/m5-dashboard
+
 ## 2026-11-23T12:07:32Z
 
 2026-11-23 — M5 in sola lettura rilasciata in v0.8.0: API /api/v1 (token Firebase, 401/403, CORS allowlist, nessuna scrittura) e SPA Vite+TS su Firebase Hosting (family-bot-dev.simonecastellani.com), deploy UI indipendente dall'API. 337 pytest + 22 vitest, ruff/pyright/eslint verdi; smoke Hosting+API verde. Inciampo IAM al primo deploy: ruoli firebase.viewer e firebasehosting.admin legati alla condizione Firestore family-bot-db-only e serviceUsageConsumer mancante; risolto con binding senza condizione. Resta la verifica dal telefono (membro, estraneo 403, log solo admin) e la restrizione della chiave browser.
