@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-23T10:36:13Z
+
+2026-11-23 — Importata la skill `impeccable` v4.10.0 (Apache-2.0) come sola documentazione: `skills/impeccable/SKILL.md` + 50 file `reference/` (playbook, degraded, mode). I richiami al launcher sono riscritti su `npx impeccable`, `DESIGN.md` → pagina `sviluppo/design-system`, `PRODUCT.md` → `progetto/prodotto`; nessuno script vendored, nessun hook. Contratto in [[sviluppo/skill-di-sviluppo]] aggiornato a tredici skill. Lint 0.
+
 ## 2026-11-23T10:35:32Z
 
 concept_patch: sviluppo/skill-di-sviluppo
