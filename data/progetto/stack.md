@@ -21,6 +21,7 @@ Stato **[Confermato]**.
 - **Database**: Firestore, edizione Enterprise con compatibilità MongoDB. Le operazioni sui dati sono gestite lato applicazione tramite interfacce/driver compatibili MongoDB, così da poter testare in locale con MongoDB durante lo sviluppo.
 - **Dashboard in sola lettura** per ora; l'editing è un'evolutiva, con DB e service layer pensati per una SPA futura.
 - **Un unico service layer**, condiviso da Telegram, tool dell'agente e web.
+- **STT**: Cloud Speech-to-Text V2, riconoscimento sincrono, modello `short`, lingua `it-IT`, multi-regione `eu`; l'audio vive in memoria e non viene mai conservato, un vocale dura al massimo un minuto ([[progetto/m6-vocali]]).
 
 ## Default
 
@@ -31,7 +32,6 @@ Stato **[Default]**: scelte di partenza, non ancora confermate.
 - **Telegram**: webhook con secret token, non polling.
 - **Segreti**: Secret Manager. **File**: Cloud Storage.
 - **Auth dashboard**: login Google (OIDC, ad esempio Firebase Auth); il backend verifica l'ID token e mappa l'email su `members`.
-- **STT**: servizio gestito (Speech-to-Text) oppure audio nativo del modello, se disponibile.
 - **Framework agente**: PydanticAI, in alternativa un loop manuale con l'SDK `openai`; LangChain e LangGraph esclusi.
 - **IaC**: Terraform, introdotto dopo la fase manuale su GCP (M0–M2). **CI/CD**: GitHub Actions con Workload Identity Federation (niente chiavi JSON). **Registry**: Artifact Registry.
 - **Osservabilità**: OpenTelemetry verso Cloud Logging e Trace; budget alert dal primo giorno.
