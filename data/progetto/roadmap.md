@@ -21,7 +21,7 @@ Milestone del progetto e criteri con cui ciascuna si considera chiusa (§11). L'
 | M4.5 | Routing locale: Laya in shadow, dataset etichettato, fine-tuning, canary delle letture | Accuratezza held-out ≥ 95%; **0** scritture instradate senza LLM; chiamate LLM ridotte — chiusa il 2026-11-22, gate in fase shadow |
 | M4.6 | Eventi esistenti: `update_event`/`delete_event` con conferma, `If-Match`, cache e audit | Correzione senza duplicati; cancellazione idempotente — `v0.6.0` |
 | M4.7 | Eventi ricorrenti: serie in calendario (`rrule`), cancellazione di una occorrenza o della serie con bottoni etichettati, più date in una sola conferma, sync best-effort | «Tutti i giovedì» crea una serie; niente righe fantasma; la scelta una/tutte è un bottone — **raggiunto il 2026-11-22** (`v0.7.3`) |
-| M5 | Dashboard in sola lettura: `/api/v1` GET, login Google OIDC, viste minime | Utente non registrato → 403; log agente solo admin |
+| M5 | Dashboard in sola lettura: `/api/v1` GET, login Google OIDC, viste minime | Utente non registrato → 403; log agente solo admin — **raggiunto il 2026-11-23** (`v0.8.0`) |
 | M6 | Vocali con STT gestito | Un vocale in italiano diventa un task corretto |
 | M7 | Link e immagini: estrazione evento con conferma | Un link con data/luogo produce una proposta strutturata |
 | M8 | Menu: documenti su GCS, estrazione menu del nido, piano settimanale, lista della spesa | Piano `draft` → `confirmed`; modifica a linguaggio naturale |
@@ -41,7 +41,7 @@ Per l'use case 4 (gestione della casa) vale la regola generale: il bot **propone
 - **M4.5 — Routing locale** è `done` (2026-11-22, chiusa dall'operatore): shadow via MCP in `v0.5.0`, baseline zero-shot 68,3%; il gate di accuratezza e il fine-tuning restano nella fase shadow. Esito in [[progetto/m4-5-routing-locale]].
 - **M4.6 — Eventi esistenti** è `done` (2026-11-21), `v0.6.0`: correzione senza duplicati e cancellazione idempotente. Esito in [[progetto/m4-6-eventi-esistenti]].
 - **M4.7 — Eventi ricorrenti** è `done` (2026-11-22), `v0.7.3`: serie in calendario, più date con una sola conferma, verifica dal telefono superata. Esito in [[progetto/m4-7-eventi-ricorrenti]].
-- **M5 — Dashboard in sola lettura** è `in-progress` (`v0.8.0`): `/api/v1` in GET, login Google OIDC, viste minime. Spec e ordine dei lavori in [[progetto/m5-dashboard]].
+- **M5 — Dashboard in sola lettura** è `done` (2026-11-23), `v0.8.0`: API `/api/v1` con token Firebase e SPA su Firebase Hosting (`family-bot-dev.simonecastellani.com`), deploy indipendenti. Login verificato dal telefono; estraneo → 403 e log solo admin coperti dai test. Dettagli in [[progetto/m5-dashboard]]. La prossima è **M6 — vocali con STT**.
 - Il passaggio da una milestone alla successiva si misura con i **criteri di accettazione** della tabella, non con il numero di attività svolte.
 - **M10** non è pianificabile a calendario: si affronta solo dopo settimane di uso reale, e la prima attività è la progettazione, non l'implementazione (§11).
 - Le domande che possono bloccare o rimandare una milestone sono raccolte in [[progetto/questioni-aperte]].
