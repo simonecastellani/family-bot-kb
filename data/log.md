@@ -2,6 +2,10 @@
 
 ## 2026-11-23T21:20:36Z
 
+M6: `speech.googleapis.com` abilitata e `roles/speech.client` concesso al solo `family-bot-api` senza condizione; verifica con token impersonato sul multi-regione `eu` riuscita. Il primo tentativo dalla console aveva ereditato la condizione Firestore (403); regola: `--condition=None` per ogni nuovo ruolo a questi service account.
+
+## 2026-11-23T21:20:36Z
+
 concept_patch: progetto/m6-vocali
 
 ## 2026-11-23T16:32:24Z
