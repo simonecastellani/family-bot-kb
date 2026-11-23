@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-23T16:32:24Z
+
+M6 — vocali con STT: implementata su Cloud Speech-to-Text V2 (modello `short`, it-IT, multi-regione `eu`), sincrona; audio in memoria e mai conservato; limiti 60 s/10 MB; eco di debug `VOICE_SHOW_TRANSCRIPT`; run con `input_kind=voice`. Restano: abilitare `speech.googleapis.com`, `roles/speech.client` al runtime api, verifica con token impersonato, deploy e prova dal telefono. STT locale rimandato in coda alla roadmap.
+
 ## 2026-11-23T16:32:11Z
 
 concept_batch (2 operation(s)):
