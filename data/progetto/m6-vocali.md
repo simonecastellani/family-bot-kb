@@ -52,9 +52,11 @@ Un vocale in italiano diventa un task corretto: il membro parla invece di scrive
 
 ## Verifica (in corso)
 
+Il primo tentativo di concessione del ruolo, fatto dalla console, lo aveva messo nella binding già condizionata al database (`resource.name == "projects/family-bot-dev/databases/family-bot"`): la condizione non è mai vera per una richiesta Speech, quindi il ruolo sembrava concesso e l'API rispondeva `403`. Corretto rimuovendo il binding condizionato e riaggiungendo il ruolo con `--condition=None`; è lo stesso errore di M5 sugli utenti Firebase, e vale come regola per ogni nuovo ruolo a questi service account. La traccia completa è in `docs/gcp-inventory.md`.
+
 - [x] test, lint e type-check verdi;
-- [ ] `speech.googleapis.com` abilitata e `roles/speech.client` al solo runtime `api`;
-- [ ] verifica con token impersonato sul multi-regione `eu`;
+- [x] `speech.googleapis.com` abilitata e `roles/speech.client` al solo runtime `api`, **senza condizione**;
+- [x] verifica con token impersonato sul multi-regione `eu` (trascrizione di un OGG reale);
 - [ ] deploy della revisione e prova reale dal telefono (vocale → proposta → task);
 - [ ] dopo una settimana, minuti consumati e spesa sotto il budget.
 
