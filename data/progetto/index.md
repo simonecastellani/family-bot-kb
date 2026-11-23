@@ -30,6 +30,7 @@ title: Progetto
 - [[progetto/m4-6-eventi-esistenti]] — M4.6 — Eventi esistenti
 - [[progetto/m4-7-eventi-ricorrenti]] — M4.7 — Eventi ricorrenti
 - [[progetto/m5-dashboard]] — M5 — Dashboard in sola lettura
+- [[progetto/m6-vocali]] — M6 — Vocali con STT
 - [[progetto/questioni-aperte]] — Questioni aperte
 - [[progetto/roadmap]] — Roadmap
 - [[progetto/stack]] — Stack tecnologico
