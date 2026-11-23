@@ -1,5 +1,11 @@
 # Log
 
+## 2026-11-23T16:31:53Z
+
+concept_batch (2 operation(s)):
+- architettura/integrazioni
+- architettura/porte-e-fake
+
 ## 2026-11-23T16:30:48Z
 
 concept_batch (2 operation(s)):

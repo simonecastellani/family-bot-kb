@@ -21,13 +21,16 @@ Fase M4 della configurazione manuale.
 - Il bot deve **chiedere conferma** prima di scrivere sul calendario (comportamento dell'agente in [[architettura/agente]]).
 - Gli eventi importati hanno già una cache dedicata, la collection `calendar_events` ([[architettura/modello-dati]]).
 
-## Speech to text
+## Speech to text (M6)
 
-Il documento di configurazione manuale di Google Cloud **non copre** questo soggetto: nessuna API, quota o credenziale STT compare nelle sue fasi.
+Adottato: **Cloud Speech-to-Text V2** con riconoscimento sincrono. Il vocale Telegram (OGG/Opus) viene scaricato in memoria, trascritto e **scartato**: nessun oggetto su Cloud Storage, nessuna retention. Dettagli della milestone in [[progetto/m6-vocali]]; la procedura sta in `docs/gcp-setup.md` (fase E4).
 
-Quello che la KB sa già: lo STT è un **[Default]** del primer — servizio gestito (Speech-to-Text) oppure audio nativo del modello, se disponibile ([[progetto/stack]]) — ed esiste la porta `STTClient` con il suo fake ([[architettura/porte-e-fake]]).
-
-- [ ] Verificare quale servizio STT si adotta e cosa richiede su GCP (API, quota, credenziali).
+- API `speech.googleapis.com`; ruolo `roles/speech.client` al **solo** runtime `api`; autenticazione ADC con scope `cloud-platform`, nessun secret.
+- Endpoint REST `https://eu-speech.googleapis.com/v2/projects/{progetto}/locations/eu/recognizers/_:recognize` con `auto_decoding_config` (l'header del container dice l'encoding), `language_codes: ["it-IT"]` e `model: short`.
+- `europe-west8` (Milano) **non è una regione Speech**: si usa il multi-regione `eu`, così l'audio resta in Europa. `short` è il modello che la tabella delle lingue supportate elenca per `eu` con `it-IT`.
+- Limiti del riconoscimento sincrono: 10 MB o **un minuto**. Il bot rifiuta i vocali più lunghi prima di scaricarli; audio inoltrati e video-note restano fuori da M6.
+- Costo: la V2 si paga dal primo minuto (0,016 $/min); il free tier di 60 min/mese è della V1, non della V2.
+- La porta `STTClient` con i suoi errori e il fake è in [[architettura/porte-e-fake]].
 
 ## Link e immagini
 
