@@ -57,7 +57,11 @@ Il primo tentativo di concessione del ruolo, fatto dalla console, lo aveva messo
 - [x] test, lint e type-check verdi;
 - [x] `speech.googleapis.com` abilitata e `roles/speech.client` al solo runtime `api`, **senza condizione**;
 - [x] verifica con token impersonato sul multi-regione `eu` (trascrizione di un OGG reale);
-- [ ] deploy della revisione e prova reale dal telefono (vocale → proposta → task);
+
+> Nota post-deploy: modificando il binding dalla console, `roles/datastore.user` è stato sostituito da `speech.client` e il bot ha smesso di rispondere (500, `pymongo` code 13) finché non è stato ripristinato con la condizione `family-bot-db-only`. Dettagli nel log e in `docs/gcp-inventory.md`; lo smoke test non l'ha visto perché `/readyz` non prova il database (candidato M9).
+
+- [x] deploy della revisione `v0.9.0` (canary, smoke test, spostamento del traffico);
+- [ ] prova reale dal telefono (vocale → proposta → task);
 - [ ] dopo una settimana, minuti consumati e spesa sotto il budget.
 
 ## Fonte

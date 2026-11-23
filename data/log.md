@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-23T21:44:32Z
+
+concept_patch: progetto/m6-vocali
+
 ## 2026-11-23T21:44:23Z
 
 Incidente post-deploy v0.9.0: il bot non rispondeva a nessun messaggio, testo compreso. La modifica IAM dalla console aveva **sostituito** la binding `roles/datastore.user` (condizionata al DB) con `roles/speech.client`: il runtime api restava senza Firestore e il webhook rispondeva 500 con `pymongo OperationFailure` code 13. Ripristinato `datastore.user` con la condizione `family-bot-db-only`; i retry di Telegram hanno poi consegnato la risposta (200). Regola: i ruoli si aggiungono da «Grant access», mai con la matita sulla riga che si sta filtrando. Nota per M9: `/readyz` non prova il database, quindi lo smoke test del deploy passa anche con Firestore irraggiungibile.
