@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-23T10:35:32Z
+
+concept_patch: sviluppo/skill-di-sviluppo
+
 ## 2026-11-22T22:25:36Z
 
 M5 avviata, M4.5 e M4.6 chiuse: l'operatore ha dichiarato chiuso tutto ciò che precede M5. - `progetto/m5-dashboard` creata (`in-progress`, `v0.8.0`): spec dal primer §10 — `GET /api/v1`, login Google OIDC con mapping email → `members`, log agente solo `admin`, nessuna route di scrittura. Le quattro decisioni ancora aperte sono elencate nella pagina (forma della UI, Firebase Auth o OIDC diretto, viste del minimo, sede dell'OpenAPI). - `progetto/m4-6-eventi-esistenti`: `done`, con Esito (rilascio `v0.6.0`, revisione `family-bot-api-00026-qal`); registrato che la verifica reale dal telefono prevista da W6 non è stata fatta. - `progetto/m4-5-routing-locale`: `done` per decisione dell'operatore, **non** con il gate: M4.5a deployata in shadow (`v0.5.0`, baseline zero-shot 68,3%), M4.5b (dataset ≥ 1.000, fine-tune, eval, canary) non eseguita. Il debito resta scritto nell'Esito e nell'Handoff, non è un criterio raggiunto. - `progetto/roadmap`: corretto lo «Stato corrente», che ripeteva tre volte la frase sullo slittamento di M5 e accorpava M4.6, M4.7 e M5 in un solo punto elenco. M4.5 ora ha anche il segno di chiusura nella tabella. Lint 0, review 0; l'unica pagina in lavorazione è M5.

@@ -6,7 +6,7 @@ status: active
 ---
 # Skill di sviluppo della KB
 
-Dodici skill di processo, adattate da [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT) all'uso della KB come memoria del progetto: l'originale presuppone una directory di documentazione dentro il repository, qui l'artefatto vive in una pagina della KB. Il corpo delle skill resta in inglese, perché è un'istruzione per l'agente; questa pagina è il contratto su dove finiscono i loro risultati.
+Tredici skill di processo, adattate da [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT) all'uso della KB come memoria del progetto: l'originale presuppone una directory di documentazione dentro il repository, qui l'artefatto vive in una pagina della KB. Il corpo delle skill resta in inglese, perché è un'istruzione per l'agente; questa pagina è il contratto su dove finiscono i loro risultati.
 
 ## Regole comuni
 
@@ -32,6 +32,7 @@ Dodici skill di processo, adattate da [addyosmani/agent-skills](https://github.c
 | `spec-driven-development` | feature o milestone senza spec | pagina milestone `progetto/m<n>-<slug>` e [[progetto/roadmap]] |
 | `test-driven-development` | implementare logica, correggere un bug | ciclo nel repository; esiti in `log_append`, gate in [[sviluppo/qualita]] |
 | `observability-and-instrumentation` | strumentazione, allarmi, incidente difficile da diagnosticare | baseline in [[infrastruttura/osservabilita]], runbook in `infrastruttura/runbook-<alert>`; esito in `log_append` |
+| `impeccable` | interfaccia frontend da progettare, rivedere o rifinire | pagine KB `sviluppo/design-system` e `progetto/prodotto`; decisioni costose in `architettura/`; screenshot fuori dalla KB |
 
 ## Reference spedite con le skill
 
@@ -44,6 +45,7 @@ Le checklist e i cataloghi di `references/` del repo upstream viaggiano accanto 
 | `test-driven-development` | `testing-patterns.md` | JavaScript/TypeScript: si prende la forma dei pattern, non la sintassi; il Python del progetto è in [[sviluppo/locale-e-test]] |
 | `idea-refine` | `frameworks.md`, `refinement-criteria.md`, `examples.md` | lenti di ideazione, rubrica di valutazione, esempi |
 | `observability-and-instrumentation` | `observability-checklist.md` | lista at-a-glance; la baseline è [[infrastruttura/osservabilita]] |
+| `impeccable` | `reference/*.md` (50 playbook) | importata come sola documentazione: l'engine resta `npx impeccable`, nessuno script vendored |
 
 Non spedite, con motivo: `orchestration-patterns.md` descrive persona e slash command del repository upstream, mentre qui l'orchestrazione è in `instructions.md`; `accessibility-checklist.md` non è citata da nessuna delle dodici skill.
 
