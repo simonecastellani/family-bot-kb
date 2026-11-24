@@ -1,9 +1,9 @@
 ---
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: in-progress
 timestamp: 2026-11-25
 title: M7.2 — Foto con OCR
 type: Pagina
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 ---
 # M7.2 — Foto con OCR
 
@@ -51,4 +51,6 @@ La suite completa passa (unit + contract su MongoDB locale), `ruff` e `pyright` 
 
 Provisioning verificato il 2026-11-25: `vision.googleapis.com` abilitata; chiamata con token impersonato del runtime `api` sull'endpoint `eu` → `200` e testo corretto su un PNG generato in locale.
 
-Resta da fare: deploy `v0.11.0` con `api.env.yaml`, prova dal telefono (foto di un volantino → proposta → evento; foto illeggibile; PDF come documento ancora rifiutato) e chiusura. La foto copre anche il caso Ticketmaster di [[progetto/m7-1-link]], dove il link risponde 403 a Cloud Run.
+Deploy fatto il 2026-11-25: `v0.11.0`, revisione `family-bot-api-00042-qiq` al 100% del traffico, `/livez` riporta `0.11.0`.
+
+Resta la prova dal telefono (foto di un volantino → proposta → evento; foto illeggibile; PDF come documento ancora rifiutato) e la chiusura. La foto copre anche il caso Ticketmaster di [[progetto/m7-1-link]], dove il link risponde 403 a Cloud Run.
