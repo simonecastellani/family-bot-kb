@@ -1,9 +1,9 @@
 ---
-type: Pagina
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: in-progress
 timestamp: 2026-11-24
 title: M7.1 — Link
+type: Pagina
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 ---
 # M7.1 — Link
 
@@ -54,4 +54,8 @@ Prova reale dell'adapter: il 2026-11-24 `https://www.eventbrite.it/` ha restitui
 
 Deploy fatto il 2026-11-24: `v0.10.0`, revisione `family-bot-api-00040-goq` al 100% del traffico, `/livez` e `/readyz` riportano `0.10.0`.
 
-Resta la prova dal telefono (link con data/luogo → proposta → evento; link a PDF; pagina senza evento; pagina con istruzioni malevoli). Nel log agente il run deve avere `input_kind: link`.
+Prova dal telefono (2026-11-24/25): una homepage senza eventi (La Stampa) è stata rifiutata correttamente, un PDF inviato come documento è rimasto non supportato, un link Ticketmaster ha ricevuto 403 (vedi il limite sotto). Restano da provare un link leggibile con data/luogo e la pagina ostile `https://gist.github.com/simonecastellani/1745bc4523e5dab594dd9ce0fe08c09a/raw`. Nel log agente il run deve avere `input_kind: link`.
+
+## Limite osservato (2026-11-25)
+
+Ticketmaster risponde **403** alle richieste da Cloud Run, mentre la stessa richiesta dall'ADSL dell'operatore riceve `200`: il sito blocca i client da datacenter, non è il parser del bot. Il bot risponde «Non riesco a leggere questo link» senza creare un run. Per questi eventi la via è la **foto** letta dall'OCR di [[progetto/m7-2-foto]]; un crawler browser-like o un servizio di terze parti resta fuori scope.
