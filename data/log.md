@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-24T23:39:18Z
+
+concept_write: progetto/roadmap
+
 ## 2026-11-24T23:39:12Z
 
 concept_write: progetto/m7-2-foto
