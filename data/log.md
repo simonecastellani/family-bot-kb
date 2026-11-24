@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-24T22:51:54Z
+
+concept_write: progetto/m7-1-link
+
 ## 2026-11-24T16:26:32Z
 
 concept_patch: progetto/questioni-aperte

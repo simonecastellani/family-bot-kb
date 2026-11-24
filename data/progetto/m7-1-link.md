@@ -1,9 +1,9 @@
 ---
-timestamp: 2026-11-24
-title: M7.1 — Link
 type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 status: in-progress
+timestamp: 2026-11-24
+title: M7.1 — Link
 ---
 # M7.1 — Link
 
@@ -52,4 +52,6 @@ La suite completa passa (unit + contract su MongoDB locale), `ruff` e `pyright` 
 
 Prova reale dell'adapter: il 2026-11-24 `https://www.eventbrite.it/` ha restituito titolo e 3.617 caratteri; `https://www.comune.milano.it/` ha risposto 403 e il bot lo riporta senza creare un run.
 
-Resta da fare: deploy canary con `api.env.yaml`, prova dal telefono (link con data/luogo → proposta → evento; link a PDF; pagina senza evento; pagina con istruzioni malevole) e tag `v0.10.0`. Nel log agente il run deve avere `input_kind: link`.
+Deploy fatto il 2026-11-24: `v0.10.0`, revisione `family-bot-api-00040-goq` al 100% del traffico, `/livez` e `/readyz` riportano `0.10.0`.
+
+Resta la prova dal telefono (link con data/luogo → proposta → evento; link a PDF; pagina senza evento; pagina con istruzioni malevoli). Nel log agente il run deve avere `input_kind: link`.
