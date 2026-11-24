@@ -32,6 +32,7 @@ title: Progetto
 - [[progetto/m5-dashboard]] — M5 — Dashboard in sola lettura
 - [[progetto/m6-vocali]] — M6 — Vocali con STT
 - [[progetto/m7-1-link]] — M7.1 — Link
+- [[progetto/m7-2-foto]] — M7.2 — Foto con OCR
 - [[progetto/questioni-aperte]] — Questioni aperte
 - [[progetto/roadmap]] — Roadmap
 - [[progetto/stack]] — Stack tecnologico
