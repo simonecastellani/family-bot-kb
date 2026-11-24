@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-24T11:41:35Z
+
+M6 chiusa il 2026-11-24 (`v0.9.0`): un vocale diventa un turno dell'agente. Cloud Speech-to-Text V2 `short` in multi-regione `eu`, audio mai conservato, limiti 60 s/10 MB, eco di debug. Prova dal telefono riuscita (vocale → trascrizione → proposta → task); i rifiuti restano coperti dai test automatici. Prossima: M7 — link e immagini.
+
 ## 2026-11-23T21:44:32Z
 
 concept_patch: progetto/m6-vocali
