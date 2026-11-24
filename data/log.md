@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-24T23:30:56Z
+
+concept_write: architettura/integrazioni
+
 ## 2026-11-24T23:30:46Z
 
 concept_write: progetto/roadmap

@@ -1,9 +1,9 @@
 ---
-title: Integrazioni con servizi esterni
 type: Concept
 provenance: [sources/2026-11-13-docs-gcp-setup-md-configurazione-manuale-di-google-cloud]
 status: active
 timestamp: 2026-11-13
+title: Integrazioni con servizi esterni
 ---
 # Integrazioni con servizi esterni
 
@@ -42,7 +42,12 @@ Implementato il 2026-11-24: **nessuna API, nessun bucket e nessun secret**. Il b
 
 ## Immagini (M7.2)
 
-Deciso il 2026-11-24: le legge l'**OCR di Cloud Vision** (`TEXT_DETECTION`, endpoint regionale `eu-vision.googleapis.com`), non un modello con vision. L'immagine resta in memoria e viene scartata; il provider LLM riceve solo il testo. Il bucket dei documenti non c'entra: serve a M8 per i menu, non alle foto.
+Implementato il 2026-11-25: l'immagine (la photo più grande, o un file `image/jpeg|png|webp`) viene letta dall'**OCR di Cloud Vision** (`TEXT_DETECTION`, endpoint regionale `eu-vision.googleapis.com`) e poi scartata. Il provider LLM riceve solo il testo, come per un vocale; nessun modello con vision serve.
+
+- `vision.googleapis.com` abilitata il 2026-11-25; **nessun ruolo IAM dedicato**: chiamata con ADC del runtime `api` e scope `cloud-platform` verificata con token impersonato (`200` sull'endpoint `eu`).
+- Nessun `languageHints`: per l'alfabeto latino il riconoscimento automatico è migliore. La porta accetta un hint opzionale, la configurazione lo lascia vuoto.
+- L'immagine resta in memoria e non viene conservata; il bucket dei documenti non c'entra (serve a M8 per i menu, non alle foto).
+- Un errore per immagine arriva in `responses[0].error` con HTTP 200: l'adapter lo mappa. Dettagli in [[progetto/m7-2-foto]].
 
 ## Fonte
 
