@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-24T23:31:08Z
+
+concept_write: architettura/porte-e-fake
+
 ## 2026-11-24T23:30:56Z
 
 concept_write: architettura/integrazioni
