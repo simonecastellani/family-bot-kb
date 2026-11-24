@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-24T16:25:56Z
+
+concept_patch: progetto/roadmap
+
 ## 2026-11-24T16:25:21Z
 
 concept_write: progetto/m7-1-link
