@@ -1,6 +1,6 @@
 ---
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
+status: done
 timestamp: 2026-11-23
 title: M6 — Vocali con STT
 type: Pagina
@@ -50,7 +50,7 @@ Un vocale in italiano diventa un task corretto: il membro parla invece di scrive
 - `agent_runs.input_kind` distingue testo e voce; la configurazione manuale è la fase E4 di `docs/gcp-setup.md`, lo stato delle risorse in `docs/gcp-inventory.md`.
 - I test coprono: adapter (200, 401/403, 429/5xx, timeout, audio oltre il limite), turno vocale (limiti, download fallito, STT giù, trascrizione vuota, retry, eco accesa e spenta) e webhook.
 
-## Verifica (in corso)
+## Verifica (chiusa il 2026-11-24)
 
 Il primo tentativo di concessione del ruolo, fatto dalla console, lo aveva messo nella binding già condizionata al database (`resource.name == "projects/family-bot-dev/databases/family-bot"`): la condizione non è mai vera per una richiesta Speech, quindi il ruolo sembrava concesso e l'API rispondeva `403`. Corretto rimuovendo il binding condizionato e riaggiungendo il ruolo con `--condition=None`; è lo stesso errore di M5 sugli utenti Firebase, e vale come regola per ogni nuovo ruolo a questi service account. La traccia completa è in `docs/gcp-inventory.md`.
 
@@ -61,8 +61,8 @@ Il primo tentativo di concessione del ruolo, fatto dalla console, lo aveva messo
 > Nota post-deploy: modificando il binding dalla console, `roles/datastore.user` è stato sostituito da `speech.client` e il bot ha smesso di rispondere (500, `pymongo` code 13) finché non è stato ripristinato con la condizione `family-bot-db-only`. Dettagli nel log e in `docs/gcp-inventory.md`; lo smoke test non l'ha visto perché `/readyz` non prova il database (candidato M9).
 
 - [x] deploy della revisione `v0.9.0` (canary, smoke test, spostamento del traffico);
-- [ ] prova reale dal telefono (vocale → proposta → task);
-- [ ] dopo una settimana, minuti consumati e spesa sotto il budget.
+- [x] prova reale dal telefono (2026-11-24): vocale → trascrizione → proposta → conferma → task corretto.
+Controllo di routine, fuori dalla chiusura: dopo una settimana, minuti consumati e spesa sotto il budget.
 
 ## Fonte
 
