@@ -32,13 +32,17 @@ Adottato: **Cloud Speech-to-Text V2** con riconoscimento sincrono. Il vocale Tel
 - Costo: la V2 si paga dal primo minuto (0,016 $/min); il free tier di 60 min/mese è della V1, non della V2.
 - La porta `STTClient` con i suoi errori e il fake è in [[architettura/porte-e-fake]].
 
-## Link e immagini
+## Link (M7.1)
 
-Anche questo soggetto **non è coperto** dal documento di configurazione GCP: nessuna API, nessun bucket dedicato, nessuna credenziale per il recupero di link o per le immagini.
+Implementato il 2026-11-24: **nessuna API, nessun bucket e nessun secret**. Il bot scarica la pagina inoltrata da Cloud Run (uscita internet pubblica, nessun connettore VPC), ne legge testo e JSON-LD e la scarta.
 
-Quello che la KB sa già: il repo prevede un adapter `link_fetcher` fra le integrazioni previste ([[architettura/regole]]); i file e gli allegati vivono in Cloud Storage, nel bucket dei documenti senza accesso pubblico ([[infrastruttura/identita-e-runtime]]).
+- Solo `http(s)` pubblici: niente credenziali nell'URL, porte 80/443, massimo 3 redirect rivalidati, 1 MB e 6 s.
+- Filtro SSRF prima di ogni richiesta: gli host che risolvono a indirizzi privati, loopback, link-local o metadata (`169.254.169.254`, `metadata.google.internal`) vengono rifiutati.
+- Il testo della pagina esce verso il provider LLM come **contenuto non fidato**; nessuna scrittura senza conferma. Dettagli in [[architettura/sicurezza]] e [[progetto/m7-1-link]].
 
-- [ ] Verificare quali servizi servono per link e immagini e se riusano il bucket dei documenti.
+## Immagini (M7.2)
+
+Deciso il 2026-11-24: le legge l'**OCR di Cloud Vision** (`TEXT_DETECTION`, endpoint regionale `eu-vision.googleapis.com`), non un modello con vision. L'immagine resta in memoria e viene scartata; il provider LLM riceve solo il testo. Il bucket dei documenti non c'entra: serve a M8 per i menu, non alle foto.
 
 ## Fonte
 

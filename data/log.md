@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-24T16:26:20Z
+
+concept_patch: architettura/integrazioni
+
 ## 2026-11-24T16:26:08Z
 
 concept_patch: architettura/porte-e-fake
