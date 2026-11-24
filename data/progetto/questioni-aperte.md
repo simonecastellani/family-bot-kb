@@ -14,11 +14,12 @@ Domande non ancora risolte, con la condizione o il momento in cui vanno chiuse (
 - **Copertura reale della compatibilità MongoDB di Firestore** — **verificata il 2026-11-18**: la suite contract (41 test) è passata sul database Enterprise reale, transazioni comprese. Resta aperto solo il presidio periodico: la suite è distruttiva, quindi non diventa notturna finché non esiste il progetto di pre-produzione dove spostarla.
 - **Regioni** — disponibilità dell'edizione Enterprise e applicabilità delle quote gratuite in regioni UE, vicine a Cloud Run.
 - **Strategia di backup/restore** — da definire, dato che non ha uso gratuito.
-- **Modelli con vision** — quali modelli di OpenCode Go supportano le immagini (serve a M7). Per l'audio la domanda è chiusa: lo STT è gestito ([[progetto/m6-vocali]]).
 - **STT locale (Whisper sull'homelab)** — esperimento in coda alla roadmap: richiederebbe l'eccezione «media verso il server domestico» e un fallback cloud, perché il bot non deve perdere i vocali quando l'homelab è giù. Il confronto va fatto in shadow (trascrive e registra, risponde il cloud) prima di spostare il traffico.
 - **Memoria della conversazione** — i turni sono stateless: una domanda del bot («quando?», «sì o no?») non può avere risposta al turno dopo. Da chiudere in **M10** (dopo M9, vedi [[progetto/roadmap]]): opzioni sul tavolo, i turni recenti già salvati in `agent_runs` (`input_text`, `outcome`) oppure un uso di Cartographer come memoria del sistema. Fino ad allora: il bot non chiude con una domanda secca e le ambiguità si risolvono con bottoni etichettati ([[progetto/m4-7-eventi-ricorrenti]]).
 
 ## Chiuse di recente
+
+- **Modelli con vision** — decisa il 2026-11-24: le immagini le legge l'OCR di Cloud Vision (`TEXT_DETECTION`, endpoint `eu`), non il modello, quindi nessun modello con vision serve; l'immagine non viene conservata e il modello riceve solo il testo ([[architettura/integrazioni]]).
 
 - **STT gestito o audio nativo del modello** — decisa il 2026-11-23: Cloud Speech-to-Text V2 (`short`, multi-regione `eu`), sincrono, audio mai conservato e nessun object storage ([[progetto/m6-vocali]]).
 

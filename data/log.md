@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-24T16:26:32Z
+
+concept_patch: progetto/questioni-aperte
+
 ## 2026-11-24T16:26:20Z
 
 concept_patch: architettura/integrazioni
