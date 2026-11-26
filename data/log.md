@@ -2,6 +2,10 @@
 
 ## 2026-11-26T16:17:03Z
 
+concept_write: progetto/m7-1-link
+
+## 2026-11-26T16:17:03Z
+
 concept_write: progetto/m7-2-foto
 
 ## 2026-11-26T16:16:52Z

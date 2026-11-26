@@ -1,9 +1,9 @@
 ---
-status: in-progress
-timestamp: 2026-11-24
+provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
+status: done
+timestamp: 2026-11-26
 title: M7.1 — Link
 type: Pagina
-provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
 ---
 # M7.1 — Link
 
@@ -54,7 +54,7 @@ Prova reale dell'adapter: il 2026-11-24 `https://www.eventbrite.it/` ha restitui
 
 Deploy fatto il 2026-11-24: `v0.10.0`, revisione `family-bot-api-00040-goq` al 100% del traffico, `/livez` e `/readyz` riportano `0.10.0`.
 
-Prova dal telefono (2026-11-24/25): una homepage senza eventi (La Stampa) è stata rifiutata correttamente, un PDF inviato come documento è rimasto non supportato, un link Ticketmaster ha ricevuto 403 (vedi il limite sotto). Restano da provare un link leggibile con data/luogo e la pagina ostile `https://gist.github.com/simonecastellani/1745bc4523e5dab594dd9ce0fe08c09a/raw`. Nel log agente il run deve avere `input_kind: link`.
+Prova dal telefono (2026-11-24/26): una homepage senza eventi (La Stampa) è stata rifiutata correttamente, un PDF inviato come documento è rimasto non supportato, un link leggibile con data/luogo ha prodotto la proposta giusta, la pagina ostile `https://gist.github.com/simonecastellani/1745bc4523e5dab594dd9ce0fe08c09a/raw` non ha innescato scritture, e un link Ticketmaster ha ricevuto 403 (vedi il limite sotto). **M7.1 è chiusa il 2026-11-26**; nel log agente il run ha `input_kind: link`.
 
 ## Limite osservato (2026-11-25)
 
