@@ -1,9 +1,9 @@
 ---
+status: done
+timestamp: 2026-11-26
 title: M7.2 — Foto con OCR
 type: Pagina
 provenance: [sources/2026-11-13-primer-md-fonte-di-verita-del-progetto-family-bot]
-status: in-progress
-timestamp: 2026-11-25
 ---
 # M7.2 — Foto con OCR
 
@@ -65,4 +65,4 @@ Provisioning verificato il 2026-11-25: `vision.googleapis.com` abilitata; chiama
 
 Deploy fatto il 2026-11-25: `v0.11.0` (revisione `family-bot-api-00042-qiq`) e poi `v0.11.1` (revisione `family-bot-api-00044-yim`) con il controllo duplicati; `/livez` riporta `0.11.1`.
 
-Prova dal telefono (2026-11-25): link, foto di un volantino, PDF come documento, pagina ostile e screenshot Ticketmaster → tutto ok. Ha però rilevato che lo **stesso evento** è stato aggiunto due volte, corretto in `v0.11.1` (vedi sotto); resta la riprova del duplicato e la chiusura. La foto copre anche il caso Ticketmaster di [[progetto/m7-1-link]], dove il link risponde 403 a Cloud Run.
+Prova dal telefono (2026-11-25/26): link, foto di un volantino, PDF come documento, pagina ostile e screenshot Ticketmaster → tutto ok. Ha rilevato che lo **stesso evento** è stato aggiunto due volte, corretto in `v0.11.1`: la riprova del 2026-11-26 conferma che lo stesso screenshot non produce più una proposta. **M7.2 è chiusa il 2026-11-26**. La foto copre anche il caso Ticketmaster di [[progetto/m7-1-link]], dove il link risponde 403 a Cloud Run.
