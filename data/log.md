@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-26T16:16:52Z
+
+concept_write: progetto/roadmap
+
 ## 2026-11-25T00:02:45Z
 
 concept_write: progetto/roadmap
