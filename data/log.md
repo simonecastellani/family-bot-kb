@@ -1,5 +1,9 @@
 # Log
 
+## 2026-11-26T21:19:28Z
+
+[progetto] M8.1 nel codice: il menù del nido arriva come screenshot o PDF, viene letto (Cloud Vision o Document AI) e il file cancellato dopo l'estrazione; `documents` e `nursery_menus` nuovi, porta BlobStore con adapter GCS. Document AI abilitato e verificato con token del worker; estrazione reale con il provider LLM provata. Mancano deploy e prova dal telefono (v0.12.0).
+
 ## 2026-11-26T21:19:18Z
 
 concept_batch (7 operation(s)):
