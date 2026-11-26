@@ -35,8 +35,9 @@ Dal primer §6, "Collection":
 | `task_occurrences` | `due_date`/`due_at`, finestra, `status`, `snoozed_until`, completamento | indice su (`status`, `due_*`) |
 | `reminders` | `_id = dedupe_key`, destinatario, `scheduled_at`, `sent_at`, `status` | idempotenza invii |
 | `calendar_events` | cache da Google: `google_event_id`, `etag`, `start/end`, partecipanti | sync con syncToken |
-| `documents` | file originale (riferimento GCS) + estratto strutturato (menu del nido) | |
-| `meal_plans` | settimana, stato `draft`/`confirmed`, **item incorporati** | |
+| `documents` | file su GCS **temporaneo** + testo OCR + estratto strutturato del menù del nido; stato `stored`/`processing`/`extracted`/`failed` | il file si cancella appena finita l'estrazione (M8.1) |
+| `nursery_menus` | menù del nido per settimana (`_id` = lunedì ISO), giorni uniti dagli estratti dei documenti | una settimana, uno o più screenshot (M8.1) |
+| `meal_plans` | settimana, stato `draft`/`confirmed`, **item incorporati** | M8.2 |
 | `agent_runs` | input, tipo, modello, token, esito, **step incorporati** (con cap) | visibile solo ad admin |
 | `audit_events` | actor, source, azione, entità, diff | |
 

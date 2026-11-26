@@ -1,5 +1,16 @@
 # Log
 
+## 2026-11-26T21:19:18Z
+
+concept_batch (7 operation(s)):
+- progetto/m8-1-documenti
+- progetto/roadmap
+- architettura/modello-dati
+- architettura/integrazioni
+- architettura/porte-e-fake
+- architettura/sicurezza
+- infrastruttura/inventario
+
 ## 2026-11-26T16:17:03Z
 
 concept_write: progetto/m7-1-link

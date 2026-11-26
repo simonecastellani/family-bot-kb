@@ -46,8 +46,18 @@ Implementato il 2026-11-25: l'immagine (la photo più grande, o un file `image/j
 
 - `vision.googleapis.com` abilitata il 2026-11-25; **nessun ruolo IAM dedicato**: chiamata con ADC del runtime `api` e scope `cloud-platform` verificata con token impersonato (`200` sull'endpoint `eu`).
 - Nessun `languageHints`: per l'alfabeto latino il riconoscimento automatico è migliore. La porta accetta un hint opzionale, la configurazione lo lascia vuoto.
-- L'immagine resta in memoria e non viene conservata; il bucket dei documenti non c'entra (serve a M8 per i menu, non alle foto).
+- L'immagine resta in memoria e non viene conservata: le foto non toccano il bucket dei documenti, che serve ai menù (M8.1).
 - Un errore per immagine arriva in `responses[0].error` con HTTP 200: l'adapter lo mappa. Dettagli in [[progetto/m7-2-foto]].
+
+## Documenti e menù del nido (M8.1)
+
+Implementato il 2026-11-26: uno screenshot o un PDF diventano un menù strutturato per settimana; il file vive su Cloud Storage **solo mentre viene letto** e il worker lo cancella appena finita l'estrazione.
+
+- **Cloud Storage**: bucket `gs://family-bot-documents`; l'API scrive, il worker legge e cancella (`roles/storage.objectAdmin` su entrambi). La porta `BlobStore` ha l'adapter REST con ADC, nessuna libreria nuova.
+- **Document AI**: Enterprise Document OCR nel multi-regione `eu`, chiamata sincrona con il PDF inline (`rawDocument`, `imagelessMode`), 15 pagine e 40 MB, prime 1.000 pagine/mese gratuite. Processor `family-bot-menu`; ruolo `roles/documentai.apiUser` al solo worker. Le immagini restano su Cloud Vision.
+- **Estrazione strutturata**: il testo OCR esce verso il provider LLM (output Pydantic) e resta **non fidato**; il worker ha di nuovo la chiave, perché è lui a leggere i documenti.
+- **Cloud Tasks**: il salvataggio accoda un task al worker (`/internal/documents`); la coda `reminders` porta già l'URL per task, quindi non ne serve una nuova.
+- Dettagli e verifiche in [[progetto/m8-1-documenti]].
 
 ## Fonte
 

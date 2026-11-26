@@ -107,8 +107,16 @@ Abilitate a mano il 2026-11-08 (Fase A):
 - `logging.googleapis.com`
 - `billingbudgets.googleapis.com`
 - `cloudbilling.googleapis.com`
+- `speech.googleapis.com` (M6), `vision.googleapis.com` (M7.2), `documentai.googleapis.com` (M8.1)
 
 Altre API risultano abilitate, probabilmente come default del progetto o abilitate dai servizi Google: `analyticshub`, `apptopology`, `backupdr`, `bigquery*`, `cloudapis`, `cloudtrace`, `compute`, `containerregistry`, `dataform`, `dataplex`, `datastore`, `firebaserules`, `oslogin`, `pubsub`, `servicemanagement`, `servicenetworking`, `sql-component`, `storage-api`, `storage-component`, `telemetry`. Non sono state abilitate a mano; se non servono, valutarne la disabilitazione in M9. `calendar-json.googleapis.com` arriva in M4.
+
+## Document AI e documenti (M8.1, 2026-11-26)
+
+- `documentai.googleapis.com` abilitata; processor `family-bot-menu` (`OCR_PROCESSOR`) in `eu`, risorsa `projects/602013947946/locations/eu/processors/11870ab02f58d539`.
+- `roles/documentai.apiUser` al solo `family-bot-worker`; `roles/storage.objectAdmin` sul bucket `family-bot-documents` al worker (l'API ce l'aveva già); `opencode-api-key` di nuovo accessibile al worker, che ora estrae il menù.
+- Il file di un documento vive sul bucket solo durante la lettura e viene cancellato dal worker: nessuna policy di lifecycle, la cancellazione è esplicita.
+- Dettagli e verifica con token impersonato in [[progetto/m8-1-documenti]].
 
 ## Registro modifiche
 
@@ -131,3 +139,5 @@ Altre API risultano abilitate, probabilmente come default del progetto o abilita
 | 2026-11-15 | `datastore.user` del worker condizionato al database; worker rimosso da `opencode-api-key` | Console → IAM e Secret Manager → Permissions |
 | 2026-11-15 | Creato l'utente `local-admin` con `datastore.owner` condizionato al database | Firestore → Databases → `family-bot` → Security → Add User |
 | 2026-11-15 | Deciso di non imporre `iam.disableServiceAccountKeyCreation`: rischio accettato con controllo manuale | — |
+| 2026-11-26 | Abilitata `documentai.googleapis.com` e creato il processor OCR `family-bot-menu` in `eu` | `gcloud services enable`, REST `POST /v1/projects/.../locations/eu/processors` |
+| 2026-11-26 | Worker: `documentai.apiUser`, `storage.objectAdmin` sul bucket e `secretAccessor` su `opencode-api-key` | `gcloud projects/storage buckets/secrets add-iam-policy-binding` |

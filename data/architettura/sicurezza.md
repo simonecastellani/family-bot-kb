@@ -54,7 +54,8 @@ Configurazione del provider di identità per la dashboard (fase M5). La regola d
 
 ## Dati verso il provider LLM
 
-- Testo, trascrizioni e contenuto del calendario escono verso il provider LLM: minimizzare ciò che si invia.
+- Testo, trascrizioni, contenuto del calendario e testo OCR dei documenti escono verso il provider LLM: minimizzare ciò che si invia.
+- Il file di un documento (M8.1) resta su Cloud Storage **solo mentre viene letto**: il worker lo cancella appena finita l'estrazione, riuscita o fallita. Il PDF esce verso Document AI (multi-regione `eu`), le immagini verso Cloud Vision (`eu`); il testo letto è non fidato.
 - Scegliere regioni UE dove supportate dalle quote gratuite (da verificare).
 - Output sempre escapato; nessun HTML generato dall'LLM è reso senza sanitizzazione.
 
